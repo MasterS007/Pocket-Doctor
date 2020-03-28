@@ -12,8 +12,8 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     public partial class FormSignUp : Form
     {
-        private User userDoc = new Doctor();
-        private DatabaseConnection db = new DatabaseConnection();
+      
+       
         public FormSignUp()
         {
             InitializeComponent();
@@ -35,17 +35,13 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void BtnSingUp_Click(object sender, EventArgs e)
         {
-            db.UserId = userDoc.UserId;
-            db.UserName = txtUserName.Text;
-            db.Password = txtPassword.Text;
-            db.MobileNumber = txtMobileNum.Text;
 
             if (this.cmbUserType.Text == "Doctor")
             {
-                
-                bool success = db.Insert(db);
-                //db = new DatabaseConnection();
-                //db.
+                User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
+
+                bool success = userDoc.InsertUser(userDoc);
+               
                 if (success == true)
                 {
                     MessageBox.Show("Successful insert");

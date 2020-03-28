@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsAppPocketDoctorProject.Classes;
 
 namespace WindowsFormsAppPocketDoctorProject
 {
      internal class User
     {
-        private static int serialNo = 1;
+        private static int serialNo =1;
         private string userId;
         private string userName;
         private string password;
         private string mobileNumber;
 
-        internal User() { }
+
         internal User(string userName, string password, string mobileNumber)
         {
-            this.userId = (serialNo++).ToString("0000");
+            serialNo += serialNo;
+            this.UserId = (serialNo).ToString("0000");
             this.UserName = userName;
             this.Password = password;
             this.MobileNumber = mobileNumber;
@@ -27,19 +31,13 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             get { return this.userId; }
             set
-            {
-                this.userId = "U-"+value;
-
-            }
+            { this.userId = "U-" + value; }
 
         }
         internal  string UserName
         {
             get { return this.userName; }
-            set
-            {
-                this.userName = value;
-            }
+            set {this.userName = value; }
 
         }
         internal  string Password
@@ -72,8 +70,44 @@ namespace WindowsFormsAppPocketDoctorProject
                     this.mobileNumber = value;
                // }
             }
+        }
+
+        public bool InsertUser(User users)
+        {
+            bool isSucceed = false;
+            DatabaseConnection db = new DatabaseConnection();
+            SqlConnection conn = db.ConnectDB();
+
+            try
+            {
+                string sql = "INSERT INTO tbl_USER (userId, userName, password, mobileNumber) VALUES (@userId, @userName , @password,  @mobileNumber)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@userId", this.UserId);
+                cmd.Parameters.AddWithValue("@userName", users.UserName);
+                cmd.Parameters.AddWithValue("@password", users.Password);
+                cmd.Parameters.AddWithValue("@mobileNumber", users.MobileNumber);
 
 
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSucceed = true;
+                    Console.WriteLine("Row INSERTED");
+                }
+                else
+                {
+                    isSucceed = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally { conn.Close(); }
+
+            return isSucceed;
         }
 
 

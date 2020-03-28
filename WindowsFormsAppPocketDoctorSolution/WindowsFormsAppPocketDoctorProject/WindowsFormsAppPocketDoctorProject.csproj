@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Doctor.cs" />
-    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>

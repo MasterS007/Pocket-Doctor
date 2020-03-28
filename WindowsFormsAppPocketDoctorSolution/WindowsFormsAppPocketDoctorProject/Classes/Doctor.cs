@@ -8,8 +8,8 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     internal class Doctor : User
     {
-        internal Doctor():base()
-        { }
+        //internal Doctor():base()
+       // { }
         internal Doctor( string userName, string password, string mobileNumber) : base( userName, password, mobileNumber)
         {
            
@@ -20,7 +20,7 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             set
             {
-                base.UserId = value + "D";
+               base.UserId = value + "-D";
             }
 
         }
