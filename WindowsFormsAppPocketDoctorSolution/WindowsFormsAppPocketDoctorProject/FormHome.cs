@@ -69,11 +69,11 @@ namespace WindowsFormsAppPocketDoctorProject
         }
         private void LblTest_Click_1(object sender, EventArgs e)
         {
-           // ucHome1.Hide();
-          //  ucMedicinecs1.Hide();
-            //ucPaitent1.Hide();
-           //// ucTest1.Show();
-           //// ucTest1.BringToFront();
+            ucHome1.Hide();
+            ucMedicinecs1.Hide();
+            ucPaitent1.Hide();
+            ucTest1.Show();
+            ucTest1.BringToFront();
 
 
         }

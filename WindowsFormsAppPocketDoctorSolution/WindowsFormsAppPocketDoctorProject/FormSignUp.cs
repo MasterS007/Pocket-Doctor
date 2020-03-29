@@ -12,8 +12,7 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     public partial class FormSignUp : Form
     {
-      
-       
+        
         public FormSignUp()
         {
             InitializeComponent();
@@ -31,25 +30,22 @@ namespace WindowsFormsAppPocketDoctorProject
             }
         }
 
-       
-
         private void BtnSingUp_Click(object sender, EventArgs e)
         {
+            User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text,cmbUserType.Text);
 
             if (this.cmbUserType.Text == "Doctor")
             {
-                User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
-
-                bool success = userDoc.InsertUser(userDoc);
+               bool success = userDoc.InsertUser(userDoc);
                
                 if (success == true)
                 {
-                    MessageBox.Show("Successful insert");
-
+                  
+                   MessageBox.Show("Successful Signup");
                 }
                 else
-                {
-                    MessageBox.Show("Failed to insert");
+                 {
+                   MessageBox.Show("Failed to insert");
 
                 }
 

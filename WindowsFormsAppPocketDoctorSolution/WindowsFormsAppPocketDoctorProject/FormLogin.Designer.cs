@@ -119,7 +119,7 @@
             this.lblSInUp.Size = new System.Drawing.Size(218, 29);
             this.lblSInUp.TabIndex = 5;
             this.lblSInUp.Text = "create an account";
-            this.lblSInUp.Click += new System.EventHandler(this.LblSInUp_Click);
+            
             // 
             // txtPassword
             // 

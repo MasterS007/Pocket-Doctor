@@ -8,13 +8,9 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     internal class Doctor : User
     {
-        //internal Doctor():base()
-       // { }
-        internal Doctor( string userName, string password, string mobileNumber) : base( userName, password, mobileNumber)
-        {
-           
-            
-        }
+       
+        internal Doctor( string userName, string password, string mobileNumber,string role) : base( userName, password, mobileNumber,role)
+        { }
 
         internal override string UserId
         {
