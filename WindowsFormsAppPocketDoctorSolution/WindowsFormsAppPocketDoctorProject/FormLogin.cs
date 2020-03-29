@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using WindowsFormsAppPocketDoctorProject.Classes;
 
 namespace WindowsFormsAppPocketDoctorProject
 {
@@ -19,27 +21,66 @@ namespace WindowsFormsAppPocketDoctorProject
         }
 
 
-
+        
         private void BtnLogin_Click_1(object sender, EventArgs e)
         {
-            // this.Visible = false;
-            // FormHome fm = new FormHome();
-            // fm.Visible = true;
-            users.UserId = txtUserId.Text;
+            users.UserId = Convert.ToInt32(txtUserId.Text);
             users.Password = txtPassword.Text;
-            DataTable dataTable = users.SelectUser(users);
-            if (dataTable.Rows.Count == 1)
+            bool dataTable = users.SelectUser(users);
+           
+           // DataSet dataSet = new DataSet();
+
+            if (dataTable == true)
             {
-                this.Visible = false;
-                FormHome fm = new FormHome();
-                fm.Visible = true;
-            }
+                 string role;
+                 DatabaseConnection db = new DatabaseConnection();
+                 SqlConnection conn = db.ConnectDB();
+
+
+                 string select = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
+                 SqlCommand cmd1 = new SqlCommand(select, conn);
+                // cmd1.Parameters.AddWithValue("@userid", txtUserId);
+                 //SqlDataReader myReader1 = cmd1.ExecuteReader();
+                 var queryResult = cmd1.ExecuteScalar();
+
+
+                if (queryResult != null)
+                {
+                    role = Convert.ToString(queryResult);
+                    
+                    if (role.Equals("Doctor"))
+                    {
+                        this.Visible = false;
+                        FormHome fm = new FormHome();
+                        fm.Visible = true;
+
+                    }
+                }
+
+                else
+                {
+                      role = "";
+                    }
+                      conn.Close();
+                
+
+
+                }
             else
             {
+
                 MessageBox.Show("Invalid password or user id");
+                txtPassword.Clear();
+                txtUserId.Clear();
             }
         }
 
-       
+        private void LblSInUp_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FormSignUp formSingUp = new FormSignUp();
+            formSingUp.Show();
+
+        }
     }
 }

@@ -12,14 +12,18 @@ namespace WindowsFormsAppPocketDoctorProject
         internal Doctor( string userName, string password, string mobileNumber,string role) : base( userName, password, mobileNumber,role)
         { }
 
-        internal override string UserId
+    
+
+      /*  internal override string UserId
         {
             set
             {
-               base.UserId = value + "-D";
-            }
+                base.UserId = value + "-D";
 
-        }
-      
+            }
+            
+        }*/
+
+
     }
 }

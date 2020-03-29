@@ -12,7 +12,7 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     public partial class FormSignUp : Form
     {
-        
+        User users = new User();
         public FormSignUp()
         {
             InitializeComponent();
@@ -36,21 +36,28 @@ namespace WindowsFormsAppPocketDoctorProject
 
             if (this.cmbUserType.Text == "Doctor")
             {
-               bool success = userDoc.InsertUser(userDoc);
+            bool success= userDoc.InsertUser(userDoc);
                
-                if (success == true)
-                {
-                  
-                   MessageBox.Show("Successful Signup");
-                }
-                else
-                 {
-                   MessageBox.Show("Failed to insert");
+                  if (success == false)
+                  {
+                     MessageBox.Show("Failed to insert");
 
-                }
+                  }
+                 else
+                  {
+                    // MessageBox.Show("Successful Signup");
+                    this.Visible = false;
+                    FormLogin fm = new FormLogin();
+                    fm.Show();
+                  }
 
             }
 
+        }
+
+        private void FormSignUp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
