@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,14 +39,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pctUpload = new System.Windows.Forms.PictureBox();
             this.lblUploadImg = new System.Windows.Forms.Label();
-            this.ucPaitent1 = new WindowsFormsAppPocketDoctorProject.UCPaitent();
-            this.ucHome1 = new WindowsFormsAppPocketDoctorProject.UCHome();
-            this.ucMedicinecs1 = new WindowsFormsAppPocketDoctorProject.UCMedicinecs();
-            this.ucTest1 = new WindowsFormsAppPocketDoctorProject.UCTest();
+            this.dtPatientInfo = new System.Windows.Forms.DataGridView();
+            this.pocketdoctordbDataSet = new WindowsFormsAppPocketDoctorProject.pocketdoctordbDataSet();
+            this.pocketdoctordbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocketdoctordbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocketdoctordbDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,10 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.ucTest1);
-            this.panel1.Controls.Add(this.ucMedicinecs1);
-            this.panel1.Controls.Add(this.ucHome1);
-            this.panel1.Controls.Add(this.ucPaitent1);
+            this.panel1.Controls.Add(this.dtPatientInfo);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(218, 14);
             this.panel1.Name = "panel1";
@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblPaitentProfile, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblMedicine, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblHome, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(182, 63);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(168, 71);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -166,37 +166,27 @@
             this.lblUploadImg.Text = "upload image";
             this.lblUploadImg.Click += new System.EventHandler(this.LblUploadImg_Click);
             // 
-            // ucPaitent1
+            // dtPatientInfo
             // 
-            this.ucPaitent1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtPatientInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucPaitent1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucPaitent1.Location = new System.Drawing.Point(13, 121);
-            this.ucPaitent1.Name = "ucPaitent1";
-            this.ucPaitent1.Size = new System.Drawing.Size(993, 529);
-            this.ucPaitent1.TabIndex = 9;
+            this.dtPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPatientInfo.Location = new System.Drawing.Point(175, 142);
+            this.dtPatientInfo.Name = "dtPatientInfo";
+            this.dtPatientInfo.RowTemplate.Height = 24;
+            this.dtPatientInfo.Size = new System.Drawing.Size(729, 386);
+            this.dtPatientInfo.TabIndex = 9;
             // 
-            // ucHome1
+            // pocketdoctordbDataSet
             // 
-            this.ucHome1.Location = new System.Drawing.Point(46, 121);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(900, 477);
-            this.ucHome1.TabIndex = 10;
+            this.pocketdoctordbDataSet.DataSetName = "pocketdoctordbDataSet";
+            this.pocketdoctordbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ucMedicinecs1
+            // pocketdoctordbDataSetBindingSource
             // 
-            this.ucMedicinecs1.Location = new System.Drawing.Point(114, 121);
-            this.ucMedicinecs1.Name = "ucMedicinecs1";
-            this.ucMedicinecs1.Size = new System.Drawing.Size(784, 501);
-            this.ucMedicinecs1.TabIndex = 11;
-            // 
-            // ucTest1
-            // 
-            this.ucTest1.Location = new System.Drawing.Point(82, 88);
-            this.ucTest1.Name = "ucTest1";
-            this.ucTest1.Size = new System.Drawing.Size(792, 532);
-            this.ucTest1.TabIndex = 12;
+            this.pocketdoctordbDataSetBindingSource.DataSource = this.pocketdoctordbDataSet;
+            this.pocketdoctordbDataSetBindingSource.Position = 0;
             // 
             // FormHome
             // 
@@ -214,6 +204,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocketdoctordbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocketdoctordbDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,9 +222,8 @@
         private System.Windows.Forms.Label lblMedicine;
         private System.Windows.Forms.Label lblPaitentProfile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private UCTest ucTest1;
-        private UCMedicinecs ucMedicinecs1;
-        private UCHome ucHome1;
-        private UCPaitent ucPaitent1;
+        private System.Windows.Forms.DataGridView dtPatientInfo;
+        private System.Windows.Forms.BindingSource pocketdoctordbDataSetBindingSource;
+        private pocketdoctordbDataSet pocketdoctordbDataSet;
     }
 }

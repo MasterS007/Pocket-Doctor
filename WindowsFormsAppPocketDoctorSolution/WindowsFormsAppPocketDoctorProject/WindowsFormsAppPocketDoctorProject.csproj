@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Doctor.cs" />
+    <Compile Include="Classes\Patient.cs" />
+    <Compile Include="Classes\SqlConnecti.cs" />
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +70,11 @@
     <Compile Include="FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="pocketdoctordbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pocketdoctordbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UCHome.cs">
@@ -81,12 +88,6 @@
     </Compile>
     <Compile Include="UCMedicinecs.Designer.cs">
       <DependentUpon>UCMedicinecs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCPaitent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCPaitent.Designer.cs">
-      <DependentUpon>UCPaitent.cs</DependentUpon>
     </Compile>
     <Compile Include="UCTest.cs">
       <SubType>UserControl</SubType>
@@ -119,12 +120,20 @@
     <EmbeddedResource Include="UCMedicinecs.resx">
       <DependentUpon>UCMedicinecs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCPaitent.resx">
-      <DependentUpon>UCPaitent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCTest.resx">
       <DependentUpon>UCTest.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="pocketdoctordbDataSet.xsc">
+      <DependentUpon>pocketdoctordbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pocketdoctordbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pocketdoctordbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pocketdoctordbDataSet.xss">
+      <DependentUpon>pocketdoctordbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

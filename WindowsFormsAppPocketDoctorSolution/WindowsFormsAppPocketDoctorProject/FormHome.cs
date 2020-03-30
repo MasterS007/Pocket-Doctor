@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPocketDoctorProject.Classes;
 
 namespace WindowsFormsAppPocketDoctorProject
 {
@@ -48,11 +49,11 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void LblHome_Click(object sender, EventArgs e)
         {
-             ucMedicinecs1.Hide();
-              ucPaitent1.Hide();
-              ucTest1.Hide();
-              ucHome1.Show();
-              ucHome1.BringToFront();
+             //ucMedicinecs1.Hide();
+             // ucPaitent1.Hide();
+              //ucTest1.Hide();
+             // ucHome1.Show();
+             // ucHome1.BringToFront();
 
         }
       
@@ -60,40 +61,44 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void LblPaitentProfile_Click(object sender, EventArgs e)
         {
-              ucHome1.Hide();
+            /*  ucHome1.Hide();
              ucMedicinecs1.Hide();
              ucTest1.Hide();
               ucPaitent1.Show();
-              ucPaitent1.BringToFront();
+              ucPaitent1.BringToFront();*/
+            dtPatientInfo.Show();
+            Patient p = new Patient();
+            DataTable dataT = p.ShowPatient();
+            dtPatientInfo.DataSource = dataT;
 
         }
         private void LblTest_Click_1(object sender, EventArgs e)
         {
-            ucHome1.Hide();
+           /* ucHome1.Hide();
             ucMedicinecs1.Hide();
             ucPaitent1.Hide();
             ucTest1.Show();
-            ucTest1.BringToFront();
+            ucTest1.BringToFront();*/
 
 
         }
 
         private void LblMedicine_Click_1(object sender, EventArgs e)
         {
-             ucHome1.Hide();
+            /* ucHome1.Hide();
              ucPaitent1.Hide();
              ucTest1.Hide();
              ucMedicinecs1.Show();
-            ucMedicinecs1.BringToFront();
+            ucMedicinecs1.BringToFront();*/
 
 
         }
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            ucMedicinecs1.Hide();
-            ucPaitent1.Hide();
-            ucTest1.Hide();
+            /* ucMedicinecs1. ucPaitent1.Hide();
+             ucTest1.Hide();*/
+            dtPatientInfo.Hide();
 
         }
     }
