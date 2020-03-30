@@ -39,11 +39,16 @@
             this.pctUpload = new System.Windows.Forms.PictureBox();
             this.lblUploadImg = new System.Windows.Forms.Label();
             this.dtPatientInfo = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dtPatientInfo);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(218, 14);
@@ -83,6 +89,7 @@
             // lblTest
             // 
             this.lblTest.AccessibleDescription = "";
+            this.lblTest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTest.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTest.Location = new System.Drawing.Point(352, 0);
             this.lblTest.Name = "lblTest";
@@ -94,6 +101,7 @@
             // lblPaitentProfile
             // 
             this.lblPaitentProfile.AccessibleDescription = "";
+            this.lblPaitentProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPaitentProfile.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaitentProfile.Location = new System.Drawing.Point(129, 0);
             this.lblPaitentProfile.Name = "lblPaitentProfile";
@@ -105,6 +113,7 @@
             // lblMedicine
             // 
             this.lblMedicine.AccessibleDescription = "";
+            this.lblMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMedicine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMedicine.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicine.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,6 +127,7 @@
             // lblHome
             // 
             this.lblHome.AccessibleDescription = "";
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblHome.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHome.Location = new System.Drawing.Point(3, 0);
             this.lblHome.Name = "lblHome";
@@ -167,15 +177,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtPatientInfo.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dtPatientInfo.ColumnHeadersHeight = 35;
+            this.dtPatientInfo.ColumnHeadersHeight = 50;
             this.dtPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dtPatientInfo.Location = new System.Drawing.Point(166, 194);
+            this.dtPatientInfo.Location = new System.Drawing.Point(44, 238);
             this.dtPatientInfo.Name = "dtPatientInfo";
             this.dtPatientInfo.RowTemplate.Height = 24;
-            this.dtPatientInfo.Size = new System.Drawing.Size(827, 446);
+            this.dtPatientInfo.Size = new System.Drawing.Size(1164, 446);
             this.dtPatientInfo.TabIndex = 9;
+            this.dtPatientInfo.Tag = "";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(44, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(304, 34);
+            this.textBox1.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Location = new System.Drawing.Point(804, 142);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(422, 69);
+            this.panel3.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(354, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // FormHome
             // 
@@ -196,6 +237,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,5 +256,8 @@
         private System.Windows.Forms.Label lblPaitentProfile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dtPatientInfo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
