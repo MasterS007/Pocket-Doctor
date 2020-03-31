@@ -20,11 +20,13 @@ namespace WindowsFormsAppPocketDoctorProject
             InitializeComponent();
         }
 
+
         private void FormHome_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+       
         private void LblUploadImg_Click(object sender, EventArgs e)
         {
             string imageLocation = "";
@@ -47,58 +49,77 @@ namespace WindowsFormsAppPocketDoctorProject
             }
         }
 
-        private void LblHome_Click(object sender, EventArgs e)
-        {
-             //ucMedicinecs1.Hide();
-             // ucPaitent1.Hide();
-              //ucTest1.Hide();
-             // ucHome1.Show();
-             // ucHome1.BringToFront();
-
-        }
-      
-     
-
-        private void LblPaitentProfile_Click(object sender, EventArgs e)
-        {
-            /*  ucHome1.Hide();
-             ucMedicinecs1.Hide();
-             ucTest1.Hide();
-              ucPaitent1.Show();
-              ucPaitent1.BringToFront();*/
-            dtPatientInfo.Show();
-            Patient p = new Patient();
-            DataTable dataT = p.ShowPatient();
-            dtPatientInfo.DataSource = dataT;
-
-        }
-        private void LblTest_Click_1(object sender, EventArgs e)
-        {
-           /* ucHome1.Hide();
-            ucMedicinecs1.Hide();
-            ucPaitent1.Hide();
-            ucTest1.Show();
-            ucTest1.BringToFront();*/
-
-
-        }
-
-        private void LblMedicine_Click_1(object sender, EventArgs e)
-        {
-            /* ucHome1.Hide();
-             ucPaitent1.Hide();
-             ucTest1.Hide();
-             ucMedicinecs1.Show();
-            ucMedicinecs1.BringToFront();*/
-
-
-        }
+       
 
         private void FormHome_Load(object sender, EventArgs e)
         {
             /* ucMedicinecs1. ucPaitent1.Hide();
              ucTest1.Hide();*/
             dtPatientInfo.Hide();
+            pnlMove1.Hide();
+            pnlMove2.Hide();
+            pnlMove3.Hide();
+
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            //ucMedicinecs1.Hide();
+            // ucPaitent1.Hide();
+            //ucTest1.Hide();
+            // ucHome1.Show();
+            // ucHome1.BringToFront();
+            pnlMove1.Hide();
+            pnlMove2.Hide();
+            pnlMove3.Hide();
+            pnlMove.Show();
+
+
+        }
+
+        private void BtnProfile_Click(object sender, EventArgs e)
+        {
+            pnlMove.Hide();
+            pnlMove2.Hide();
+            pnlMove3.Hide();
+            pnlMove1.Show();
+        }
+
+        private void BtnPatient_Click(object sender, EventArgs e)
+        {
+            /*  ucHome1.Hide();
+            ucMedicinecs1.Hide();
+            ucTest1.Hide();
+             ucPaitent1.Show();
+             ucPaitent1.BringToFront();*/
+            dtPatientInfo.Show();
+            Patient p = new Patient();
+            DataTable dataT = p.ShowPatient();
+
+            dtPatientInfo.DataSource = dataT;
+            pnlMove1.Hide();
+            pnlMove.Hide();
+            pnlMove3.Hide();
+            pnlMove2.Show();
+
+
+        }
+
+        private void BtnPrescription_Click(object sender, EventArgs e)
+        {
+            /* ucHome1.Hide();
+             ucPaitent1.Hide();
+             ucTest1.Hide();
+             ucMedicinecs1.Show();
+            ucMedicinecs1.BringToFront();*/
+            pnlMove1.Hide();
+            pnlMove2.Hide();
+            pnlMove.Hide();
+            pnlMove3.Show();
+        }
+
+        private void PicbSearch_Click(object sender, EventArgs e)
+        {
 
         }
     }
