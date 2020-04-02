@@ -21,7 +21,7 @@ namespace WindowsFormsAppPocketDoctorProject
         private string role;
         // private static ushort serialNo = 1;
 
-        DatabaseConnection db = new DatabaseConnection();
+        DatabaseConnection db; 
         
 
         internal User() { }
@@ -115,16 +115,16 @@ namespace WindowsFormsAppPocketDoctorProject
         }
         public bool InsertUser(User users)
         {
-            SqlConnection conn = db.ConnectDB();
+            db = new DatabaseConnection();
+            // SqlConnection conn = db.ConnectDB();
             bool isSucceed = false;
           
             try
             {
                 string sql = "INSERT INTO tbl_User ( name, password, mobilenumber,userrole) VALUES ( @userName , @password, @mobileNumber, @userrole)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                var cmd = db.Query(sql);
    
-                // SqlDataAdapter adapter = new SqlDataAdapter();
-                // adapter.InsertCommand =new SqlCommand(sql, conn);
+                
                 //cmd.Parameters.AddWithValue("@userId",this.UserId);
                 cmd.Parameters.AddWithValue("@userName",users.UserName);
                 cmd.Parameters.AddWithValue("@password", users.Password);
@@ -132,7 +132,6 @@ namespace WindowsFormsAppPocketDoctorProject
                 cmd.Parameters.AddWithValue("@userrole", users.Role);
 
                   int rows = cmd.ExecuteNonQuery();
-                 //  rowsup++;
                    if (rows>0)
                       {
                         isSucceed =true;
@@ -146,25 +145,25 @@ namespace WindowsFormsAppPocketDoctorProject
             {
                 Console.WriteLine(ex);
             }
-            finally { conn.Close(); }
+            finally {db.CloseConnection(); }
 
             return isSucceed;
         }
 
-        public bool SelectUser(User users)
+          public bool SelectUser(User users)
         {
             bool correct = false;
-            
-            SqlConnection conn = db.ConnectDB();
+
+               db = new DatabaseConnection();
            
             try
             {  
                 string sql = "SELECT id, password FROM tbl_USER WHERE id =@userid and password =@password";
-                SqlCommand cmd = new SqlCommand(sql,conn);
-                cmd.Parameters.AddWithValue("@userid", users.userId);
-                cmd.Parameters.AddWithValue("@password", users.Password);
+                var queryResut = db.Query(sql);
+                queryResut.Parameters.AddWithValue("@userid", users.userId);
+                queryResut.Parameters.AddWithValue("@password", users.Password);
                 
-                SqlDataReader myReader = cmd.ExecuteReader();
+                SqlDataReader myReader = queryResut.ExecuteReader();
 
                 if(myReader.Read())
                 {
@@ -181,7 +180,7 @@ namespace WindowsFormsAppPocketDoctorProject
             {
                 Console.WriteLine(ex);
             }
-            finally { conn.Close(); }
+            finally { db.CloseConnection(); }
             return correct;
 
         }

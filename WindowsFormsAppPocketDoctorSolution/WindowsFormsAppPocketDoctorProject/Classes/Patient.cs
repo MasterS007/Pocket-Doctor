@@ -35,24 +35,25 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
         internal int PId
         { set; get; }
 
-        internal DataTable ShowPatient()
+          internal DataTable ShowPatient()
         {
-            SqlConnection conn = db.ConnectDB();
+            DatabaseConnection db = new DatabaseConnection();
             DataTable dataTable = new DataTable();
 
             try
             {
                 string sql = "SELECT * FROM tbl_Patient";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                //SqlCommand cmd = db.Query(sql);
+                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(dataTable);
-
+                //adapter.Fill(dataTable);
+                db.ExecuteQuery(sql);
+                db.Sda.Fill(dataTable);
 
             }
             catch(Exception ex) { }
 
-            finally { conn.Close(); }
+            finally { db.CloseConnection(); }
           
 
             return dataTable;

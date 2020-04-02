@@ -14,34 +14,24 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     public partial class FormLogin : Form
     {
+        DatabaseConnection db;
         User users= new User();
         public FormLogin()
         {
             InitializeComponent();
-        }
-
-
-        
-        private void BtnLogin_Click_1(object sender, EventArgs e)
+        }   
+          private void BtnLogin_Click_1(object sender, EventArgs e)
         {
             users.UserId = Convert.ToInt32(txtUserId.Text);
             users.Password = txtPassword.Text;
-            bool dataTable = users.SelectUser(users);
-           
-           // DataSet dataSet = new DataSet();
-
-            if (dataTable == true)
+             bool dataTable = users.SelectUser(users);
+             if (dataTable == true)
             {
                  string role;
-                 DatabaseConnection db = new DatabaseConnection();
-                 SqlConnection conn = db.ConnectDB();
-
-
-                 string select = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
-                 SqlCommand cmd1 = new SqlCommand(select, conn);
-                // cmd1.Parameters.AddWithValue("@userid", txtUserId);
-                 //SqlDataReader myReader1 = cmd1.ExecuteReader();
-                 var queryResult = cmd1.ExecuteScalar();
+                 db = new DatabaseConnection();
+                 string query = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
+                SqlCommand cmd1 = db.Query(query);
+                 var queryResult= cmd1.ExecuteScalar();
 
 
                 if (queryResult != null)
@@ -60,11 +50,8 @@ namespace WindowsFormsAppPocketDoctorProject
                 else
                 {
                       role = "";
-                    }
-                      conn.Close();
-                
-
-
+                }
+                db.CloseConnection();
                 }
             else
             {
@@ -77,9 +64,9 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void LblSInUp_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            FormSignUp formSingUp = new FormSignUp();
-            formSingUp.Show();
+              this.Visible = false;
+              FormSignUp formSingUp = new FormSignUp();
+              formSingUp.Show();
 
         }
     }

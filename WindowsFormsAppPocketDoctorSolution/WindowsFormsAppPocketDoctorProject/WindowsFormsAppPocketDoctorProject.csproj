@@ -64,6 +64,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,17 +102,14 @@
       <DependentUpon>UCTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
-    <Compile Include="UCDoctorProfile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCDoctorProfile.Designer.cs">
-      <DependentUpon>UCDoctorProfile.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
@@ -128,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCTest.resx">
       <DependentUpon>UCTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCDoctorProfile.resx">
-      <DependentUpon>UCDoctorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="pocketdoctordbDataSet.xsc">
       <DependentUpon>pocketdoctordbDataSet.xsd</DependentUpon>
