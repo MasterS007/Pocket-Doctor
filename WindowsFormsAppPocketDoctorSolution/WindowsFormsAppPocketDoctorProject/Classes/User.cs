@@ -28,6 +28,7 @@ namespace WindowsFormsAppPocketDoctorProject
 
       /*  internal void GetId()
         {
+            
             DataSet st = new DataSet();
             SqlConnection conn = db.ConnectDB();
             try

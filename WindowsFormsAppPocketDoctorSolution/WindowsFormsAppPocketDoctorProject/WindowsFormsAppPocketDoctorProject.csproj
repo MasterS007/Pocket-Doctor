@@ -96,6 +96,12 @@
       <DependentUpon>UCTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
+    <Compile Include="UCDoctorProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDoctorProfile.Designer.cs">
+      <DependentUpon>UCDoctorProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCTest.resx">
       <DependentUpon>UCTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDoctorProfile.resx">
+      <DependentUpon>UCDoctorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="pocketdoctordbDataSet.xsc">
       <DependentUpon>pocketdoctordbDataSet.xsd</DependentUpon>
