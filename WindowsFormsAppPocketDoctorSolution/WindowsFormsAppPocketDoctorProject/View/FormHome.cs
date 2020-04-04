@@ -19,6 +19,7 @@ namespace WindowsFormsAppPocketDoctorProject
         public FormHome()
         {
             InitializeComponent();
+            timerD.Start();
         }
 
 
@@ -133,5 +134,14 @@ namespace WindowsFormsAppPocketDoctorProject
             DataTable dset = p.SearchPatient(keyWord);
             dgvPatientInfo.DataSource = dset;
         }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dateT = DateTime.Now;
+            this.lbTime.Text = dateT.ToLongTimeString();
+            this.lblDate.Text = dateT.ToLongDateString();
+        }
+
+        
     }
 }

@@ -42,6 +42,7 @@ namespace WindowsFormsAppPocketDoctorProject
         {
            
             dgvPatientPro.Show();
+
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
@@ -52,6 +53,11 @@ namespace WindowsFormsAppPocketDoctorProject
 
             DataTable dset = p.SearchPatient(keyWord);
             dgvPatientPro.DataSource = dset;
+        }
+
+        private void FormReceptonist_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

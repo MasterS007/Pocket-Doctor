@@ -45,6 +45,14 @@ namespace WindowsFormsAppPocketDoctorProject
                         fm.Visible = true;
 
                     }
+
+                    else if (role.Equals("Receptionist"))
+                    {
+                        this.Visible = false;
+                        FormReceptonist fm = new FormReceptonist();
+                        fm.Visible = true;
+
+                    }
                 }
 
                 else

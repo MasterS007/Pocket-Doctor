@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPocketDoctorProject.Classes;
 
 namespace WindowsFormsAppPocketDoctorProject
 {
@@ -33,6 +34,8 @@ namespace WindowsFormsAppPocketDoctorProject
         private void BtnSingUp_Click(object sender, EventArgs e)
         {
             User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text,cmbUserType.Text);
+            User userReceptionist = new Receptionist (txtUserName.Text, txtPassword.Text, txtMobileNum.Text, cmbUserType.Text);
+
 
             if (this.cmbUserType.Text == "Doctor")
             {
@@ -50,6 +53,25 @@ namespace WindowsFormsAppPocketDoctorProject
                     FormLogin fm = new FormLogin();
                     fm.Show();
                   }
+
+            }
+
+            else if (this.cmbUserType.Text == "Receptionist")
+            {
+                bool success = userReceptionist.InsertUser(userReceptionist);
+
+                if (success == false)
+                {
+                    MessageBox.Show("Failed to insert");
+
+                }
+                else
+                {
+                    // MessageBox.Show("Successful Signup");
+                    this.Visible = false;
+                    FormLogin fm = new FormLogin();
+                    fm.Show();
+                }
 
             }
 

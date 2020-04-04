@@ -51,6 +51,7 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Doctor.cs" />
     <Compile Include="Classes\Patient.cs" />
+    <Compile Include="Classes\Receptionist.cs" />
     <Compile Include="FormReceptonist.cs">
       <SubType>Form</SubType>
     </Compile>
