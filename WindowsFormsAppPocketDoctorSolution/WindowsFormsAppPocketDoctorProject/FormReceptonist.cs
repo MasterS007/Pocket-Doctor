@@ -19,6 +19,7 @@ namespace WindowsFormsAppPocketDoctorProject
         public FormReceptonist()
         {
             InitializeComponent();
+            timerR.Start();
         }
 
 
@@ -58,6 +59,13 @@ namespace WindowsFormsAppPocketDoctorProject
         private void FormReceptonist_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TimerR_Tick(object sender, EventArgs e)
+        {
+            DateTime dateT = DateTime.Now;
+            this.lbTime.Text = dateT.ToLongTimeString();
+            this.lblDate.Text = dateT.ToLongDateString();
         }
     }
 }
