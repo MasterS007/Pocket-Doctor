@@ -76,7 +76,8 @@
             this.cmbUserType.FormattingEnabled = true;
             this.cmbUserType.Items.AddRange(new object[] {
             "Doctor",
-            "Receptionist"});
+            "Receptionist",
+            "Pathologist"});
             this.cmbUserType.Location = new System.Drawing.Point(223, 265);
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(254, 33);

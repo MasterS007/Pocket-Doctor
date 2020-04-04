@@ -94,7 +94,7 @@ namespace WindowsFormsAppPocketDoctorProject
              ucPaitent1.BringToFront();*/
             dtPatientInfo.Show();
             Patient p = new Patient();
-            DataTable dataT = p.ShowPatient();
+            DataTable dataT = p.GetPatient();
 
             dtPatientInfo.DataSource = dataT;
             pnlMove1.Hide();
@@ -122,5 +122,7 @@ namespace WindowsFormsAppPocketDoctorProject
         {
 
         }
+
+       
     }
 }

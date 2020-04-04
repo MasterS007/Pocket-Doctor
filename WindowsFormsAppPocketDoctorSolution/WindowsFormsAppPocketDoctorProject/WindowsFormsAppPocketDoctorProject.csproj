@@ -51,29 +51,34 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Doctor.cs" />
     <Compile Include="Classes\Patient.cs" />
-    <Compile Include="Classes\SqlConnecti.cs" />
-    <Compile Include="FormHome.cs">
+    <Compile Include="View\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHome.Designer.cs">
+    <Compile Include="View\FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="View\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProfile.cs">
+    <Compile Include="View\FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProfile.Designer.cs">
+    <Compile Include="View\FormProfile.Designer.cs">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSignUp.cs">
+    <Compile Include="View\FormReceptionist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSignUp.Designer.cs">
+    <Compile Include="View\FormReceptionist.Designer.cs">
+      <DependentUpon>FormReceptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="pocketdoctordbDataSet.Designer.cs">
@@ -102,16 +107,19 @@
       <DependentUpon>UCTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
-    <EmbeddedResource Include="FormHome.resx">
+    <EmbeddedResource Include="View\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProfile.resx">
+    <EmbeddedResource Include="View\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSignUp.resx">
+    <EmbeddedResource Include="View\FormReceptionist.resx">
+      <DependentUpon>FormReceptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

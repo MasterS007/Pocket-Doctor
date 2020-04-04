@@ -35,7 +35,7 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
         internal int PId
         { set; get; }
 
-          internal DataTable ShowPatient()
+          internal DataTable GetPatient()
         {
             DatabaseConnection db = new DatabaseConnection();
             DataTable dataTable = new DataTable();
