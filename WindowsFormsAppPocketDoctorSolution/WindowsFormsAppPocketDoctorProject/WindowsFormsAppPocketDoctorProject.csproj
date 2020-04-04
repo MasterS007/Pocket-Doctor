@@ -51,6 +51,12 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Doctor.cs" />
     <Compile Include="Classes\Patient.cs" />
+    <Compile Include="FormReceptonist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReceptonist.Designer.cs">
+      <DependentUpon>FormReceptonist.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,12 +74,6 @@
     </Compile>
     <Compile Include="View\FormProfile.Designer.cs">
       <DependentUpon>FormProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormReceptionist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormReceptionist.Designer.cs">
-      <DependentUpon>FormReceptionist.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormSignUp.cs">
       <SubType>Form</SubType>
@@ -107,6 +107,9 @@
       <DependentUpon>UCTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="FormReceptonist.resx">
+      <DependentUpon>FormReceptonist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,9 +118,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormReceptionist.resx">
-      <DependentUpon>FormReceptionist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>

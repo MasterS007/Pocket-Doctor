@@ -112,11 +112,11 @@
             // lblSInUp
             // 
             this.lblSInUp.AutoSize = true;
-            this.lblSInUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSInUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSInUp.ForeColor = System.Drawing.Color.Transparent;
-            this.lblSInUp.Location = new System.Drawing.Point(139, 443);
+            this.lblSInUp.Location = new System.Drawing.Point(118, 453);
             this.lblSInUp.Name = "lblSInUp";
-            this.lblSInUp.Size = new System.Drawing.Size(218, 29);
+            this.lblSInUp.Size = new System.Drawing.Size(257, 32);
             this.lblSInUp.TabIndex = 5;
             this.lblSInUp.Text = "create an account";
             this.lblSInUp.Click += new System.EventHandler(this.LblSInUp_Click);

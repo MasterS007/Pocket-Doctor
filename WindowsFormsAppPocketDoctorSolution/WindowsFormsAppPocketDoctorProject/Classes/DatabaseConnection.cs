@@ -15,6 +15,7 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
         private SqlCommand sqlcom;
         private SqlDataAdapter sda;
         private DataSet ds;
+        private DataTable dt;
 
         public static string myConnection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
 
@@ -42,6 +43,12 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
         {
             get { return ds; }
             set { ds = value; }
+        }
+
+        public DataTable Dt
+        {
+            get { return dt; }
+            set { dt = value; }
         }
         public DatabaseConnection()
         {
@@ -78,6 +85,15 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
             this.Ds = new DataSet();
             this.Sda.Fill(this.Ds);
             return Ds;
+        }
+
+        public DataTable SearchQuery(string sql)
+        {
+            this.QueryText(sql);
+            this.Sda = new SqlDataAdapter(this.Sqlcom);
+            this.Dt = new DataTable();
+            this.Sda.Fill(this.Dt);
+            return Dt;
         }
 
         public int ExecuteUpdateQuery(string sql)

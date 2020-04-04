@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearchP = new System.Windows.Forms.PictureBox();
             this.txtSearchP = new System.Windows.Forms.TextBox();
-            this.dtPatientInfo = new System.Windows.Forms.DataGridView();
+            this.dgvPatientInfo = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMove3 = new System.Windows.Forms.Panel();
             this.pnlMove2 = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.dtPatientInfo);
+            this.panel1.Controls.Add(this.dgvPatientInfo);
             this.panel1.Location = new System.Drawing.Point(231, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(916, 778);
@@ -110,7 +110,6 @@
             this.picbSearchP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbSearchP.TabIndex = 11;
             this.picbSearchP.TabStop = false;
-            this.picbSearchP.Click += new System.EventHandler(this.PicbSearch_Click);
             this.picbSearchP.MouseHover += new System.EventHandler(this.PicbSearch_Click);
             // 
             // txtSearchP
@@ -120,64 +119,65 @@
             this.txtSearchP.Name = "txtSearchP";
             this.txtSearchP.Size = new System.Drawing.Size(304, 34);
             this.txtSearchP.TabIndex = 10;
+            this.txtSearchP.TextChanged += new System.EventHandler(this.TxtSearchP_TextChanged);
             // 
-            // dtPatientInfo
+            // dgvPatientInfo
             // 
-            this.dtPatientInfo.AllowUserToAddRows = false;
-            this.dtPatientInfo.AllowUserToDeleteRows = false;
-            this.dtPatientInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPatientInfo.AllowUserToAddRows = false;
+            this.dgvPatientInfo.AllowUserToDeleteRows = false;
+            this.dgvPatientInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtPatientInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtPatientInfo.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dtPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dtPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtPatientInfo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dtPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dtPatientInfo.Location = new System.Drawing.Point(4, 154);
-            this.dtPatientInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.dtPatientInfo.Name = "dtPatientInfo";
-            this.dtPatientInfo.ReadOnly = true;
-            this.dtPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtPatientInfo.RowHeadersVisible = false;
-            this.dtPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtPatientInfo.RowTemplate.Height = 40;
-            this.dtPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dtPatientInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtPatientInfo.Size = new System.Drawing.Size(906, 525);
-            this.dtPatientInfo.TabIndex = 9;
-            this.dtPatientInfo.Tag = "";
-            this.dtPatientInfo.VirtualMode = true;
+            this.dgvPatientInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPatientInfo.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dgvPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvPatientInfo.Location = new System.Drawing.Point(4, 154);
+            this.dgvPatientInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPatientInfo.Name = "dgvPatientInfo";
+            this.dgvPatientInfo.ReadOnly = true;
+            this.dgvPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPatientInfo.RowHeadersVisible = false;
+            this.dgvPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPatientInfo.RowTemplate.Height = 40;
+            this.dgvPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvPatientInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPatientInfo.Size = new System.Drawing.Size(906, 525);
+            this.dgvPatientInfo.TabIndex = 9;
+            this.dgvPatientInfo.Tag = "";
+            this.dgvPatientInfo.VirtualMode = true;
             // 
             // panel2
             // 
@@ -328,7 +328,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPatientInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).EndInit();
@@ -345,7 +345,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox picbSearchP;
         private System.Windows.Forms.TextBox txtSearchP;
-        private System.Windows.Forms.DataGridView dtPatientInfo;
+        private System.Windows.Forms.DataGridView dgvPatientInfo;
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Button btnPrescription;
         private System.Windows.Forms.Button btnProfile;

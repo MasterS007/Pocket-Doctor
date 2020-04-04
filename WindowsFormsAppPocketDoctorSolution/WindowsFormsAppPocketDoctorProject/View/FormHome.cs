@@ -13,8 +13,9 @@ namespace WindowsFormsAppPocketDoctorProject
 {
     public partial class FormHome : Form
     {
-      //  List<Panel> listPanel = new List<Panel>();
+        //  List<Panel> listPanel = new List<Panel>();
         //int index;
+        Patient p = new Patient();
         public FormHome()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             /* ucMedicinecs1. ucPaitent1.Hide();
              ucTest1.Hide();*/
-            dtPatientInfo.Hide();
+            dgvPatientInfo.Hide();
             pnlMove1.Hide();
             pnlMove2.Hide();
             pnlMove3.Hide();
@@ -92,11 +93,11 @@ namespace WindowsFormsAppPocketDoctorProject
             ucTest1.Hide();
              ucPaitent1.Show();
              ucPaitent1.BringToFront();*/
-            dtPatientInfo.Show();
-            Patient p = new Patient();
+            dgvPatientInfo.Show();
+            
             DataTable dataT = p.GetPatient();
 
-            dtPatientInfo.DataSource = dataT;
+            dgvPatientInfo.DataSource = dataT;
             pnlMove1.Hide();
             pnlMove.Hide();
             pnlMove3.Hide();
@@ -120,9 +121,17 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void PicbSearch_Click(object sender, EventArgs e)
         {
+            string keyWord = txtSearchP.Text;
+            DataTable dset = p.SearchPatient(keyWord);
+            dgvPatientInfo.DataSource = dset;
 
         }
 
-       
+        private void TxtSearchP_TextChanged(object sender, EventArgs e)
+        {
+            string keyWord = txtSearchP.Text;
+            DataTable dset = p.SearchPatient(keyWord);
+            dgvPatientInfo.DataSource = dset;
+        }
     }
 }

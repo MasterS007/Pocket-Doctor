@@ -11,8 +11,9 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
     class Patient
     {
         private int pid;
-
         DatabaseConnection db = new DatabaseConnection();
+        DataTable dataTable;
+
 
         internal Patient() { }
         internal Patient(string name, int age, string mobilenumber)
@@ -37,7 +38,7 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
 
           internal DataTable GetPatient()
         {
-            DatabaseConnection db = new DatabaseConnection();
+           
             DataTable dataTable = new DataTable();
 
             try
@@ -55,6 +56,29 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
 
             finally { db.CloseConnection(); }
           
+
+            return dataTable;
+        }
+
+        internal DataTable SearchPatient(string keyWord)
+        {
+            
+
+            try
+            {
+                string sql = "SELECT * FROM tbl_Patient WHERE mobilenumber LIKE '%"+keyWord+ "%' OR name LIKE '%" + keyWord + "%'";
+                //SqlCommand cmd = db.Query(sql);
+                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //adapter.Fill(dataTable);
+               dataTable= db.SearchQuery(sql);
+                //db.Sda.Fill(dataTable);
+
+            }
+            catch (Exception ex) { }
+
+            finally { db.CloseConnection(); }
+
 
             return dataTable;
         }
