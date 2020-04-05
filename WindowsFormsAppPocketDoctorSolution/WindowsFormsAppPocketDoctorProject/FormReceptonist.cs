@@ -23,16 +23,6 @@ namespace WindowsFormsAppPocketDoctorProject
         }
 
 
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            // dgvPatientPro.Show();
-
-            
-            DataTable dataT = p.GetPatient();
-            this.PopulatedDataGridView(dataT);
-           
-        }
-
        /* private void PicbSearch_Click(object sender, EventArgs e)
         {
                 string keyWord = txtSearch.Text;
@@ -48,12 +38,13 @@ namespace WindowsFormsAppPocketDoctorProject
             string keyWord = txtSearch.Text;
             DataTable dset = p.SearchPatient(keyWord);
             this.PopulatedDataGridView(dset);
+            
         }
 
         private void PopulatedDataGridView(DataTable dataT)
         {
-            dgvPatientPro.AutoGenerateColumns = false;
-            dgvPatientPro.DataSource = dataT;
+            this.dgvPatientPro.AutoGenerateColumns = false;
+            this.dgvPatientPro.DataSource = dataT;
         }
 
         private void FormReceptonist_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,8 +61,9 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void FormReceptonist_Load(object sender, EventArgs e)
         {
-
-            dgvPatientPro.Show();
+            DataTable dataT = p.GetPatient();
+            this.PopulatedDataGridView(dataT);
+          
 
         }
     }
