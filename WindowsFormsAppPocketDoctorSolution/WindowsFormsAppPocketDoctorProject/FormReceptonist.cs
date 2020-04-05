@@ -25,8 +25,9 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-           // dgvPatientPro.Show();
-            
+            // dgvPatientPro.Show();
+
+            dgvPatientPro.AutoGenerateColumns = false;
             DataTable dataT = p.GetPatient();
             dgvPatientPro.DataSource = dataT;
         }

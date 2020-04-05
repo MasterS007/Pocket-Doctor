@@ -65,8 +65,8 @@ namespace WindowsFormsAppPocketDoctorProject
             {
 
                 MessageBox.Show("Invalid password or user id");
-                txtPassword.Clear();
-                txtUserId.Clear();
+                this.txtPassword.Clear();
+                this.txtUserId.Clear();
             }
         }
 

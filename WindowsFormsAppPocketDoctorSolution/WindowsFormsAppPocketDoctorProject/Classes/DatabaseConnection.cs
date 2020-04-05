@@ -73,7 +73,7 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
             return this.Sqlcom;
 
         }
-        public void QueryText(string query)
+        private void QueryText(string query)
         {
             this.Sqlcom = new SqlCommand(query, this.Sqlcon);
         }

@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceptonist));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
@@ -42,13 +44,18 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lbTime = new System.Windows.Forms.Label();
             this.timerR = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,8 +63,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Controls.Add(this.lbTime);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dgvPatientPro);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button3);
@@ -68,6 +74,30 @@
             this.panel1.Size = new System.Drawing.Size(1152, 694);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(68, 14);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(58, 23);
+            this.lblDate.TabIndex = 17;
+            this.lblDate.Text = "Time";
+            // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(130, 45);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(58, 23);
+            this.lbTime.TabIndex = 16;
+            this.lbTime.Text = "Time";
             // 
             // dgvPatientPro
             // 
@@ -90,6 +120,12 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatientPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatientPro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pid,
+            this.name,
+            this.age,
+            this.gender,
+            this.mobilenumber});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,7 +158,7 @@
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPatientPro.Size = new System.Drawing.Size(1115, 416);
+            this.dgvPatientPro.Size = new System.Drawing.Size(1115, 405);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.VirtualMode = true;
@@ -193,33 +229,53 @@
             this.button1.Text = "New Appointment";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(907, 626);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(58, 23);
-            this.lblDate.TabIndex = 17;
-            this.lblDate.Text = "Time";
-            // 
-            // lbTime
-            // 
-            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(963, 662);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(58, 23);
-            this.lbTime.TabIndex = 16;
-            this.lbTime.Text = "Time";
-            // 
             // timerR
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblDate);
+            this.panel2.Controls.Add(this.lbTime);
+            this.panel2.Location = new System.Drawing.Point(847, 618);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(302, 73);
+            this.panel2.TabIndex = 18;
+            // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "Patient Id";
+            this.pid.Name = "pid";
+            this.pid.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // mobilenumber
+            // 
+            this.mobilenumber.DataPropertyName = "mobilenumber";
+            this.mobilenumber.HeaderText = "Mobile Number";
+            this.mobilenumber.Name = "mobilenumber";
+            this.mobilenumber.ReadOnly = true;
             // 
             // FormReceptonist
             // 
@@ -235,11 +291,12 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReceptonist_FormClosed);
             this.Load += new System.EventHandler(this.FormReceptonist_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +314,11 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerR;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
     }
 }

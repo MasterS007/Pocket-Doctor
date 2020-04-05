@@ -19,7 +19,7 @@ namespace WindowsFormsAppPocketDoctorProject
         public FormHome()
         {
             InitializeComponent();
-            timerD.Start();
+            this.timerD.Start();
         }
 
 
@@ -40,7 +40,7 @@ namespace WindowsFormsAppPocketDoctorProject
                 if (openFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = openFile.FileName;
-                    pctUpload.ImageLocation = imageLocation;
+                    this.pctUpload.ImageLocation = imageLocation;
 
                 }
             }
@@ -57,10 +57,10 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             /* ucMedicinecs1. ucPaitent1.Hide();
              ucTest1.Hide();*/
-            dgvPatientInfo.Hide();
-            pnlMove1.Hide();
-            pnlMove2.Hide();
-            pnlMove3.Hide();
+            this.dgvPatientInfo.Hide();
+            this.pnlMove1.Hide();
+            this.pnlMove2.Hide();
+            this.pnlMove3.Hide();
 
         }
 
@@ -71,20 +71,20 @@ namespace WindowsFormsAppPocketDoctorProject
             //ucTest1.Hide();
             // ucHome1.Show();
             // ucHome1.BringToFront();
-            pnlMove1.Hide();
-            pnlMove2.Hide();
-            pnlMove3.Hide();
-            pnlMove.Show();
+            this.pnlMove1.Hide();
+            this.pnlMove2.Hide();
+            this.pnlMove3.Hide();
+            this.pnlMove.Show();
 
 
         }
 
         private void BtnProfile_Click(object sender, EventArgs e)
         {
-            pnlMove.Hide();
-            pnlMove2.Hide();
-            pnlMove3.Hide();
-            pnlMove1.Show();
+            this.pnlMove.Hide();
+            this.pnlMove2.Hide();
+            this.pnlMove3.Hide();
+            this.pnlMove1.Show();
         }
 
         private void BtnPatient_Click(object sender, EventArgs e)
@@ -94,15 +94,15 @@ namespace WindowsFormsAppPocketDoctorProject
             ucTest1.Hide();
              ucPaitent1.Show();
              ucPaitent1.BringToFront();*/
-            dgvPatientInfo.Show();
+            this.dgvPatientInfo.Show();
             
             DataTable dataT = p.GetPatient();
 
-            dgvPatientInfo.DataSource = dataT;
-            pnlMove1.Hide();
-            pnlMove.Hide();
-            pnlMove3.Hide();
-            pnlMove2.Show();
+            this.dgvPatientInfo.DataSource = dataT;
+            this.pnlMove1.Hide();
+            this.pnlMove.Hide();
+            this.pnlMove3.Hide();
+            this.pnlMove2.Show();
 
 
         }
@@ -114,17 +114,17 @@ namespace WindowsFormsAppPocketDoctorProject
              ucTest1.Hide();
              ucMedicinecs1.Show();
             ucMedicinecs1.BringToFront();*/
-            pnlMove1.Hide();
-            pnlMove2.Hide();
-            pnlMove.Hide();
-            pnlMove3.Show();
+            this.pnlMove1.Hide();
+            this.pnlMove2.Hide();
+            this.pnlMove.Hide();
+            this.pnlMove3.Show();
         }
 
         private void PicbSearch_Click(object sender, EventArgs e)
         {
             string keyWord = txtSearchP.Text;
             DataTable dset = p.SearchPatient(keyWord);
-            dgvPatientInfo.DataSource = dset;
+            this.dgvPatientInfo.DataSource = dset;
 
         }
 
@@ -132,7 +132,7 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             string keyWord = txtSearchP.Text;
             DataTable dset = p.SearchPatient(keyWord);
-            dgvPatientInfo.DataSource = dset;
+            this.dgvPatientInfo.DataSource = dset;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
