@@ -185,7 +185,7 @@
             this.picbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbSearch.TabIndex = 11;
             this.picbSearch.TabStop = false;
-            this.picbSearch.Click += new System.EventHandler(this.PicbSearch_Click);
+            //this.picbSearch.Click += new System.EventHandler(this.PicbSearch_Click);
             // 
             // txtSearch
             // 

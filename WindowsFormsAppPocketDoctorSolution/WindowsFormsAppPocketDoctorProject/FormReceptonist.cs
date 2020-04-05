@@ -27,34 +27,33 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             // dgvPatientPro.Show();
 
-            dgvPatientPro.AutoGenerateColumns = false;
+            
             DataTable dataT = p.GetPatient();
-            dgvPatientPro.DataSource = dataT;
+            this.PopulatedDataGridView(dataT);
+           
         }
 
-        private void PicbSearch_Click(object sender, EventArgs e)
+       /* private void PicbSearch_Click(object sender, EventArgs e)
         {
                 string keyWord = txtSearch.Text;
-                DataTable dset = p.SearchPatient(keyWord);
-                dgvPatientPro.DataSource = dset;
+                DataTable dataT = p.SearchPatient(keyWord);
+                dgvPatientPro.DataSource = dataT;
                    
-        }
+        }*/
 
-        private void FormReceptonist_Load(object sender, EventArgs e)
-        {
-           
-            dgvPatientPro.Show();
-
-        }
+       
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyWord = txtSearch.Text;
-
-
-
             DataTable dset = p.SearchPatient(keyWord);
-            dgvPatientPro.DataSource = dset;
+            this.PopulatedDataGridView(dset);
+        }
+
+        private void PopulatedDataGridView(DataTable dataT)
+        {
+            dgvPatientPro.AutoGenerateColumns = false;
+            dgvPatientPro.DataSource = dataT;
         }
 
         private void FormReceptonist_FormClosed(object sender, FormClosedEventArgs e)
@@ -67,6 +66,13 @@ namespace WindowsFormsAppPocketDoctorProject
             DateTime dateT = DateTime.Now;
             this.lbTime.Text = dateT.ToLongTimeString();
             this.lblDate.Text = dateT.ToLongDateString();
+        }
+
+        private void FormReceptonist_Load(object sender, EventArgs e)
+        {
+
+            dgvPatientPro.Show();
+
         }
     }
 }
