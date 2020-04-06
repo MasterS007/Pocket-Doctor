@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Classes;
+using WindowsFormsAppPocketDoctorProject.View;
 
 namespace WindowsFormsAppPocketDoctorProject
 {
@@ -138,9 +139,10 @@ namespace WindowsFormsAppPocketDoctorProject
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void BtnCreatePatient_Click(object sender, EventArgs e)
         {
-
+            FormPatient fp = new FormPatient();
+            fp.Show();
         }
     }
 }

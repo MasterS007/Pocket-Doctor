@@ -49,7 +49,7 @@
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCreatePatient = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.dgvPatientPro);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnCreatePatient);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Name = "panel1";
@@ -87,9 +87,9 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(893, 104);
+            this.btnDelete.Location = new System.Drawing.Point(883, 104);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(225, 57);
+            this.btnDelete.Size = new System.Drawing.Size(254, 57);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete Profile";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.lbTime);
-            this.panel2.Location = new System.Drawing.Point(847, 618);
+            this.panel2.Location = new System.Drawing.Point(808, 618);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(302, 73);
+            this.panel2.Size = new System.Drawing.Size(341, 73);
             this.panel2.TabIndex = 18;
             // 
             // lblDate
@@ -264,27 +264,27 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(612, 104);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(225, 57);
+            this.btnUpdate.Size = new System.Drawing.Size(236, 57);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // button2
+            // btnCreatePatient
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(331, 104);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(225, 57);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "New Patient Profile";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.btnCreatePatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreatePatient.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCreatePatient.FlatAppearance.BorderSize = 0;
+            this.btnCreatePatient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatePatient.Location = new System.Drawing.Point(325, 104);
+            this.btnCreatePatient.Name = "btnCreatePatient";
+            this.btnCreatePatient.Size = new System.Drawing.Size(249, 57);
+            this.btnCreatePatient.TabIndex = 4;
+            this.btnCreatePatient.Text = "New Patient Profile";
+            this.btnCreatePatient.UseVisualStyleBackColor = true;
+            this.btnCreatePatient.Click += new System.EventHandler(this.BtnCreatePatient_Click);
             // 
             // button1
             // 
@@ -294,7 +294,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 104);
+            this.button1.Location = new System.Drawing.Point(67, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 57);
             this.button1.TabIndex = 3;
@@ -350,7 +350,7 @@
         private System.Windows.Forms.PictureBox picbSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCreatePatient;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.Label lblDate;

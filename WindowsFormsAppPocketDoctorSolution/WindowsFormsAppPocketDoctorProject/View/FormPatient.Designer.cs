@@ -178,7 +178,7 @@
             // 
             // cmbBloodGroup
             // 
-            this.cmbBloodGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.FormattingEnabled = true;
             this.cmbBloodGroup.Items.AddRange(new object[] {
             "A (+ve)",
@@ -191,22 +191,23 @@
             "O (-ve)"});
             this.cmbBloodGroup.Location = new System.Drawing.Point(269, 410);
             this.cmbBloodGroup.Name = "cmbBloodGroup";
-            this.cmbBloodGroup.Size = new System.Drawing.Size(311, 33);
+            this.cmbBloodGroup.Size = new System.Drawing.Size(311, 37);
             this.cmbBloodGroup.TabIndex = 11;
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(239, 627);
+            this.btnSave.Location = new System.Drawing.Point(236, 627);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(210, 53);
+            this.btnSave.Size = new System.Drawing.Size(189, 55);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // FormPatient
             // 
@@ -214,7 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 732);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

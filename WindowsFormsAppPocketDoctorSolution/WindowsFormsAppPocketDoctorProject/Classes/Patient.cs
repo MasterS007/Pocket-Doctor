@@ -36,7 +36,38 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
         internal int PId
         { set; get; }
 
-          internal DataTable GetPatient()
+
+        internal bool InsertPatient(Patient p)
+        {
+            this.DB = new DatabaseConnection();
+            bool succeed = false;
+            try
+            {
+                string sql = "INSERT INTO tbl_Patient (name,age,gender,mobilenumber) VALUES( @Name, @Age, @Gender, @MobileNumber)";
+                var cmd = DB.Query(sql);
+
+                //  cmd.Parameters.AddWithValue("PId", p.PId);
+                cmd.Parameters.AddWithValue("@Name", p.Name);
+                cmd.Parameters.AddWithValue("@Gender", p.Gender);
+                cmd.Parameters.AddWithValue("@Age", p.Age);
+                cmd.Parameters.AddWithValue("@MobileNumber", p.MobileNumber);
+                int row = cmd.ExecuteNonQuery();
+                if (row == 1)
+                {
+                    succeed = true;
+                }
+                else
+                {
+                    succeed = false;
+                }
+            }
+            catch (Exception ex) { }
+
+            finally { this.DB.CloseConnection(); }
+
+            return succeed;
+        }
+        internal DataTable GetPatient()
         {
             this.DB = new DatabaseConnection();
             //DataTable dataTable = new DataTable();
