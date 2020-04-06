@@ -21,7 +21,8 @@ namespace WindowsFormsAppPocketDoctorProject
         private string role;
         // private static ushort serialNo = 1;
 
-        DatabaseConnection db; 
+        DatabaseConnection Db { get; set; }
+        
         
 
         internal User() { }
@@ -115,21 +116,22 @@ namespace WindowsFormsAppPocketDoctorProject
         }
         public bool InsertUser(User users)
         {
-            db = new DatabaseConnection();
+            this.Db = new DatabaseConnection();
             // SqlConnection conn = db.ConnectDB();
             bool isSucceed = false;
           
             try
             {
                 string sql = "INSERT INTO tbl_User ( name, password, mobilenumber,userrole) VALUES ( @userName , @password, @mobileNumber, @userrole)";
-                var cmd = db.Query(sql);
+                var cmd = this.Db.Query(sql);
+                
    
                 
                 //cmd.Parameters.AddWithValue("@userId",this.UserId);
                 cmd.Parameters.AddWithValue("@userName",users.UserName);
                 cmd.Parameters.AddWithValue("@password", users.Password);
                 cmd.Parameters.AddWithValue("@mobileNumber",users.MobileNumber);
-                cmd.Parameters.AddWithValue("@userrole", users.Role);
+               cmd.Parameters.AddWithValue("@userrole", users.Role);
 
                   int rows = cmd.ExecuteNonQuery();
                    if (rows>0)
@@ -145,7 +147,7 @@ namespace WindowsFormsAppPocketDoctorProject
             {
                 Console.WriteLine(ex);
             }
-            finally {db.CloseConnection(); }
+            finally {this.Db.CloseConnection(); }
 
             return isSucceed;
         }
@@ -154,12 +156,12 @@ namespace WindowsFormsAppPocketDoctorProject
         {
             bool correct = false;
 
-               db = new DatabaseConnection();
+               this.Db = new DatabaseConnection();
            
             try
             {  
                 string sql = "SELECT id, password FROM tbl_USER WHERE id =@userid and password =@password";
-                var queryResut = db.Query(sql);
+                var queryResut = this.Db.Query(sql);
                 queryResut.Parameters.AddWithValue("@userid", users.userId);
                 queryResut.Parameters.AddWithValue("@password", users.Password);
                 
@@ -180,7 +182,7 @@ namespace WindowsFormsAppPocketDoctorProject
             {
                 Console.WriteLine(ex);
             }
-            finally { db.CloseConnection(); }
+            finally { this.Db.CloseConnection(); }
             return correct;
 
         }

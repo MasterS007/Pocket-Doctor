@@ -78,16 +78,16 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
             this.Sqlcom = new SqlCommand(query, this.Sqlcon);
         }
 
-        public DataSet ExecuteQuery(string sql)
+      /*  public DataSet ExecuteQuery(string sql)
         {
             this.QueryText(sql);
             this.Sda = new SqlDataAdapter(this.Sqlcom);
             this.Ds = new DataSet();
             this.Sda.Fill(this.Ds);
             return Ds;
-        }
+        }*/
 
-        public DataTable SearchQuery(string sql)
+        public DataTable ExecuteQuery(string sql)
         {
             this.QueryText(sql);
             this.Sda = new SqlDataAdapter(this.Sqlcom);

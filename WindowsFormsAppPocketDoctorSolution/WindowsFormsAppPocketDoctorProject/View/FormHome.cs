@@ -15,12 +15,16 @@ namespace WindowsFormsAppPocketDoctorProject
     {
         //  List<Panel> listPanel = new List<Panel>();
         //int index;
-        Patient p = new Patient();
+        Patient p;
         public FormHome()
         {
             InitializeComponent();
+            p = new Patient();
             this.timerD.Start();
         }
+
+
+
 
 
         private void FormHome_FormClosed(object sender, FormClosedEventArgs e)
