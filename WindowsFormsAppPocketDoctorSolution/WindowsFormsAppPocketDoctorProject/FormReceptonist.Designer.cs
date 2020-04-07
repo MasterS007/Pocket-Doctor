@@ -66,6 +66,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.panel2);
@@ -100,6 +101,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
             this.btnDelete.Location = new System.Drawing.Point(883, 104);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(254, 57);
@@ -123,6 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblDate.Location = new System.Drawing.Point(68, 14);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(58, 23);
@@ -135,6 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbTime.Location = new System.Drawing.Point(130, 45);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(58, 23);
@@ -149,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPatientPro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatientPro.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPatientPro.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvPatientPro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatientPro.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientPro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -178,7 +182,7 @@
             this.dgvPatientPro.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatientPro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientPro.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvPatientPro.Location = new System.Drawing.Point(5, 178);
+            this.dgvPatientPro.Location = new System.Drawing.Point(1, 178);
             this.dgvPatientPro.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPatientPro.Name = "dgvPatientPro";
             this.dgvPatientPro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -199,7 +203,7 @@
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatientPro.Size = new System.Drawing.Size(1144, 405);
+            this.dgvPatientPro.Size = new System.Drawing.Size(1151, 405);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.VirtualMode = true;
@@ -275,6 +279,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
             this.btnUpdate.Location = new System.Drawing.Point(612, 104);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(236, 57);
@@ -291,6 +296,7 @@
             this.btnCreatePatient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatePatient.ForeColor = System.Drawing.SystemColors.Info;
             this.btnCreatePatient.Location = new System.Drawing.Point(325, 104);
             this.btnCreatePatient.Name = "btnCreatePatient";
             this.btnCreatePatient.Size = new System.Drawing.Size(249, 57);
@@ -307,6 +313,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Info;
             this.button1.Location = new System.Drawing.Point(67, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 57);

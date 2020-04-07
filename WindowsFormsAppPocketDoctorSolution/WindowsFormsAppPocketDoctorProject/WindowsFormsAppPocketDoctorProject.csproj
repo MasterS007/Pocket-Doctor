@@ -70,6 +70,12 @@
     <Compile Include="View\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormPathologist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPathologist.Designer.cs">
+      <DependentUpon>FormPathologist.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPathologist.resx">
+      <DependentUpon>FormPathologist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPatient.resx">
       <DependentUpon>FormPatient.cs</DependentUpon>

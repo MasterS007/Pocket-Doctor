@@ -131,7 +131,7 @@ namespace WindowsFormsAppPocketDoctorProject
                 cmd.Parameters.AddWithValue("@userName",users.UserName);
                 cmd.Parameters.AddWithValue("@password", users.Password);
                 cmd.Parameters.AddWithValue("@mobileNumber",users.MobileNumber);
-               cmd.Parameters.AddWithValue("@userrole", users.Role);
+                cmd.Parameters.AddWithValue("@userrole", users.Role);
 
                   int rows = cmd.ExecuteNonQuery();
                    if (rows>0)
