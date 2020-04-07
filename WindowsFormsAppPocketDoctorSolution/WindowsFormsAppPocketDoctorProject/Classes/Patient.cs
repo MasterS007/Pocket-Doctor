@@ -120,7 +120,9 @@ namespace WindowsFormsAppPocketDoctorProject.Classes
             bool succeed = false;
             try
             {
-               string sql = @"UPDATE tbl_Patient SET  name= @Name , gender= @Gender, age = @Age, mobilenumber=@MobileNumber WHERE pid = @PId";
+               string sql = @"UPDATE tbl_Patient SET  name= @Name ,
+                            gender= @Gender, age = @Age, mobilenumber= @MobileNumber 
+                            WHERE pid = @PId";
 
                 var cmd = DB.Query(sql);
                 

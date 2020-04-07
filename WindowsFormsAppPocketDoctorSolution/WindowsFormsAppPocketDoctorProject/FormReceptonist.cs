@@ -76,28 +76,26 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-           
             p.PId = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
             p.Name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
             p.Gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
             p.Age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
             p.MobileNumber = this.dgvPatientPro.CurrentRow.Cells["mobilenumber"].Value.ToString();
 
+            MessageBox.Show(p.PId +" ");
             bool succeed=p.UpdatePatient(p);
             
-            if (succeed == true)
-            {
+           if (succeed == true)
+           {
                
-                    DataTable dataT = p.GetPatient();
-                    this.PopulatedDataGridView(dataT);
-                    MessageBox.Show( p.Name + " is updated");
-                
-                
-            }
-            else
-            {
+                DataTable dataT = p.GetPatient();
+                this.PopulatedDataGridView(dataT);
+                MessageBox.Show( p.Name + " is updated");     
+           }
+           else
+           {
                 MessageBox.Show(p.Name + " is not updated");
-            }
+           }
            
           
 
@@ -108,27 +106,30 @@ namespace WindowsFormsAppPocketDoctorProject
           
             p.PId = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
             p.Name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
-            bool succeed = p.DeletePatient(p);
-            if(succeed == true)
+           
+            if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                bool succeed = p.DeletePatient(p);
+                if(succeed == true)
                 {
                     DataTable dataT = p.GetPatient();
                     this.PopulatedDataGridView(dataT);
                     MessageBox.Show(p.Name + " is Deleted");
 
                 }
-                   
+
                 else
                 {
-                    MessageBox.Show(p.Name + " is not deleted", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(p.Name + " is not Deleted");
                 }
+
             }
 
             else
             {
-                MessageBox.Show(p.Name + " is not Deleted");
+                MessageBox.Show(p.Name + " is not deleted", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void PcbRefresh_Click(object sender, EventArgs e)
