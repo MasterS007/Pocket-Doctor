@@ -20,9 +20,9 @@ namespace WindowsFormsAppPocketDoctorProject
             // Application.Run(new FormLogin());
             // Application.Run(new FormSignUp());
             // Application.Run(new FormHome());
-            // Application.Run(new FormReceptonist());
+            Application.Run(new FormReceptonist());
             //Application.Run(new FormPatient());
-            Application.Run(new FormPathologist());
+            //Application.Run(new FormPathologist());
 
 
         }

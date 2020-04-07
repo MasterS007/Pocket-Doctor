@@ -82,20 +82,29 @@ namespace WindowsFormsAppPocketDoctorProject
             p.Age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
             p.MobileNumber = this.dgvPatientPro.CurrentRow.Cells["mobilenumber"].Value.ToString();
 
-            MessageBox.Show(p.PId +" ");
-            bool succeed=p.UpdatePatient(p);
+            //MessageBox.Show(p.PId +" ");
+
+            if(MessageBox.Show("Do you want to update?","Row Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                bool succeed = p.UpdatePatient(p);
+
+                if (succeed == true)
+                {
+
+                    DataTable dataT = p.GetPatient();
+                    this.PopulatedDataGridView(dataT);
+                    MessageBox.Show(p.Name + " is updated");
+                }
+                else
+                {
+                    MessageBox.Show(p.Name + " is not updated");
+                }
+            }
+            else
+            {
+                MessageBox.Show(p.Name + " is not updated", "Row Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             
-           if (succeed == true)
-           {
-               
-                DataTable dataT = p.GetPatient();
-                this.PopulatedDataGridView(dataT);
-                MessageBox.Show( p.Name + " is updated");     
-           }
-           else
-           {
-                MessageBox.Show(p.Name + " is not updated");
-           }
            
           
 
