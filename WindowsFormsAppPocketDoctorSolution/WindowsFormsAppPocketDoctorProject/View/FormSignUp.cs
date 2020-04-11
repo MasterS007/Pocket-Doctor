@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
-using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
 namespace WindowsFormsAppPocketDoctorProject.View

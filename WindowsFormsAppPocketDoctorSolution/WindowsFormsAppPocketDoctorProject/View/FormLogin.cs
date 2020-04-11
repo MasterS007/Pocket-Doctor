@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 using WindowsFormsAppPocketDoctorProject.Repository_Class;
-using WindowsFormsAppPocketDoctorProject.Entity_Class;
+
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsAppPocketDoctorProject
+﻿namespace WindowsFormsAppPocketDoctorProject.View
 {
     partial class FormHome
     {
@@ -79,7 +79,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 749);
             this.panel1.TabIndex = 0;
-            this.panel1.MouseHover += new System.EventHandler(this.PicbSearch_Click);
+           // this.panel1.MouseHover += new System.EventHandler(this.PicbSearch_Click);
             // 
             // lblDate
             // 
@@ -123,7 +123,7 @@
             this.picbSearchP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbSearchP.TabIndex = 11;
             this.picbSearchP.TabStop = false;
-            this.picbSearchP.MouseHover += new System.EventHandler(this.PicbSearch_Click);
+            //this.picbSearchP.MouseHover += new System.EventHandler(this.PicbSearch_Click);
             // 
             // txtSearchP
             // 

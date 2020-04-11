@@ -8,18 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsAppPocketDoctorProject
+namespace WindowsFormsAppPocketDoctorProject.View
 {
-    public partial class FormProfile : Form
+    public partial class FormDoctorProfile : Form
     {
-        public FormProfile()
+        public FormDoctorProfile()
         {
             InitializeComponent();
         }
 
-        private void Label8_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

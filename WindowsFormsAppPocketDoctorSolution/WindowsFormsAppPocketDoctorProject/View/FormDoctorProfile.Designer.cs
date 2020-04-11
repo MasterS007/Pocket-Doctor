@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsAppPocketDoctorProject
+﻿namespace WindowsFormsAppPocketDoctorProject.View
 {
-    partial class FormProfile
+    partial class FormDoctorProfile
     {
         /// <summary>
         /// Required designer variable.

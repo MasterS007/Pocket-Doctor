@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsAppPocketDoctorProject
+﻿namespace WindowsFormsAppPocketDoctorProject.View
 {
     partial class FormReceptonist
     {
@@ -41,11 +41,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -53,6 +48,12 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -171,6 +172,7 @@
             this.name,
             this.age,
             this.gender,
+            this.bloodgroup,
             this.mobilenumber});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -207,36 +209,6 @@
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.VirtualMode = true;
-            // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "Patient Id";
-            this.pid.Name = "pid";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Patient Name";
-            this.name.Name = "name";
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            // 
-            // mobilenumber
-            // 
-            this.mobilenumber.DataPropertyName = "mobilenumber";
-            this.mobilenumber.HeaderText = "Mobile Number";
-            this.mobilenumber.Name = "mobilenumber";
             // 
             // panel3
             // 
@@ -325,6 +297,42 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "Patient Id";
+            this.pid.Name = "pid";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            // 
+            // bloodgroup
+            // 
+            this.bloodgroup.DataPropertyName = "bloodgroup";
+            this.bloodgroup.HeaderText = "Blood Group";
+            this.bloodgroup.Name = "bloodgroup";
+            // 
+            // mobilenumber
+            // 
+            this.mobilenumber.DataPropertyName = "mobilenumber";
+            this.mobilenumber.HeaderText = "Mobile Number";
+            this.mobilenumber.Name = "mobilenumber";
+            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,12 +372,13 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerR;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.PictureBox pcbRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.PictureBox pcbRefresh;
     }
 }

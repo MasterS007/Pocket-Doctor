@@ -8,31 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
-namespace WindowsFormsAppPocketDoctorProject
+namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormHome : Form
     {
         //  List<Panel> listPanel = new List<Panel>();
         //int index;
         Patient p;
+        PatientRepo prepo = new PatientRepo();
         public FormHome()
         {
             InitializeComponent();
             p = new Patient();
             this.timerD.Start();
         }
-
-
-
-
-
         private void FormHome_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-       
         private void LblUploadImg_Click(object sender, EventArgs e)
         {
             string imageLocation = "";
@@ -54,8 +50,6 @@ namespace WindowsFormsAppPocketDoctorProject
 
             }
         }
-
-       
 
         private void FormHome_Load(object sender, EventArgs e)
         {
@@ -100,7 +94,7 @@ namespace WindowsFormsAppPocketDoctorProject
              ucPaitent1.BringToFront();*/
             this.dgvPatientInfo.Show();
             
-            DataTable dataT = p.GetPatient();
+            DataTable dataT = prepo.GetPatient();
 
             this.dgvPatientInfo.DataSource = dataT;
             this.pnlMove1.Hide();
@@ -124,18 +118,18 @@ namespace WindowsFormsAppPocketDoctorProject
             this.pnlMove3.Show();
         }
 
-        private void PicbSearch_Click(object sender, EventArgs e)
+     /*   private void PicbSearch_Click(object sender, EventArgs e)
         {
             string keyWord = txtSearchP.Text;
-            DataTable dset = p.SearchPatient(keyWord);
+            DataTable dset = prepo.SearchPatient(keyWord);
             this.dgvPatientInfo.DataSource = dset;
 
-        }
+        }*/
 
         private void TxtSearchP_TextChanged(object sender, EventArgs e)
         {
             string keyWord = txtSearchP.Text;
-            DataTable dset = p.SearchPatient(keyWord);
+            DataTable dset = prepo.SearchPatient(keyWord);
             this.dgvPatientInfo.DataSource = dset;
         }
 

@@ -10,14 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
-using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.View;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
-namespace WindowsFormsAppPocketDoctorProject
+namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormReceptonist : Form
     {
-        Patient p = new Patient();
+        Patient p;
+        PatientRepo prepo = new PatientRepo();
         DatabaseConnection DB { get; set; }
        
 
@@ -43,7 +44,7 @@ namespace WindowsFormsAppPocketDoctorProject
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyWord = txtSearch.Text;
-            DataTable dset = p.SearchPatient(keyWord);
+            DataTable dset = prepo.SearchPatient(keyWord);
             this.PopulatedDataGridView(dset);
             
         }
@@ -65,7 +66,7 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void FormReceptonist_Load(object sender, EventArgs e)
         {
-            DataTable dataT = p.GetPatient();
+            DataTable dataT = prepo.GetPatient();
             //sda = DB.Sda;
             this.PopulatedDataGridView(dataT); 
 
@@ -78,33 +79,34 @@ namespace WindowsFormsAppPocketDoctorProject
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            p.PId = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
-            p.Name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
-            p.Gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
-            p.Age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
-            p.MobileNumber = this.dgvPatientPro.CurrentRow.Cells["mobilenumber"].Value.ToString();
+            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+            p.gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
+            p.age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
+            p.mobilenumber = this.dgvPatientPro.CurrentRow.Cells["mobilenumber"].Value.ToString();
+            p.bloodgroup = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
 
             //MessageBox.Show(p.PId +" ");
 
-            if(MessageBox.Show("Do you want to update?","Row Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("Do you want to update?","Row Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                bool succeed = p.UpdatePatient(p);
+                bool succeed = prepo.UpdatePatient(p);
 
                 if (succeed == true)
                 {
 
-                    DataTable dataT = p.GetPatient();
+                    DataTable dataT = prepo.GetPatient();
                     this.PopulatedDataGridView(dataT);
-                    MessageBox.Show(p.Name + " is updated");
+                    MessageBox.Show(p.name + " is updated");
                 }
                 else
                 {
-                    MessageBox.Show(p.Name + " is not updated");
+                    MessageBox.Show(p.name + " is not updated");
                 }
             }
             else
             {
-                MessageBox.Show(p.Name + " is not updated", "Row Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(p.name + " is not updated", "Row Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
            
@@ -115,37 +117,37 @@ namespace WindowsFormsAppPocketDoctorProject
         private void BtnDelete_Click(object sender, EventArgs e)
         {
           
-            p.PId = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
-            p.Name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
            
             if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                bool succeed = p.DeletePatient(p);
+                bool succeed = prepo.DeletePatient(p);
                 if(succeed == true)
                 {
-                    DataTable dataT = p.GetPatient();
+                    DataTable dataT = prepo.GetPatient();
                     this.PopulatedDataGridView(dataT);
-                    MessageBox.Show(p.Name + " is Deleted");
+                    MessageBox.Show(p.name + " is Deleted");
 
                 }
 
                 else
                 {
-                    MessageBox.Show(p.Name + " is not Deleted");
+                    MessageBox.Show(p.name + " is not Deleted");
                 }
 
             }
 
             else
             {
-                MessageBox.Show(p.Name + " is not deleted", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(p.name + " is not deleted", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
 
         private void PcbRefresh_Click(object sender, EventArgs e)
         {
-            DataTable dataT = p.GetPatient();
+            DataTable dataT = prepo.GetPatient();
             //sda = DB.Sda;
             this.PopulatedDataGridView(dataT);
 

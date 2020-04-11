@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormPatient : Form
     {
         Patient p = new Patient();
+        PatientRepo prepo = new PatientRepo();
         public FormPatient()
         {
             InitializeComponent();
@@ -26,30 +28,31 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            p.Name =this.txtPatientName.Text;
-            p.Age = Convert.ToInt32(this.txtPatientAge.Text);
+            p.name =this.txtPatientName.Text;
+            p.age = Convert.ToInt32(this.txtPatientAge.Text);
+            p.bloodgroup = this.cmbBloodGroup.Text;
             if(this.rbFemale.Checked)
             {
-                p.Gender = this.rbFemale.Text;
+                p.gender = this.rbFemale.Text;
             }
             else
             {
-                p.Gender = this.rbMale.Text;
+                p.gender = this.rbMale.Text;
             }
-            p.MobileNumber = this.txtMobileNum.Text;
+            p.mobilenumber = this.txtMobileNum.Text;
 
-            bool succeed = p.InsertPatient(p);
+            bool succeed = prepo.InsertPatient(p);
 
             if (succeed == true)
             {
-                MessageBox.Show(p.Name + " is inserted");
+                MessageBox.Show(p.name + " is inserted");
                 this.Visible = false;
 
 
             }
             else
             {
-                MessageBox.Show(p.Name + " is not inserted");
+                MessageBox.Show(p.name + " is not inserted");
             }
 
         }
