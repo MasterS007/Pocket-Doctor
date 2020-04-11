@@ -6,24 +6,25 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsAppPocketDoctorProject.Classes;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Data_Layer;
 
+namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 
-namespace WindowsFormsAppPocketDoctorProject
 {
      internal class User
     {
         
-        private int userId;
-        private string userName;
-        private string password;
-        private string mobileNumber;
-        private string role;
+        internal int id { get; set; }
+        internal string name { get; set; }
+        internal string password { get; set; }
+        internal string mobilenumber { get; set; }
+        internal string role { get; set; }
         // private static ushort serialNo = 1;
 
-        DatabaseConnection Db { get; set; }
         
-        
+
+
 
         internal User() { }
 
@@ -52,141 +53,18 @@ namespace WindowsFormsAppPocketDoctorProject
         }*/
         internal User(string userName, string password, string mobileNumber,string role)
         {   
-            this.UserName = userName;
-            this.Password = password;
-            this.MobileNumber = mobileNumber;
-            this.Role = role;
+            this.name = userName;
+            this.password = password;
+            this.mobilenumber = mobileNumber;
+            this.role = role;
         }
-        internal User(int userId) { this.UserId = userId; }
-
-        internal virtual int UserId
-        {
-            get { return this.userId; }
-             set
-             {
-              this.userId =  value;
-              }
-
-        }
+       
 
        
-           
-        internal  string UserName
-        {
-            get { return this.userName; }
-            set {this.userName = value; }
+     
+       
 
-        }
-        internal  string Password
-        {
-            get { return this.password; }
-            set
-            {   //if(value.Length<6)
-                //{
-                  //  Console.WriteLine("Password must be more than or equals to 6 characters");
-                //}
-                //else
-                //{
-                  this.password = value;
-                //}
-                
-            }
-
-        }
-        internal string MobileNumber
-        {
-            get { return this.mobileNumber; }
-            set
-            {
-               // if(value.Length< mobileNumber.Length || value[0]!=0 )
-               // {
-                //    Console.WriteLine("Invalid Phone Number");
-               // }
-               // else
-               // {
-                    this.mobileNumber = value;
-               // }
-            }
-        }
-
-        internal string Role
-        {
-            get { return this.role; }
-            set { this.role = value; }
-        }
-        public bool InsertUser(User users)
-        {
-            this.Db = new DatabaseConnection();
-            // SqlConnection conn = db.ConnectDB();
-            bool isSucceed = false;
-          
-            try
-            {
-                string sql = "INSERT INTO tbl_User ( name, password, mobilenumber,userrole) VALUES ( @userName , @password, @mobileNumber, @userrole)";
-                var cmd = this.Db.Query(sql);
-                
-   
-                
-                //cmd.Parameters.AddWithValue("@userId",this.UserId);
-                cmd.Parameters.AddWithValue("@userName",users.UserName);
-                cmd.Parameters.AddWithValue("@password", users.Password);
-                cmd.Parameters.AddWithValue("@mobileNumber",users.MobileNumber);
-                cmd.Parameters.AddWithValue("@userrole", users.Role);
-
-                  int rows = cmd.ExecuteNonQuery();
-                   if (rows>0)
-                      {
-                        isSucceed =true;
-                      }
-                   else
-                    {
-                       isSucceed = false;
-                     }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            finally {this.Db.CloseConnection(); }
-
-            return isSucceed;
-        }
-
-          public bool SelectUser(User users)
-        {
-            bool correct = false;
-
-               this.Db = new DatabaseConnection();
-           
-            try
-            {  
-                string sql = "SELECT id, password FROM tbl_USER WHERE id =@userid and password =@password";
-                var queryResut = this.Db.Query(sql);
-                queryResut.Parameters.AddWithValue("@userid", users.userId);
-                queryResut.Parameters.AddWithValue("@password", users.Password);
-                
-                SqlDataReader myReader = queryResut.ExecuteReader();
-
-                if(myReader.Read())
-                {
-                   
-                    correct = true;
-                }
-                else
-                {
-                    correct = false;
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            finally { this.Db.CloseConnection(); }
-            return correct;
-
-        }
-
+         
 
     }
 }

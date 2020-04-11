@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsAppPocketDoctorProject
+﻿namespace WindowsFormsAppPocketDoctorProject.View
 {
     partial class FormLogin
     {

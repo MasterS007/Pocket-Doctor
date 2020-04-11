@@ -14,8 +14,6 @@ G:\Aiub\3-Spring(2019-2020)\C#\final\Project\WindowsFormsAppPocketDoctorSolution
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.UCHome.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.FormSignUp.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.FormHome.resources
-G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.FormLogin.resources
-G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.FormSignUp.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.Properties.Resources.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.UCHome.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.UCMedicinecs.resources
@@ -32,3 +30,9 @@ G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocket
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormPatient.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csprojAssemblyReference.cache
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormPathologist.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormLogin.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormSignUp.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\MetroFramework.Design.dll
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\MetroFramework.dll
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\MetroFramework.Fonts.dll
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csproj.CopyComplete

@@ -8,29 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using WindowsFormsAppPocketDoctorProject.Classes;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Data_Layer;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
 
-namespace WindowsFormsAppPocketDoctorProject
+namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormLogin : Form
     {
-        DatabaseConnection db;
-        User users= new User();
+       
+        DatabaseConnection DB { get; set; }
+        
+        UserRepo urepo = new UserRepo();
+        
+
         public FormLogin()
         {
             InitializeComponent();
+            
         }   
           private void BtnLogin_Click_1(object sender, EventArgs e)
         {
-            users.UserId = Convert.ToInt32(txtUserId.Text);
-            users.Password = txtPassword.Text;
-             bool dataTable = users.SelectUser(users);
+            User users = new User();
+            users.id = Convert.ToInt32(txtUserId.Text);
+            users.password = txtPassword.Text;
+             bool dataTable = urepo.SelectUser(users);
              if (dataTable == true)
             {
                  string role;
-                 db = new DatabaseConnection();
+                 this.DB = new DatabaseConnection();
                  string query = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
-                SqlCommand cmd1 = db.Query(query);
+                SqlCommand cmd1 = DB.Query(query);
                  var queryResult= cmd1.ExecuteScalar();
 
 
@@ -59,7 +68,7 @@ namespace WindowsFormsAppPocketDoctorProject
                 {
                       role = "";
                 }
-                db.CloseConnection();
+                DB.CloseConnection();
                 }
             else
             {

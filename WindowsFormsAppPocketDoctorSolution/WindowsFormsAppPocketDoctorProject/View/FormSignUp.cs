@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsAppPocketDoctorProject.Classes;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
-namespace WindowsFormsAppPocketDoctorProject
+namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormSignUp : Form
     {
         User users = new User();
+        UserRepo urepo = new UserRepo();
         public FormSignUp()
         {
             InitializeComponent();
@@ -39,7 +42,7 @@ namespace WindowsFormsAppPocketDoctorProject
 
             if (this.cmbUserType.Text == "Doctor")
             {
-            bool success= userDoc.InsertUser(userDoc);
+            bool success= urepo.InsertUser(userDoc);
                
                   if (success == false)
                   {
@@ -58,7 +61,7 @@ namespace WindowsFormsAppPocketDoctorProject
 
             else if (this.cmbUserType.Text == "Receptionist")
             {
-                bool success = userReceptionist.InsertUser(userReceptionist);
+                bool success = urepo.InsertUser(userReceptionist);
 
                 if (success == false)
                 {

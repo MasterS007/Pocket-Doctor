@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsAppPocketDoctorProject.Classes;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
 
 namespace WindowsFormsAppPocketDoctorProject
 {

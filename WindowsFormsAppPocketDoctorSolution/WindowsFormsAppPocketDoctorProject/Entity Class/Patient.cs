@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsAppPocketDoctorProject.Data_Layer;
 
-namespace WindowsFormsAppPocketDoctorProject.Classes
+namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
     class Patient
     {

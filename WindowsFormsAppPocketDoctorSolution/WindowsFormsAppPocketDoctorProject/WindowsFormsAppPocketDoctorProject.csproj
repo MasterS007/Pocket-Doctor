@@ -57,16 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DatabaseConnection.cs" />
-    <Compile Include="Classes\Doctor.cs" />
-    <Compile Include="Classes\Patient.cs" />
-    <Compile Include="Classes\Receptionist.cs" />
+    <Compile Include="Data Layer\DatabaseConnection.cs" />
+    <Compile Include="Entity Class\Doctor.cs" />
+    <Compile Include="Entity Class\Patient.cs" />
+    <Compile Include="Entity Class\Receptionist.cs" />
     <Compile Include="FormReceptonist.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormReceptonist.Designer.cs">
       <DependentUpon>FormReceptonist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository Class\UserRepo.cs" />
     <Compile Include="View\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,7 @@
     </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
+      <CustomToolNamespace>WindowsFormsAppPocketDoctorProject.View</CustomToolNamespace>
     </Compile>
     <Compile Include="View\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -128,7 +130,7 @@
     <Compile Include="UCTest.Designer.cs">
       <DependentUpon>UCTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Entity Class\User.cs" />
     <EmbeddedResource Include="FormReceptonist.resx">
       <DependentUpon>FormReceptonist.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,5 +195,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

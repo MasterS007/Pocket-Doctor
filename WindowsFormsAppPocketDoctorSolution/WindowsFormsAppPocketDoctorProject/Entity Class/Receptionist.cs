@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsAppPocketDoctorProject.Classes
+namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
     internal class Receptionist:User
     {
