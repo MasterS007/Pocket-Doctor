@@ -62,6 +62,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
                         fm.Visible = true;
 
                     }
+
+                    else if (role.Equals("Pathologist"))
+                    {
+                        this.Visible = false;
+                        FormPathologist fm = new FormPathologist();
+                        fm.Visible = true;
+
+                    }
                 }
 
                 else

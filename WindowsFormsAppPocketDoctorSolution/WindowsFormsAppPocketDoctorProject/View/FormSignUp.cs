@@ -37,7 +37,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text,cmbUserType.Text);
             User userReceptionist = new Receptionist (txtUserName.Text, txtPassword.Text, txtMobileNum.Text, cmbUserType.Text);
-
+            User userPathologist = new Pathologist(txtUserName.Text, txtPassword.Text, txtMobileNum.Text, cmbUserType.Text);
 
             if (this.cmbUserType.Text == "Doctor")
             {
@@ -61,6 +61,24 @@ namespace WindowsFormsAppPocketDoctorProject.View
             else if (this.cmbUserType.Text == "Receptionist")
             {
                 bool success = urepo.InsertUser(userReceptionist);
+
+                if (success == false)
+                {
+                    MessageBox.Show("Failed to insert");
+
+                }
+                else
+                {
+                    // MessageBox.Show("Successful Signup");
+                    this.Visible = false;
+                    FormLogin fm = new FormLogin();
+                    fm.Show();
+                }
+
+            }
+            else if (this.cmbUserType.Text == "Pathologist")
+            {
+                bool success = urepo.InsertUser(userPathologist);
 
                 if (success == false)
                 {

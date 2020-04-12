@@ -12,10 +12,11 @@ using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 using WindowsFormsAppPocketDoctorProject.View;
 using WindowsFormsAppPocketDoctorProject.Repository_Class;
+using MetroFramework.Forms;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
-    public partial class FormReceptonist : Form
+    public partial class FormReceptonist :Form
     {
         Patient p;
         PatientRepo prepo = new PatientRepo();
@@ -74,6 +75,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void FormReceptonist_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
             Application.Exit();
         } 
 
@@ -161,6 +163,13 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnAppointment_Click(object sender, EventArgs e)
         {
+            FormAppointment f1 = new FormAppointment();
+
+            f1.lblName.Text = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+            f1.lblAge.Text = this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString();
+            f1.lblBloodg.Text = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
+            f1.lblGender.Text = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
+            f1.Show();
 
         }
     }

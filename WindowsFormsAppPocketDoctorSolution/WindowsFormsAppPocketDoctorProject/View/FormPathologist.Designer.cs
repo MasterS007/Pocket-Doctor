@@ -307,6 +307,7 @@
             this.Name = "FormPathologist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPathologist";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPathologist_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

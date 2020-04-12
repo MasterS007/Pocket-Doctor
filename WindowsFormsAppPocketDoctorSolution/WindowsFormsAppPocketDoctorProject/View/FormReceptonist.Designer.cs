@@ -41,6 +41,12 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -48,12 +54,6 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,9 +76,9 @@
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCreatePatient);
             this.panel1.Controls.Add(this.btnAppointment);
-            this.panel1.Location = new System.Drawing.Point(12, 14);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1152, 694);
+            this.panel1.Size = new System.Drawing.Size(1170, 715);
             this.panel1.TabIndex = 1;
             // 
             // pcbRefresh
@@ -196,7 +196,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPatientPro.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPatientPro.RowHeadersVisible = false;
             this.dgvPatientPro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -205,10 +204,46 @@
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatientPro.Size = new System.Drawing.Size(1151, 405);
+            this.dgvPatientPro.Size = new System.Drawing.Size(1169, 426);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.VirtualMode = true;
+            // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "Patient Id";
+            this.pid.Name = "pid";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            // 
+            // bloodgroup
+            // 
+            this.bloodgroup.DataPropertyName = "bloodgroup";
+            this.bloodgroup.HeaderText = "Blood Group";
+            this.bloodgroup.Name = "bloodgroup";
+            // 
+            // mobilenumber
+            // 
+            this.mobilenumber.DataPropertyName = "mobilenumber";
+            this.mobilenumber.HeaderText = "Mobile Number";
+            this.mobilenumber.Name = "mobilenumber";
             // 
             // panel3
             // 
@@ -218,7 +253,7 @@
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Location = new System.Drawing.Point(14, 13);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(392, 69);
+            this.panel3.Size = new System.Drawing.Size(410, 69);
             this.panel3.TabIndex = 12;
             // 
             // picbSearch
@@ -298,49 +333,13 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "Patient Id";
-            this.pid.Name = "pid";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Patient Name";
-            this.name.Name = "name";
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            // 
-            // bloodgroup
-            // 
-            this.bloodgroup.DataPropertyName = "bloodgroup";
-            this.bloodgroup.HeaderText = "Blood Group";
-            this.bloodgroup.Name = "bloodgroup";
-            // 
-            // mobilenumber
-            // 
-            this.mobilenumber.DataPropertyName = "mobilenumber";
-            this.mobilenumber.HeaderText = "Mobile Number";
-            this.mobilenumber.Name = "mobilenumber";
-            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 722);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormReceptonist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -368,7 +367,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreatePatient;
         private System.Windows.Forms.Button btnAppointment;
-        private System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerR;
@@ -381,5 +379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
+        internal System.Windows.Forms.DataGridView dgvPatientPro;
     }
 }

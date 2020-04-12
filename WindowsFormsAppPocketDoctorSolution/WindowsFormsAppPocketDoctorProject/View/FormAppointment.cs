@@ -1,5 +1,4 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,24 +10,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
-    public partial class FormPathologist : Form
+    public partial class FormAppointment : Form
     {
-        public FormPathologist()
+        
+        public FormAppointment()
         {
             InitializeComponent();
-            timerT.Start();
+            timerAp.Start();
+            
         }
 
-        private void TimerT_Tick(object sender, EventArgs e)
+        private void TimerAp_Tick(object sender, EventArgs e)
         {
             DateTime dateT = DateTime.Now;
             this.lblDate.Text = dateT.ToLongDateString();
-            this.lbTime.Text = dateT.ToLongTimeString();
-        }
-
-        private void FormPathologist_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
