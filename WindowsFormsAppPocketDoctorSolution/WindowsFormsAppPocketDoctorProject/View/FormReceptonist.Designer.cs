@@ -46,7 +46,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreatePatient = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
             this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCreatePatient);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnAppointment);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1152, 694);
@@ -277,21 +277,22 @@
             this.btnCreatePatient.UseVisualStyleBackColor = true;
             this.btnCreatePatient.Click += new System.EventHandler(this.BtnCreatePatient_Click);
             // 
-            // button1
+            // btnAppointment
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Location = new System.Drawing.Point(67, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 57);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "New Appointment";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAppointment.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAppointment.FlatAppearance.BorderSize = 0;
+            this.btnAppointment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppointment.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnAppointment.Location = new System.Drawing.Point(67, 104);
+            this.btnAppointment.Name = "btnAppointment";
+            this.btnAppointment.Size = new System.Drawing.Size(214, 57);
+            this.btnAppointment.TabIndex = 3;
+            this.btnAppointment.Text = "New Appointment";
+            this.btnAppointment.UseVisualStyleBackColor = true;
+            this.btnAppointment.Click += new System.EventHandler(this.BtnAppointment_Click);
             // 
             // timerR
             // 
@@ -366,7 +367,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreatePatient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbTime;

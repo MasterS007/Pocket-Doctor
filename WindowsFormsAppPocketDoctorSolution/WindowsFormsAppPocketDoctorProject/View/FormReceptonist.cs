@@ -158,5 +158,10 @@ namespace WindowsFormsAppPocketDoctorProject.View
             FormPatient fp = new FormPatient();
             fp.Show();
         }
+
+        private void BtnAppointment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
