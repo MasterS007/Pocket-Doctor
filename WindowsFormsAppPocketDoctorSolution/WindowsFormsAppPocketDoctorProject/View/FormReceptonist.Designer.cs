@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceptonist));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceptonist));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -54,12 +54,14 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,6 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.panel2);
@@ -86,9 +89,9 @@
             this.pcbRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pcbRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pcbRefresh.Image")));
-            this.pcbRefresh.Location = new System.Drawing.Point(1064, 12);
+            this.pcbRefresh.Location = new System.Drawing.Point(9, 9);
             this.pcbRefresh.Name = "pcbRefresh";
-            this.pcbRefresh.Size = new System.Drawing.Size(73, 50);
+            this.pcbRefresh.Size = new System.Drawing.Size(31, 42);
             this.pcbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbRefresh.TabIndex = 20;
             this.pcbRefresh.TabStop = false;
@@ -103,7 +106,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(883, 104);
+            this.btnDelete.Location = new System.Drawing.Point(895, 104);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(254, 57);
             this.btnDelete.TabIndex = 19;
@@ -251,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(14, 13);
+            this.panel3.Location = new System.Drawing.Point(46, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(410, 69);
             this.panel3.TabIndex = 12;
@@ -287,7 +290,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(612, 104);
+            this.btnUpdate.Location = new System.Drawing.Point(631, 104);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(236, 57);
             this.btnUpdate.TabIndex = 5;
@@ -304,7 +307,7 @@
             this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePatient.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnCreatePatient.Location = new System.Drawing.Point(325, 104);
+            this.btnCreatePatient.Location = new System.Drawing.Point(336, 104);
             this.btnCreatePatient.Name = "btnCreatePatient";
             this.btnCreatePatient.Size = new System.Drawing.Size(249, 57);
             this.btnCreatePatient.TabIndex = 4;
@@ -321,7 +324,7 @@
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppointment.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAppointment.Location = new System.Drawing.Point(67, 104);
+            this.btnAppointment.Location = new System.Drawing.Point(57, 104);
             this.btnAppointment.Name = "btnAppointment";
             this.btnAppointment.Size = new System.Drawing.Size(214, 57);
             this.btnAppointment.TabIndex = 3;
@@ -332,6 +335,15 @@
             // timerR
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1113, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 57);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // FormReceptonist
             // 
@@ -354,6 +366,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         internal System.Windows.Forms.DataGridView dgvPatientPro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
