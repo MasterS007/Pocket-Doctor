@@ -59,5 +59,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
             DataTable dataT = docRepo.SearchDoctor(txtSearch.Text);
             this.PopulateDataGeidView(dataT);
         }
+
+        private void PicbSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dataT = docRepo.SearchDoctor(txtSearch.Text);
+            this.PopulateDataGeidView(dataT);
+        }
     }
 }

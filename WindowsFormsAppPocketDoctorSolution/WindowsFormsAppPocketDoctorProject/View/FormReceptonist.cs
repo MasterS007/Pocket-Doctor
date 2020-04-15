@@ -32,15 +32,15 @@ namespace WindowsFormsAppPocketDoctorProject.View
         }
 
 
-       /* private void PicbSearch_Click(object sender, EventArgs e)
+        private void PicbSearch_Click(object sender, EventArgs e)
         {
-                string keyWord = txtSearch.Text;
-                DataTable dataT = p.SearchPatient(keyWord);
-                dgvPatientPro.DataSource = dataT;
-                   
-        }*/
+            string keyWord = txtSearch.Text;
+            DataTable dataT = prepo.SearchPatient(keyWord);
+            dgvPatientPro.DataSource = dataT;
 
-       
+
+        }
+
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -172,5 +172,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             f1.Show();
 
         }
+
+       
     }
 }

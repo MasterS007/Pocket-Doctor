@@ -44,7 +44,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             try
             {
-                string sql = "SELECT u.id, u.name, d.dr_catagory FROM tbl_User u join tbl_DoctorInfo d on d.dr_catagory LIKE '%"+keyWord+ "%' AND u.id=d.dr_id or u.name LIKE '"% + keyWord + "%' AND u.id=d.dr_id";
+                string sql = "SELECT u.id, u.name, d.dr_catagory FROM tbl_User u join tbl_DoctorInfo d on d.dr_catagory LIKE '%"+keyWord+ "%' AND u.id=d.dr_id or u.name LIKE '%"+keyWord+"%' AND u.id=d.dr_id";
                 dataTable = DB.ExecuteQuery(sql);
 
 

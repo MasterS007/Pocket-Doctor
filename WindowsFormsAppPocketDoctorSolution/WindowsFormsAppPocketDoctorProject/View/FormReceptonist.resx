@@ -120,9 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABRSURBVGhD7dWxDQBBEAKx7b/p/wbQkRLY0oTEHAAw5huvSqOlqjRaqkqjpQDgKZ3HUlUaLVWl
-        0VJVGi0FAE/pPJaq0mipKo2WqtJoKQBgxN0PZNbeMD5dwlgAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAFFJREFUaEPt
+        1bENAEEQArHtv+n/BtCREtjShMQcADDmG69Ko6WqNFqqSqOlAOApncdSVRotVaXRUlUaLQUAT+k8lqrS
+        aKkqjZaq0mgpAGDE3Q9k1t4wPl3CWAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="pcbRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
