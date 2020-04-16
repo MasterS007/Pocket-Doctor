@@ -169,10 +169,19 @@ namespace WindowsFormsAppPocketDoctorProject.View
             f1.lblAge.Text = this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString();
             f1.lblBloodg.Text = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
             f1.lblGender.Text = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
+            f1.lblPId.Text = this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString();
             f1.Show();
 
         }
 
-       
+        private void PcbRefresh_MouseHover(object sender, EventArgs e)
+        {
+            pcbRefresh.BackColor = Color.Wheat;
+        }
+
+        private void PcbRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            pcbRefresh.BackColor = Color.Transparent;
+        }
     }
 }

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceptonist));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
@@ -55,6 +55,7 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
@@ -70,6 +71,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
@@ -79,15 +82,16 @@
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCreatePatient);
             this.panel1.Controls.Add(this.btnAppointment);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1170, 715);
+            this.panel1.Size = new System.Drawing.Size(1174, 727);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1113, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 57);
             this.pictureBox1.TabIndex = 21;
@@ -98,13 +102,15 @@
             this.pcbRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pcbRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pcbRefresh.Image")));
-            this.pcbRefresh.Location = new System.Drawing.Point(9, 9);
+            this.pcbRefresh.Location = new System.Drawing.Point(4, 3);
             this.pcbRefresh.Name = "pcbRefresh";
-            this.pcbRefresh.Size = new System.Drawing.Size(31, 42);
+            this.pcbRefresh.Size = new System.Drawing.Size(44, 37);
             this.pcbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbRefresh.TabIndex = 20;
             this.pcbRefresh.TabStop = false;
             this.pcbRefresh.Click += new System.EventHandler(this.PcbRefresh_Click);
+            this.pcbRefresh.MouseLeave += new System.EventHandler(this.PcbRefresh_MouseLeave);
+            this.pcbRefresh.MouseHover += new System.EventHandler(this.PcbRefresh_MouseHover);
             // 
             // btnDelete
             // 
@@ -115,9 +121,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(895, 104);
+            this.btnDelete.Location = new System.Drawing.Point(946, 104);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(254, 57);
+            this.btnDelete.Size = new System.Drawing.Size(215, 57);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete Profile";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -139,7 +145,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblDate.Location = new System.Drawing.Point(68, 14);
+            this.lblDate.Location = new System.Drawing.Point(26, 10);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(58, 23);
             this.lblDate.TabIndex = 17;
@@ -167,17 +173,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPatientPro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPatientPro.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvPatientPro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPatientPro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPatientPro.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientPro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPatientPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientPro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pid,
@@ -186,40 +192,42 @@
             this.gender,
             this.bloodgroup,
             this.mobilenumber});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientPro.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPatientPro.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientPro.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPatientPro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientPro.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvPatientPro.Location = new System.Drawing.Point(1, 178);
+            this.dgvPatientPro.Location = new System.Drawing.Point(4, 168);
             this.dgvPatientPro.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPatientPro.MultiSelect = false;
             this.dgvPatientPro.Name = "dgvPatientPro";
             this.dgvPatientPro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPatientPro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPatientPro.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatientPro.Size = new System.Drawing.Size(1169, 426);
+            this.dgvPatientPro.Size = new System.Drawing.Size(1169, 433);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
-            this.dgvPatientPro.VirtualMode = true;
             // 
             // pid
             // 
@@ -263,9 +271,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(46, 9);
+            this.panel3.Location = new System.Drawing.Point(763, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(410, 69);
+            this.panel3.Size = new System.Drawing.Size(398, 69);
             this.panel3.TabIndex = 12;
             // 
             // picbSearch
@@ -273,7 +281,7 @@
             this.picbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picbSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picbSearch.Image = ((System.Drawing.Image)(resources.GetObject("picbSearch.Image")));
-            this.picbSearch.Location = new System.Drawing.Point(335, 19);
+            this.picbSearch.Location = new System.Drawing.Point(325, 19);
             this.picbSearch.Name = "picbSearch";
             this.picbSearch.Size = new System.Drawing.Size(50, 34);
             this.picbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -283,11 +291,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSearch.Location = new System.Drawing.Point(25, 19);
+            this.txtSearch.Location = new System.Drawing.Point(15, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(304, 30);
+            this.txtSearch.Size = new System.Drawing.Size(304, 34);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
@@ -300,9 +308,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(631, 104);
+            this.btnUpdate.Location = new System.Drawing.Point(743, 104);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(236, 57);
+            this.btnUpdate.Size = new System.Drawing.Size(206, 57);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -317,9 +325,9 @@
             this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePatient.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnCreatePatient.Location = new System.Drawing.Point(336, 104);
+            this.btnCreatePatient.Location = new System.Drawing.Point(242, 104);
             this.btnCreatePatient.Name = "btnCreatePatient";
-            this.btnCreatePatient.Size = new System.Drawing.Size(249, 57);
+            this.btnCreatePatient.Size = new System.Drawing.Size(204, 57);
             this.btnCreatePatient.TabIndex = 4;
             this.btnCreatePatient.Text = "New Patient Profile";
             this.btnCreatePatient.UseVisualStyleBackColor = true;
@@ -334,9 +342,9 @@
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppointment.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAppointment.Location = new System.Drawing.Point(57, 104);
+            this.btnAppointment.Location = new System.Drawing.Point(12, 104);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(214, 57);
+            this.btnAppointment.Size = new System.Drawing.Size(185, 57);
             this.btnAppointment.TabIndex = 3;
             this.btnAppointment.Text = "New Appointment";
             this.btnAppointment.UseVisualStyleBackColor = true;
@@ -346,10 +354,27 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Info;
+            this.button1.Location = new System.Drawing.Point(505, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 57);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Cancel Appointment";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(1176, 722);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -357,6 +382,7 @@
             this.Name = "FormReceptonist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReceptonist";
+            this.TransparencyKey = System.Drawing.Color.Maroon;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReceptonist_FormClosed);
             this.Load += new System.EventHandler(this.FormReceptonist_Load);
             this.panel1.ResumeLayout(false);
@@ -395,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         internal System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

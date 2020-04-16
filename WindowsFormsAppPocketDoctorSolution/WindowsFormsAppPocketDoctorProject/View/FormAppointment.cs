@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPocketDoctorProject.Entity_Class;
 using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
 namespace WindowsFormsAppPocketDoctorProject.View
@@ -14,6 +15,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     public partial class FormAppointment : Form
     {
         DoctorRepo docRepo = new DoctorRepo();
+       
         public FormAppointment()
         {
             InitializeComponent();
@@ -64,6 +66,33 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             DataTable dataT = docRepo.SearchDoctor(txtSearch.Text);
             this.PopulateDataGeidView(dataT);
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            DoctorPatient dp = new DoctorPatient();
+            DoctorPatientRepo docp = new DoctorPatientRepo();
+
+            
+            dp.dr_id = Convert.ToInt32(this.dgvDoctor.CurrentRow.Cells["id"].Value.ToString());
+            dp.p_id = Convert.ToInt32(this.lblPId.Text);
+            
+            dp.visiting_date =Convert.ToDateTime(lblDate.Text);
+            bool succeed = docp.InsertRow(dp);
+
+
+            if (succeed == true)
+            {
+                MessageBox.Show("inserted");
+                
+                this.Visible = false;
+
+            }
+            else
+            {
+                MessageBox.Show(dp.visiting_date+"not inserted");
+            }
+
         }
     }
 }
