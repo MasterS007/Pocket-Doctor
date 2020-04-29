@@ -184,10 +184,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             pcbRefresh.BackColor = Color.Transparent;
         }
 
-        private void MenuSTripRefresh_Click(object sender, EventArgs e)
-        {
-            this.PopulatedDataGridView(prepo.GetPatient());
-        }
+       
 
         int rowIndex = 0;
         private void DgvPatientPro_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -204,5 +201,79 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         }
 
+        private void MenuSTripRefresh_Click(object sender, EventArgs e)
+        {
+            this.PopulatedDataGridView(prepo.GetPatient());
+        }
+
+        private void MenuStripDelete_Click(object sender, EventArgs e)
+        {
+            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+
+            if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool succeed = prepo.DeletePatient(p);
+                if (succeed == true)
+                {
+                    //DataTable dataT = prepo.GetPatient();
+                   // this.PopulatedDataGridView(dataT);
+                    MessageBox.Show(p.name + " is Deleted");
+
+                }
+
+                else
+                {
+                    MessageBox.Show(p.name + " is not Deleted");
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show(p.name + " is not deleted", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void MenuStripUpdate_Click(object sender, EventArgs e)
+        {
+            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+            p.gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
+            p.age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
+            p.mobilenumber = this.dgvPatientPro.CurrentRow.Cells["mobilenumber"].Value.ToString();
+            p.bloodgroup = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
+
+            //MessageBox.Show(p.PId +" ");
+
+            if (MessageBox.Show("Do you want to update?", "Row Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool succeed = prepo.UpdatePatient(p);
+
+                if (succeed == true)
+                {
+
+                    DataTable dataT = prepo.GetPatient();
+                    this.PopulatedDataGridView(dataT);
+                    MessageBox.Show(p.name + " is updated");
+                }
+                else
+                {
+                    MessageBox.Show(p.name + " is not updated");
+                }
+            }
+            else
+            {
+                MessageBox.Show(p.name + " is not updated", "Row Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
+
+        private void AddPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPatient fp = new FormPatient();
+            fp.Show();
+        }
     }
 }

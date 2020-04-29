@@ -43,10 +43,9 @@
             this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
             this.CMSReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuSTripRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -245,41 +245,37 @@
             // 
             this.CMSReceptionist.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.CMSReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuSTripRefresh,
-            this.MenuStripDelete,
-            this.MenuStripUpdate,
-            this.toolStripMenuItem1});
+            this.refreshPatientToolStripMenuItem,
+            this.deletePatientToolStripMenuItem,
+            this.updatePatientToolStripMenuItem,
+            this.addPatientToolStripMenuItem});
             this.CMSReceptionist.Name = "CMSReceptionist";
             this.CMSReceptionist.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSReceptionist.Size = new System.Drawing.Size(216, 108);
+            this.CMSReceptionist.Size = new System.Drawing.Size(215, 136);
             // 
-            // MenuSTripRefresh
+            // refreshPatientToolStripMenuItem
             // 
-            this.MenuSTripRefresh.Image = ((System.Drawing.Image)(resources.GetObject("MenuSTripRefresh.Image")));
-            this.MenuSTripRefresh.Name = "MenuSTripRefresh";
-            this.MenuSTripRefresh.Size = new System.Drawing.Size(215, 26);
-            this.MenuSTripRefresh.Text = "Refresh";
-            this.MenuSTripRefresh.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
+            this.refreshPatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshPatientToolStripMenuItem.Image")));
+            this.refreshPatientToolStripMenuItem.Name = "refreshPatientToolStripMenuItem";
+            this.refreshPatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.refreshPatientToolStripMenuItem.Text = "Refresh";
+            this.refreshPatientToolStripMenuItem.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
             // 
-            // MenuStripDelete
+            // deletePatientToolStripMenuItem
             // 
-            this.MenuStripDelete.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripDelete.Image")));
-            this.MenuStripDelete.Name = "MenuStripDelete";
-            this.MenuStripDelete.Size = new System.Drawing.Size(215, 26);
-            this.MenuStripDelete.Text = "Delete";
+            this.deletePatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deletePatientToolStripMenuItem.Image")));
+            this.deletePatientToolStripMenuItem.Name = "deletePatientToolStripMenuItem";
+            this.deletePatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.deletePatientToolStripMenuItem.Text = "Delete";
+            this.deletePatientToolStripMenuItem.Click += new System.EventHandler(this.MenuStripDelete_Click);
             // 
-            // MenuStripUpdate
+            // updatePatientToolStripMenuItem
             // 
-            this.MenuStripUpdate.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripUpdate.Image")));
-            this.MenuStripUpdate.Name = "MenuStripUpdate";
-            this.MenuStripUpdate.Size = new System.Drawing.Size(215, 26);
-            this.MenuStripUpdate.Text = "Update";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 26);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.updatePatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updatePatientToolStripMenuItem.Image")));
+            this.updatePatientToolStripMenuItem.Name = "updatePatientToolStripMenuItem";
+            this.updatePatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.updatePatientToolStripMenuItem.Text = "Update";
+            this.updatePatientToolStripMenuItem.Click += new System.EventHandler(this.MenuStripUpdate_Click);
             // 
             // panel3
             // 
@@ -407,6 +403,14 @@
             this.mobilenumber.HeaderText = "Mobile Number";
             this.mobilenumber.Name = "mobilenumber";
             // 
+            // addPatientToolStripMenuItem
+            // 
+            this.addPatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addPatientToolStripMenuItem.Image")));
+            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
+            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.addPatientToolStripMenuItem.Text = "Add Patient";
+            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.AddPatientToolStripMenuItem_Click);
+            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,15 +457,15 @@
         internal System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip CMSReceptionist;
-        private System.Windows.Forms.ToolStripMenuItem MenuSTripRefresh;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripDelete;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripUpdate;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem refreshPatientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletePatientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updatePatientToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
+        private System.Windows.Forms.ToolStripMenuItem addPatientToolStripMenuItem;
     }
 }
