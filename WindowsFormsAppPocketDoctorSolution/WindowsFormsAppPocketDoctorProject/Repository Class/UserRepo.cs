@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
 
@@ -11,29 +12,51 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 {
     class UserRepo
     {
-        User users = new User();
-        DatabaseConnection DB { get; set; }
-        public bool InsertUser(User users)
+        internal User userr= new User();
+        private string userid;
+
+        DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
+        
+       
+
+        public int AutoIDValue()
         {
-            this.DB = new DatabaseConnection();
-            // SqlConnection conn = db.ConnectDB();
+            int number;
+               var dt = dbCon.GetDataTable("select * from tbl_User;");
+            if (dt.Rows.Count == 0) { number = 0;
+                return number;
+            }
+            
+                string value = dt.Rows[dt.Rows.Count - 1]["userid"].ToString();
+
+                string[] id = value.Split('-');
+                 number = Convert.ToInt32(id[1]);
+                return number;
+          
+        }
+        
+        
+        internal virtual string UserId
+        {
+            get { return this.userid; }
+            set
+            {
+                this.userid = "U-" + value;
+
+                
+            }
+        }
+        
+        public bool InsertUser(User users, string keyword)
+        {
             bool isSucceed = false;
 
             try
             {
-                string sql = "INSERT INTO tbl_User ( name, password, mobilenumber,userrole) VALUES ( @userName , @password, @mobileNumber, @userrole)";
-                var cmd = this.DB.Query(sql);
-
-
-
-                //cmd.Parameters.AddWithValue("@userId",this.UserId);
-                cmd.Parameters.AddWithValue("@userName", users.name);
-                cmd.Parameters.AddWithValue("@password", users.password);
-                cmd.Parameters.AddWithValue("@mobileNumber", users.mobilenumber);
-                cmd.Parameters.AddWithValue("@userrole", users.role);
-
-                int rows = cmd.ExecuteNonQuery();
-                if (rows > 0)
+                string sql = "INSERT INTO tbl_User ( userid, username, password, mobilenumber) VALUES ( '"+keyword+"','"+users.username+"' , '"+users.password+"','"+users.mobilenumber+"')";
+               
+                var row = dbCon.ExecuteUpdateQuery(sql);
+                if (row==1)
                 {
                     isSucceed = true;
                 }
@@ -44,45 +67,47 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                MessageBox.Show(ex+"");
             }
-            finally { this.DB.CloseConnection(); }
 
+            finally {dbCon.CloseConnection(); }
             return isSucceed;
         }
 
-        public bool SelectUser(User users)
+        public string SelectUser(User users)
         {
+            string role=null;
             bool correct = false;
-
-            this.DB = new DatabaseConnection();
+            
 
             try
-            {
-                string sql = "SELECT id, password FROM tbl_USER WHERE id =@userid and password =@password";
-                var queryResut = this.DB.Query(sql);
-                queryResut.Parameters.AddWithValue("@userid", users.id);
-                queryResut.Parameters.AddWithValue("@password", users.password);
+            {    string sql = "SELECT userid, password FROM tbl_USER WHERE userid ='"+ users.UserId +"' and password ='"+ users.password +"'";
 
+                var queryResut = dbCon.Query(sql);
+                var dt = dbCon.GetDataTable(sql);
+                string value = dt.Rows[dt.Rows.Count - 1]["userid"].ToString();
+                string[] id = value.Split('-');
+                
                 SqlDataReader myReader = queryResut.ExecuteReader();
+                
 
-                if (myReader.Read())
+                if (myReader.Read()==true)
                 {
+                    role = id[2];
 
-                    correct = true;
                 }
                 else
                 {
-                    correct = false;
+                    role = null;
                 }
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                MessageBox.Show(ex+"");
             }
-            finally { this.DB.CloseConnection(); }
-            return correct;
+            finally { dbCon.CloseConnection(); }
+            return role;
 
         }
 

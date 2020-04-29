@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceptonist));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,14 +55,18 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.CMSReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuSTripRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).BeginInit();
+            this.CMSReceptionist.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,7 +77,6 @@
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.panel2);
@@ -88,24 +91,31 @@
             this.panel1.Size = new System.Drawing.Size(1174, 727);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox1
+            // button1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 57);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Info;
+            this.button1.Location = new System.Drawing.Point(500, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 57);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Cancel Appointment";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // pcbRefresh
             // 
             this.pcbRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pcbRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pcbRefresh.Image")));
-            this.pcbRefresh.Location = new System.Drawing.Point(4, 3);
+            this.pcbRefresh.Location = new System.Drawing.Point(1113, 5);
             this.pcbRefresh.Name = "pcbRefresh";
-            this.pcbRefresh.Size = new System.Drawing.Size(44, 37);
-            this.pcbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbRefresh.Size = new System.Drawing.Size(56, 51);
+            this.pcbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbRefresh.TabIndex = 20;
             this.pcbRefresh.TabStop = false;
             this.pcbRefresh.Click += new System.EventHandler(this.PcbRefresh_Click);
@@ -121,9 +131,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(946, 104);
+            this.btnDelete.Location = new System.Drawing.Point(949, 96);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(215, 57);
+            this.btnDelete.Size = new System.Drawing.Size(215, 73);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete Profile";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -176,14 +186,14 @@
             this.dgvPatientPro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPatientPro.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientPro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatientPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientPro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pid,
@@ -192,15 +202,16 @@
             this.gender,
             this.bloodgroup,
             this.mobilenumber});
+            this.dgvPatientPro.ContextMenuStrip = this.CMSReceptionist;
             this.dgvPatientPro.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientPro.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientPro.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatientPro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientPro.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPatientPro.Location = new System.Drawing.Point(4, 168);
@@ -208,19 +219,19 @@
             this.dgvPatientPro.MultiSelect = false;
             this.dgvPatientPro.Name = "dgvPatientPro";
             this.dgvPatientPro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatientPro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientPro.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumTurquoise;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientPro.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientPro.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -228,6 +239,7 @@
             this.dgvPatientPro.Size = new System.Drawing.Size(1169, 433);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
+            this.dgvPatientPro.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPatientPro_CellMouseClick);
             // 
             // pid
             // 
@@ -271,7 +283,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(763, 3);
+            this.panel3.Location = new System.Drawing.Point(4, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(398, 69);
             this.panel3.TabIndex = 12;
@@ -308,7 +320,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(743, 104);
+            this.btnUpdate.Location = new System.Drawing.Point(737, 104);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(206, 57);
             this.btnUpdate.TabIndex = 5;
@@ -325,7 +337,7 @@
             this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePatient.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnCreatePatient.Location = new System.Drawing.Point(242, 104);
+            this.btnCreatePatient.Location = new System.Drawing.Point(236, 104);
             this.btnCreatePatient.Name = "btnCreatePatient";
             this.btnCreatePatient.Size = new System.Drawing.Size(204, 57);
             this.btnCreatePatient.TabIndex = 4;
@@ -354,21 +366,45 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
-            // button1
+            // CMSReceptionist
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Location = new System.Drawing.Point(505, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 57);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Cancel Appointment";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CMSReceptionist.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CMSReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuSTripRefresh,
+            this.MenuStripDelete,
+            this.MenuStripUpdate,
+            this.toolStripMenuItem1});
+            this.CMSReceptionist.Name = "CMSReceptionist";
+            this.CMSReceptionist.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.CMSReceptionist.Size = new System.Drawing.Size(216, 108);
+            // 
+            // MenuSTripRefresh
+            // 
+            this.MenuSTripRefresh.Image = ((System.Drawing.Image)(resources.GetObject("MenuSTripRefresh.Image")));
+            this.MenuSTripRefresh.Name = "MenuSTripRefresh";
+            this.MenuSTripRefresh.Size = new System.Drawing.Size(215, 26);
+            this.MenuSTripRefresh.Text = "Refresh";
+            this.MenuSTripRefresh.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
+            // 
+            // MenuStripDelete
+            // 
+            this.MenuStripDelete.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripDelete.Image")));
+            this.MenuStripDelete.Name = "MenuStripDelete";
+            this.MenuStripDelete.Size = new System.Drawing.Size(215, 26);
+            this.MenuStripDelete.Text = "Delete";
+            // 
+            // MenuStripUpdate
+            // 
+            this.MenuStripUpdate.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripUpdate.Image")));
+            this.MenuStripUpdate.Name = "MenuStripUpdate";
+            this.MenuStripUpdate.Size = new System.Drawing.Size(215, 26);
+            this.MenuStripUpdate.Text = "Update";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 26);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // FormReceptonist
             // 
@@ -386,7 +422,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReceptonist_FormClosed);
             this.Load += new System.EventHandler(this.FormReceptonist_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -394,6 +429,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).EndInit();
+            this.CMSReceptionist.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -420,7 +456,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         internal System.Windows.Forms.DataGridView dgvPatientPro;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip CMSReceptionist;
+        private System.Windows.Forms.ToolStripMenuItem MenuSTripRefresh;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripDelete;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripUpdate;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

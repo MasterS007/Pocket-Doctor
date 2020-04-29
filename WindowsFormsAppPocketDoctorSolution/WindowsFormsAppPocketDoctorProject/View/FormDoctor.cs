@@ -12,13 +12,13 @@ using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
-    public partial class FormHome : Form
+    public partial class FormDoctor : Form
     {
         //  List<Panel> listPanel = new List<Panel>();
         //int index;
         Patient p;
         PatientRepo prepo = new PatientRepo();
-        public FormHome()
+        public FormDoctor()
         {
             InitializeComponent();
             p = new Patient();

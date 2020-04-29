@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
     internal class Doctor : User
     {
-        internal int dr_id { get; set; }
+        internal string dr_id { get; set; }
         internal string dr_catagory { get; set; }
         internal int info_id { get; set; }
         internal float earnings { get; set; }
@@ -17,22 +18,10 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
         internal float commission { get; set; }
 
         internal Doctor() { }
-       
-        internal Doctor( string userName, string password, string mobileNumber,string role) : base( userName, password, mobileNumber,role)
-        { }
 
-
-    
-
-      /*  internal override string UserId
+        internal Doctor(string userName, string password, string mobileNumber) : base(userName, password, mobileNumber)
         {
-            set
-            {
-                base.UserId = value + "-D";
-
-            }
-            
-        }*/
+        }
 
 
     }

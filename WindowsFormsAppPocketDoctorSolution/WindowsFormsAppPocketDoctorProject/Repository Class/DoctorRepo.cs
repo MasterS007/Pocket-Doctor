@@ -11,50 +11,46 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 {
     class DoctorRepo
     {
-        DatabaseConnection DB { get; set; }
         DataTable dataTable;
-        Doctor doc = new Doctor();        
+        Doctor doc = new Doctor();
+        DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
         internal DataTable GetDoctor()
         {
-            this.DB = new DatabaseConnection();
+            
             //DataTable dataTable = new DataTable();
 
             try
             {
-                string sql = "select id, name , dr_catagory from tbl_User  join tbl_DoctorInfo  on id = dr_id ";
+                string sql = "select userid, username , dr_catagory from tbl_User  join tbl_Doctor  on userid = dr_id ";
                // SqlCommand cmd = db.Query(sql);
                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                 //adapter.Fill(dataTable);
-                dataTable = DB.ExecuteQuery(sql);
+                dataTable =dbCon.GetDataTable(sql);
                 //db.Sda.Fill(dataTable);
 
             }
             catch (Exception ex) { }
 
-            finally { DB.CloseConnection(); }
-
+            finally { dbCon.CloseConnection(); }
 
             return dataTable;
         }
 
         internal DataTable SearchDoctor(string keyWord)
         {
-            this.DB = new DatabaseConnection();
-
             try
             {
-                string sql = "SELECT u.id, u.name, d.dr_catagory FROM tbl_User u join tbl_DoctorInfo d on d.dr_catagory LIKE '%"+keyWord+ "%' AND u.id=d.dr_id or u.name LIKE '%"+keyWord+"%' AND u.id=d.dr_id";
-                dataTable = DB.ExecuteQuery(sql);
-
-
+                string sql = "SELECT u.userid, u.username, d.dr_catagory FROM tbl_User u join tbl_Doctor d on d.dr_catagory LIKE '%" + keyWord + "%' AND u.userid=d.dr_id or u.username LIKE '%" + keyWord + "%' AND u.userid=d.dr_id";
+                dataTable = dbCon.GetDataTable(sql);
             }
+
             catch (Exception ex) { }
+            finally { dbCon.CloseConnection(); }
 
-            finally { DB.CloseConnection(); }
-
-
+          
             return dataTable;
+
         }
     }
 }

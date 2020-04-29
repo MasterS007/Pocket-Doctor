@@ -9,8 +9,16 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
     internal class Receptionist:User
     {
 
-        internal Receptionist(string userName, string password, string mobileNumber, string role) : base(userName, password, mobileNumber, role)
+        internal Receptionist(string userName, string password, string mobileNumber) : base(userName, password, mobileNumber)
         { }
 
+       /* internal override string UserId
+        {
+
+            set
+            {
+                base.UserId = value + "-R";
+            }
+        }*/
     }
 }

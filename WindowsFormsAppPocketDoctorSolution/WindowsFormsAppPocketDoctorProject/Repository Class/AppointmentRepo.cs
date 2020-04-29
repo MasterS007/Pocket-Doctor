@@ -11,23 +11,16 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 {
     class AppointmentRepo
     {
-        //DoctorPatient docp = new DoctorPatient();
-        DatabaseConnection DB { get; set; }
+        DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
+
         internal bool InsertRow(Appointment dp)
         {
-            this.DB = new DatabaseConnection();
+            
             bool succeed = false;
             try
             {
-                string sql = "INSERT INTO tbl_Appointment (dr_id, p_id, visiting_date ) VALUES( @drid, @pid, @visitingdate)";
-                var cmd = DB.Query(sql);
-
-                //.Show(dp.dr_id + " "+dp.p_id + " "+ dp.visiting_date);
-                //  cmd.Parameters.AddWithValue("PId", p.PId);
-                cmd.Parameters.AddWithValue("@drid", dp.dr_id);
-                cmd.Parameters.AddWithValue("@pid", dp.p_id);
-                cmd.Parameters.AddWithValue("@visitingdate", dp.visiting_date);
-                int row = cmd.ExecuteNonQuery();
+                string sql = "INSERT INTO tbl_Appointment (dr_id, p_id, visiting_date ) VALUES( '"+dp.dr_id+"', '"+dp.p_id+"', '"+dp.visiting_date+"')";
+                var row = dbCon.ExecuteUpdateQuery(sql);
                 if (row == 1)
                 {
                     succeed = true;
@@ -38,8 +31,8 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex+" "); }
+            finally { dbCon.CloseConnection(); }
 
-            finally { this.DB.CloseConnection(); }
 
             return succeed;
         }

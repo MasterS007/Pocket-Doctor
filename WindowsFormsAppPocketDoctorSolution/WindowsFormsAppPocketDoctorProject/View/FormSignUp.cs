@@ -16,9 +16,18 @@ namespace WindowsFormsAppPocketDoctorProject.View
     {
         User users = new User();
         UserRepo urepo = new UserRepo();
+     
         public FormSignUp()
         {
             InitializeComponent();
+        }
+
+        private void LoadAutoUserId()
+        {
+            int serial = urepo.AutoIDValue();
+            urepo.UserId = (++serial).ToString("d4");
+            users.UserId = urepo.UserId;
+            
         }
 
         private void ChkPassword_CheckedChanged(object sender, EventArgs e)
@@ -32,16 +41,19 @@ namespace WindowsFormsAppPocketDoctorProject.View
                 txtPassword.UseSystemPasswordChar = true;
             }
         }
-
+       // string Id;
+        
         private void BtnSingUp_Click(object sender, EventArgs e)
         {
-            User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text,cmbUserType.Text);
-            User userReceptionist = new Receptionist (txtUserName.Text, txtPassword.Text, txtMobileNum.Text, cmbUserType.Text);
-            User userPathologist = new Pathologist(txtUserName.Text, txtPassword.Text, txtMobileNum.Text, cmbUserType.Text);
+           // users.UserId = uId;
+            User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
+            User userReceptionist = new Receptionist (txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
+            User userPathologist = new Pathologist(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
 
             if (this.cmbUserType.Text == "Doctor")
             {
-            bool success= urepo.InsertUser(userDoc);
+           
+            bool success= urepo.InsertUser(userDoc,users.UserId+"-D");
                
                   if (success == false)
                   {
@@ -58,9 +70,9 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
             }
 
-            else if (this.cmbUserType.Text == "Receptionist")
+           else if (this.cmbUserType.Text == "Receptionist")
             {
-                bool success = urepo.InsertUser(userReceptionist);
+                bool success = urepo.InsertUser(userReceptionist,users.UserId+"-R");
 
                 if (success == false)
                 {
@@ -78,7 +90,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             }
             else if (this.cmbUserType.Text == "Pathologist")
             {
-                bool success = urepo.InsertUser(userPathologist);
+                bool success = urepo.InsertUser(userPathologist,users.UserId+"-P");
 
                 if (success == false)
                 {
@@ -100,6 +112,18 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void FormSignUp_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        
+        private void FormSignUp_Load(object sender, EventArgs e)
+        {
+            
+             this.LoadAutoUserId();
+            //users.UserId = uId;
+           
+            //
+           // Id = uId + "-D";
+          // MessageBox.Show(users.UserId+"-D");
+
         }
     }
 }

@@ -17,9 +17,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormLogin : Form
     {
-       
-        DatabaseConnection DB { get; set; }
-        
+      
         UserRepo urepo = new UserRepo();
         
 
@@ -27,35 +25,38 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             InitializeComponent();
             
-        }   
-          private void BtnLogin_Click_1(object sender, EventArgs e)
+        }
+
+
+        private void BtnLogin_Click_1(object sender, EventArgs e)
         {
+            DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
             User users = new User();
-            users.id = Convert.ToInt32(txtUserId.Text);
+            users.UserId = txtUserId.Text;
             users.password = txtPassword.Text;
-             bool dataTable = urepo.SelectUser(users);
-             if (dataTable == true)
-            {
-                 string role;
-                 this.DB = new DatabaseConnection();
+             var role = urepo.SelectUser(users);
+             //if (dataTable == true)
+          //  {
+                /* string role;
                  string query = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
-                SqlCommand cmd1 = DB.Query(query);
+                SqlCommand cmd1 = dbCon.Query(query);
                  var queryResult= cmd1.ExecuteScalar();
+                 */
 
-
-                if (queryResult != null)
-                {
-                    role = Convert.ToString(queryResult);
+              //  if (queryResult != null)
+              //  {
+                 //   role = Convert.ToString(queryResult);
+                
                     
-                    if (role.Equals("Doctor"))
+                    if( role.Equals("D"))
                     {
                         this.Visible = false;
-                        FormHome fm = new FormHome();
+                        FormDoctor fm = new FormDoctor();
                         fm.Visible = true;
 
                     }
 
-                    else if (role.Equals("Receptionist"))
+                    else if (role.Equals("R"))
                     {
                         this.Visible = false;
                         FormReceptonist fm = new FormReceptonist();
@@ -63,21 +64,15 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
                     }
 
-                    else if (role.Equals("Pathologist"))
+                    else if (role.Equals("P"))
                     {
                         this.Visible = false;
                         FormPathologist fm = new FormPathologist();
                         fm.Visible = true;
 
                     }
-                }
+               
 
-                else
-                {
-                      role = "";
-                }
-                DB.CloseConnection();
-                }
             else
             {
 
@@ -93,6 +88,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
               FormSignUp formSingUp = new FormSignUp();
               formSingUp.Show();
 
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

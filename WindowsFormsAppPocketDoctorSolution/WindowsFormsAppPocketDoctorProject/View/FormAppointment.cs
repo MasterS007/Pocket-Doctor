@@ -70,11 +70,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            DoctorPatient dp = new DoctorPatient();
-            DoctorPatientRepo docp = new DoctorPatientRepo();
+            Appointment dp = new Appointment();
+            AppointmentRepo docp = new AppointmentRepo();
 
             
-            dp.dr_id = Convert.ToInt32(this.dgvDoctor.CurrentRow.Cells["id"].Value.ToString());
+            dp.dr_id = this.dgvDoctor.CurrentRow.Cells["UserId"].Value.ToString();
             dp.p_id = Convert.ToInt32(this.lblPId.Text);
             
             dp.visiting_date =Convert.ToDateTime(lblDate.Text);
@@ -92,6 +92,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
             {
                 MessageBox.Show(dp.visiting_date+"not inserted");
             }
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -6,78 +6,139 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsAppPocketDoctorProject.Data_Layer
 {
     class DatabaseConnection
     {
 
-        private SqlConnection sqlcon;
-        private SqlCommand sqlcom;
-        private SqlDataAdapter sda;
-        private DataSet ds;
-        private DataTable dt;
+        //
+        private static DatabaseConnection dbCon;
+        private static SqlConnection sqlCon;
 
         public static string myConnection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
 
-        public SqlConnection Sqlcon
+        private DatabaseConnection()
         {
-            get { return sqlcon; }
-            set { sqlcon = value; }
+            sqlCon = new SqlConnection(myConnection);
+           // sqlCon.Open();
         }
 
-
-        public SqlCommand Sqlcom
+        public static DatabaseConnection GetDbInstance()
         {
-            get { return sqlcom; }
-            set { sqlcom = value; }
+            if (dbCon == null)
+            {
+                dbCon = new DatabaseConnection();
+            }
+            return dbCon;
+        }
+        private static SqlConnection SqlCon
+        {
+            get
+            {
+                if (sqlCon.State != ConnectionState.Open)
+                {
+                    sqlCon.Open();
+                }
+                return sqlCon;
+            }
+            set
+            {
+                sqlCon = value;
+            }
+        }
+        public SqlCommand Query(string query)
+        {
+            SqlCommand sqcom = new SqlCommand(query, SqlCon);
+            return sqcom;
+            
+
         }
 
-
-        public SqlDataAdapter Sda
+        private DataSet GetDataSet(string query)
         {
-            get { return sda; }
-            set { sda = value; }
+            SqlCommand sqcom = new SqlCommand(query, SqlCon);
+            SqlDataAdapter sda = new SqlDataAdapter(sqcom);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            return ds;
         }
 
-        public DataSet Ds
+        public DataTable GetDataTable(string query)
         {
-            get { return ds; }
-            set { ds = value; }
+            var ds = GetDataSet(query);
+            if (ds.Tables.Count > 0)
+            {
+                return ds.Tables[0];
+            }
+            return null;
         }
 
-        public DataTable Dt
+        public int ExecuteUpdateQuery(string query)
         {
-            get { return dt; }
-            set { dt = value; }
-        }
-        public DatabaseConnection()
-        {
-            this.Sqlcon = new SqlConnection(myConnection);
-            sqlcon.Open();
+            SqlCommand sqcom = new SqlCommand(query, SqlCon);
+            return sqcom.ExecuteNonQuery();
         }
 
+        public void CloseConnection()
+        {
+            SqlCon.Close();
+        }
+        
 
-        /*   public SqlConnection ConnectDB()
-           {
-              this.conn = new SqlConnection(myConnection);
-               conn.Open();
-               return conn;
-           }*/
+        /*  private SqlCommand sqlcom;
+          private SqlDataAdapter sda;
+          private DataSet ds;
+          private DataTable dt;
+
+
+
+
+
+
+          public SqlCommand Sqlcom
+          {
+              get { return sqlcom; }
+              set { sqlcom = value; }
+          }
+
+
+          public SqlDataAdapter Sda
+          {
+              get { return sda; }
+              set { sda = value; }
+          }
+
+          public DataSet Ds
+          {
+              get { return ds; }
+              set { ds = value; }
+          }
+
+          public DataTable Dt
+          {
+              get { return dt; }
+              set { dt = value; }
+          }
+
+
+
+          /*   public SqlConnection ConnectDB()
+             {
+                this.conn = new SqlConnection(myConnection);
+                 conn.Open();
+                 return conn;
+             }*/
 
         //internal DataTable dt;
 
+        /*
 
-        public SqlCommand Query(string query)
-        {
-            this.Sqlcom = new SqlCommand(query, this.Sqlcon);
-            return this.Sqlcom;
-
-        }
-        private void QueryText(string query)
-        {
-            this.Sqlcom = new SqlCommand(query, this.Sqlcon);
-        }
+                private void QueryText(string query)
+                {
+                    this.Sqlcom = new SqlCommand(query, this.Sqlcon);
+                }*/
 
         /*  public DataSet ExecuteQuery(string sql)
           {
@@ -88,25 +149,17 @@ namespace WindowsFormsAppPocketDoctorProject.Data_Layer
               return Ds;
           }*/
 
-        public DataTable ExecuteQuery(string sql)
-        {
-            this.QueryText(sql);
-            this.Sda = new SqlDataAdapter(this.Sqlcom);
-            this.Dt = new DataTable();
-            this.Sda.Fill(this.Dt);
-            return Dt;
-        }
+        //  public DataTable ExecuteQuery(string sql)
+        /* {
+             this.QueryText(sql);
+             this.Sda = new SqlDataAdapter(this.Sqlcom);
+             this.Dt = new DataTable();
+             this.Sda.Fill(this.Dt);
+             return Dt;
+         }*/
 
-        public int ExecuteUpdateQuery(string sql)
-        {
-            this.QueryText(sql);
-            int u = this.Sqlcom.ExecuteNonQuery();
-            return u;
-        }
 
-        public void CloseConnection()
-        {
-            this.Sqlcon.Close();
-        }
+
+        
     }
 }

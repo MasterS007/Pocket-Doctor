@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppPocketDoctorProject.View
 {
-    partial class FormHome
+    partial class FormDoctor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctor));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,14 +54,13 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.lblUploadImg = new System.Windows.Forms.Label();
             this.timerD = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,16 +70,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dgvPatientInfo);
             this.panel1.Location = new System.Drawing.Point(231, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 749);
+            this.panel1.Size = new System.Drawing.Size(964, 749);
             this.panel1.TabIndex = 0;
-           // this.panel1.MouseHover += new System.EventHandler(this.PicbSearch_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblDate);
+            this.panel4.Controls.Add(this.lbTime);
+            this.panel4.Location = new System.Drawing.Point(627, 676);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(331, 68);
+            this.panel4.TabIndex = 15;
             // 
             // lblDate
             // 
@@ -109,7 +117,7 @@
             this.panel3.Controls.Add(this.txtSearchP);
             this.panel3.Location = new System.Drawing.Point(458, 19);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 69);
+            this.panel3.Size = new System.Drawing.Size(473, 69);
             this.panel3.TabIndex = 11;
             // 
             // picbSearchP
@@ -123,7 +131,6 @@
             this.picbSearchP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbSearchP.TabIndex = 11;
             this.picbSearchP.TabStop = false;
-            //this.picbSearchP.MouseHover += new System.EventHandler(this.PicbSearch_Click);
             // 
             // txtSearchP
             // 
@@ -146,23 +153,23 @@
             this.dgvPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPatientInfo.Location = new System.Drawing.Point(4, 154);
@@ -170,24 +177,24 @@
             this.dgvPatientInfo.Name = "dgvPatientInfo";
             this.dgvPatientInfo.ReadOnly = true;
             this.dgvPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatientInfo.RowHeadersVisible = false;
             this.dgvPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientInfo.RowTemplate.Height = 40;
             this.dgvPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPatientInfo.Size = new System.Drawing.Size(926, 496);
+            this.dgvPatientInfo.Size = new System.Drawing.Size(954, 496);
             this.dgvPatientInfo.TabIndex = 9;
             this.dgvPatientInfo.Tag = "";
             this.dgvPatientInfo.VirtualMode = true;
@@ -331,29 +338,22 @@
             // 
             this.timerD.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblDate);
-            this.panel4.Controls.Add(this.lbTime);
-            this.panel4.Location = new System.Drawing.Point(627, 676);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(303, 68);
-            this.panel4.TabIndex = 15;
-            // 
-            // FormHome
+            // FormDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 775);
+            this.ClientSize = new System.Drawing.Size(1203, 775);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "FormHome";
+            this.Name = "FormDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "sn";
+            this.Text = "Doctor Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormHome_FormClosed);
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).EndInit();
@@ -361,8 +361,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

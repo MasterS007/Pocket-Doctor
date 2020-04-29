@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
-    class Pathologist:User
+    class Pathologist : User
     {
-        internal Pathologist(string userName, string password, string mobileNumber, string role) : base(userName, password, mobileNumber, role)
+        internal Pathologist(string userName, string password, string mobileNumber) : base(userName, password, mobileNumber)
         { }
+
+        
+     /*  internal override string UserId
+        {
+            
+            set
+            {
+                base.UserId = value + "-P";
+            }
+        }*/
     }
 }
