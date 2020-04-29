@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,24 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DataTable dataTable;
         Doctor doc = new Doctor();
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
+
+        internal DataTable GetDoctorInfo()
+        {
+            
+            try
+            {
+                string sql = "SELECT userid, username,password,mobilenumber,edu_background from tbl_User  join tbl_Doctor  on userid = 'U-0001-D' AND dr_id ='U-0001-D'";
+
+                dataTable = dbCon.GetDataTable(sql);
+
+            }
+            catch (Exception ex) { }
+
+            finally { dbCon.CloseConnection(); }
+
+                return dataTable;
+          
+        }
         internal DataTable GetDoctor()
         {
             

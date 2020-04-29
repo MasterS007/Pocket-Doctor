@@ -18,6 +18,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         //int index;
         Patient p;
         PatientRepo prepo = new PatientRepo();
+        UserControlProfile userProf = new UserControlProfile();
         public FormDoctor()
         {
             InitializeComponent();
@@ -53,8 +54,9 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            /* ucMedicinecs1. ucPaitent1.Hide();
-             ucTest1.Hide();*/
+            
+            this.pnlDoctor.Controls.Add(userProf);
+            userProf.Hide();
             this.dgvPatientInfo.Hide();
             this.pnlMove1.Hide();
             this.pnlMove2.Hide();
@@ -79,19 +81,19 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnProfile_Click(object sender, EventArgs e)
         {
+           
             this.pnlMove.Hide();
             this.pnlMove2.Hide();
             this.pnlMove3.Hide();
             this.pnlMove1.Show();
+            this.dgvPatientInfo.Hide();
+            userProf.Show();
+
         }
 
         private void BtnPatient_Click(object sender, EventArgs e)
         {
-            /*  ucHome1.Hide();
-            ucMedicinecs1.Hide();
-            ucTest1.Hide();
-             ucPaitent1.Show();
-             ucPaitent1.BringToFront();*/
+            userProf.Hide();
             this.dgvPatientInfo.Show();
             
             DataTable dataT = prepo.GetPatient();
@@ -139,7 +141,5 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.lbTime.Text = dateT.ToLongTimeString();
             this.lblDate.Text = dateT.ToLongDateString();
         }
-
-        
     }
 }

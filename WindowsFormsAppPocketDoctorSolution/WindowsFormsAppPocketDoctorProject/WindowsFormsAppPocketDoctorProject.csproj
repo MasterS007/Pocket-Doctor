@@ -123,25 +123,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCHome.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCHome.Designer.cs">
-      <DependentUpon>UCHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCMedicinecs.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCMedicinecs.Designer.cs">
-      <DependentUpon>UCMedicinecs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCTest.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCTest.Designer.cs">
-      <DependentUpon>UCTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entity Class\User.cs" />
+    <Compile Include="View\UserControlProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlProfile.Designer.cs">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\FormAppointment.resx">
       <DependentUpon>FormAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,14 +163,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCHome.resx">
-      <DependentUpon>UCHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCMedicinecs.resx">
-      <DependentUpon>UCMedicinecs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCTest.resx">
-      <DependentUpon>UCTest.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControlProfile.resx">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="pocketdoctordbDataSet.xsc">

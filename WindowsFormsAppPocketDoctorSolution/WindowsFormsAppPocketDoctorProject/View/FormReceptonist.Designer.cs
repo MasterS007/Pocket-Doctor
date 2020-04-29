@@ -243,6 +243,7 @@
             // 
             // CMSReceptionist
             // 
+            this.CMSReceptionist.BackColor = System.Drawing.Color.White;
             this.CMSReceptionist.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.CMSReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshPatientToolStripMenuItem,
@@ -283,7 +284,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(4, 10);
+            this.panel3.Location = new System.Drawing.Point(12, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(398, 69);
             this.panel3.TabIndex = 12;

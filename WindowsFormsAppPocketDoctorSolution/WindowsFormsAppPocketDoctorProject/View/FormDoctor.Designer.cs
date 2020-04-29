@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlDoctor = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.lblUploadImg = new System.Windows.Forms.Label();
             this.timerD = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.pnlDoctor.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).BeginInit();
@@ -63,22 +63,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlDoctor
             // 
-            this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlDoctor.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
+            this.pnlDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.dgvPatientInfo);
-            this.panel1.Location = new System.Drawing.Point(231, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 749);
-            this.panel1.TabIndex = 0;
+            this.pnlDoctor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlDoctor.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlDoctor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDoctor.Controls.Add(this.panel4);
+            this.pnlDoctor.Controls.Add(this.panel3);
+            this.pnlDoctor.Controls.Add(this.dgvPatientInfo);
+            this.pnlDoctor.Location = new System.Drawing.Point(231, 14);
+            this.pnlDoctor.Name = "pnlDoctor";
+            this.pnlDoctor.Size = new System.Drawing.Size(964, 749);
+            this.pnlDoctor.TabIndex = 0;
             // 
             // panel4
             // 
@@ -93,7 +93,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(62, 10);
+            this.lblDate.Location = new System.Drawing.Point(20, 10);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(58, 23);
             this.lblDate.TabIndex = 14;
@@ -125,7 +125,7 @@
             this.picbSearchP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picbSearchP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picbSearchP.Image = ((System.Drawing.Image)(resources.GetObject("picbSearchP.Image")));
-            this.picbSearchP.Location = new System.Drawing.Point(354, 19);
+            this.picbSearchP.Location = new System.Drawing.Point(405, 19);
             this.picbSearchP.Name = "picbSearchP";
             this.picbSearchP.Size = new System.Drawing.Size(50, 34);
             this.picbSearchP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             this.txtSearchP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchP.Location = new System.Drawing.Point(44, 19);
             this.txtSearchP.Name = "txtSearchP";
-            this.txtSearchP.Size = new System.Drawing.Size(304, 34);
+            this.txtSearchP.Size = new System.Drawing.Size(355, 34);
             this.txtSearchP.TabIndex = 10;
             this.txtSearchP.TextChanged += new System.EventHandler(this.TxtSearchP_TextChanged);
             // 
@@ -153,23 +153,23 @@
             this.dgvPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPatientInfo.Location = new System.Drawing.Point(4, 154);
@@ -177,19 +177,19 @@
             this.dgvPatientInfo.Name = "dgvPatientInfo";
             this.dgvPatientInfo.ReadOnly = true;
             this.dgvPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvPatientInfo.RowHeadersVisible = false;
             this.dgvPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientInfo.RowTemplate.Height = 40;
             this.dgvPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -222,7 +222,7 @@
             // 
             this.pnlMove3.AutoScroll = true;
             this.pnlMove3.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove3.Location = new System.Drawing.Point(3, 557);
+            this.pnlMove3.Location = new System.Drawing.Point(5, 608);
             this.pnlMove3.Name = "pnlMove3";
             this.pnlMove3.Size = new System.Drawing.Size(20, 71);
             this.pnlMove3.TabIndex = 15;
@@ -231,7 +231,7 @@
             // 
             this.pnlMove2.AutoScroll = true;
             this.pnlMove2.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove2.Location = new System.Drawing.Point(5, 443);
+            this.pnlMove2.Location = new System.Drawing.Point(5, 483);
             this.pnlMove2.Name = "pnlMove2";
             this.pnlMove2.Size = new System.Drawing.Size(20, 71);
             this.pnlMove2.TabIndex = 14;
@@ -240,7 +240,7 @@
             // 
             this.pnlMove1.AutoScroll = true;
             this.pnlMove1.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove1.Location = new System.Drawing.Point(5, 334);
+            this.pnlMove1.Location = new System.Drawing.Point(5, 358);
             this.pnlMove1.Name = "pnlMove1";
             this.pnlMove1.Size = new System.Drawing.Size(20, 71);
             this.pnlMove1.TabIndex = 13;
@@ -274,7 +274,7 @@
             this.btnPatient.FlatAppearance.BorderSize = 0;
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatient.Location = new System.Drawing.Point(29, 443);
+            this.btnPatient.Location = new System.Drawing.Point(29, 483);
             this.btnPatient.Name = "btnPatient";
             this.btnPatient.Size = new System.Drawing.Size(156, 71);
             this.btnPatient.TabIndex = 6;
@@ -288,7 +288,7 @@
             this.btnPrescription.FlatAppearance.BorderSize = 0;
             this.btnPrescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrescription.Location = new System.Drawing.Point(29, 560);
+            this.btnPrescription.Location = new System.Drawing.Point(29, 608);
             this.btnPrescription.Name = "btnPrescription";
             this.btnPrescription.Size = new System.Drawing.Size(156, 68);
             this.btnPrescription.TabIndex = 5;
@@ -312,7 +312,7 @@
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.Location = new System.Drawing.Point(29, 334);
+            this.btnProfile.Location = new System.Drawing.Point(29, 358);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(130, 71);
             this.btnProfile.TabIndex = 4;
@@ -344,14 +344,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 775);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlDoctor);
             this.MaximizeBox = false;
             this.Name = "FormDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doctor Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormHome_FormClosed);
             this.Load += new System.EventHandler(this.FormHome_Load);
-            this.panel1.ResumeLayout(false);
+            this.pnlDoctor.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -367,7 +367,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDoctor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblUploadImg;
         private System.Windows.Forms.PictureBox pctUpload;
