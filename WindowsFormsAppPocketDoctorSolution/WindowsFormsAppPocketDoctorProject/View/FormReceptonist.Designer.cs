@@ -42,12 +42,11 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMSReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuSTripRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -55,18 +54,19 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
-            this.CMSReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuSTripRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).BeginInit();
+            this.CMSReceptionist.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).BeginInit();
-            this.CMSReceptionist.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -241,41 +241,45 @@
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPatientPro_CellMouseClick);
             // 
-            // pid
+            // CMSReceptionist
             // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "Patient Id";
-            this.pid.Name = "pid";
+            this.CMSReceptionist.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CMSReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuSTripRefresh,
+            this.MenuStripDelete,
+            this.MenuStripUpdate,
+            this.toolStripMenuItem1});
+            this.CMSReceptionist.Name = "CMSReceptionist";
+            this.CMSReceptionist.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.CMSReceptionist.Size = new System.Drawing.Size(216, 108);
             // 
-            // name
+            // MenuSTripRefresh
             // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Patient Name";
-            this.name.Name = "name";
+            this.MenuSTripRefresh.Image = ((System.Drawing.Image)(resources.GetObject("MenuSTripRefresh.Image")));
+            this.MenuSTripRefresh.Name = "MenuSTripRefresh";
+            this.MenuSTripRefresh.Size = new System.Drawing.Size(215, 26);
+            this.MenuSTripRefresh.Text = "Refresh";
+            this.MenuSTripRefresh.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
             // 
-            // age
+            // MenuStripDelete
             // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
+            this.MenuStripDelete.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripDelete.Image")));
+            this.MenuStripDelete.Name = "MenuStripDelete";
+            this.MenuStripDelete.Size = new System.Drawing.Size(215, 26);
+            this.MenuStripDelete.Text = "Delete";
             // 
-            // gender
+            // MenuStripUpdate
             // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
+            this.MenuStripUpdate.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripUpdate.Image")));
+            this.MenuStripUpdate.Name = "MenuStripUpdate";
+            this.MenuStripUpdate.Size = new System.Drawing.Size(215, 26);
+            this.MenuStripUpdate.Text = "Update";
             // 
-            // bloodgroup
+            // toolStripMenuItem1
             // 
-            this.bloodgroup.DataPropertyName = "bloodgroup";
-            this.bloodgroup.HeaderText = "Blood Group";
-            this.bloodgroup.Name = "bloodgroup";
-            // 
-            // mobilenumber
-            // 
-            this.mobilenumber.DataPropertyName = "mobilenumber";
-            this.mobilenumber.HeaderText = "Mobile Number";
-            this.mobilenumber.Name = "mobilenumber";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 26);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // panel3
             // 
@@ -366,45 +370,42 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
-            // CMSReceptionist
+            // pid
             // 
-            this.CMSReceptionist.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CMSReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuSTripRefresh,
-            this.MenuStripDelete,
-            this.MenuStripUpdate,
-            this.toolStripMenuItem1});
-            this.CMSReceptionist.Name = "CMSReceptionist";
-            this.CMSReceptionist.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSReceptionist.Size = new System.Drawing.Size(216, 108);
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "Patient Id";
+            this.pid.Name = "pid";
+            this.pid.ReadOnly = true;
             // 
-            // MenuSTripRefresh
+            // name
             // 
-            this.MenuSTripRefresh.Image = ((System.Drawing.Image)(resources.GetObject("MenuSTripRefresh.Image")));
-            this.MenuSTripRefresh.Name = "MenuSTripRefresh";
-            this.MenuSTripRefresh.Size = new System.Drawing.Size(215, 26);
-            this.MenuSTripRefresh.Text = "Refresh";
-            this.MenuSTripRefresh.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
             // 
-            // MenuStripDelete
+            // age
             // 
-            this.MenuStripDelete.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripDelete.Image")));
-            this.MenuStripDelete.Name = "MenuStripDelete";
-            this.MenuStripDelete.Size = new System.Drawing.Size(215, 26);
-            this.MenuStripDelete.Text = "Delete";
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
             // 
-            // MenuStripUpdate
+            // gender
             // 
-            this.MenuStripUpdate.Image = ((System.Drawing.Image)(resources.GetObject("MenuStripUpdate.Image")));
-            this.MenuStripUpdate.Name = "MenuStripUpdate";
-            this.MenuStripUpdate.Size = new System.Drawing.Size(215, 26);
-            this.MenuStripUpdate.Text = "Update";
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
             // 
-            // toolStripMenuItem1
+            // bloodgroup
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 26);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.bloodgroup.DataPropertyName = "bloodgroup";
+            this.bloodgroup.HeaderText = "Blood Group";
+            this.bloodgroup.Name = "bloodgroup";
+            // 
+            // mobilenumber
+            // 
+            this.mobilenumber.DataPropertyName = "mobilenumber";
+            this.mobilenumber.HeaderText = "Mobile Number";
+            this.mobilenumber.Name = "mobilenumber";
             // 
             // FormReceptonist
             // 
@@ -426,10 +427,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientPro)).EndInit();
+            this.CMSReceptionist.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).EndInit();
-            this.CMSReceptionist.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -449,12 +450,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pcbRefresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         internal System.Windows.Forms.DataGridView dgvPatientPro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip CMSReceptionist;
@@ -462,5 +457,11 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripDelete;
         private System.Windows.Forms.ToolStripMenuItem MenuStripUpdate;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
     }
 }

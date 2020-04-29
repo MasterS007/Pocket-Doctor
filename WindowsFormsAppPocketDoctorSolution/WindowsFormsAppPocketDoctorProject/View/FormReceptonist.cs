@@ -192,11 +192,17 @@ namespace WindowsFormsAppPocketDoctorProject.View
         int rowIndex = 0;
         private void DgvPatientPro_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.dgvPatientPro.Rows[e.RowIndex].Selected = true;
-            this.rowIndex = e.RowIndex;
-            this.CMSReceptionist.Show(this.dgvPatientPro, e.Location);
-            this.CMSReceptionist.Show(Cursor.Position);
+            if(e.Button == MouseButtons.Right)
+            {
+                this.dgvPatientPro.Rows[e.RowIndex].Selected = true;
+                this.rowIndex = e.RowIndex;
+                this.CMSReceptionist.Show(this.dgvPatientPro, e.Location);
+                this.CMSReceptionist.Show(Cursor.Position);
+
+            }
+            
 
         }
+
     }
 }
