@@ -77,5 +77,34 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             return dataTable;
 
         }
+
+        internal bool UpdateDoctor(User d, Doctor doc)
+        {
+            string u = FormLogin.uid;
+
+            bool succeed = false;
+            try
+            {
+                string sql = @"UPDATE tbl_User SET username = '" + d.username + "', password = '"+d.password+"', mobilenumber='"+d.mobilenumber+"' WHERE  userid = '" +u  +"'";
+
+                string sq = "UPDATE tbl_Doctor SET edu_background = '" + doc.educational_background+"' WHERE dr_id = '"+u+"'";
+                var row = dbCon.ExecuteUpdateQuery(sql);
+                var row2 = dbCon.ExecuteUpdateQuery(sq);
+                if (row == 1 || row2 ==1)
+                {
+                    succeed = true;
+                }
+                else
+                {
+                    succeed = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex+""); }
+
+
+
+            return succeed;
+        }
+
     }
 }

@@ -134,7 +134,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Close();
             FormLogin flog = new FormLogin();
             flog.Visible = true;
         }

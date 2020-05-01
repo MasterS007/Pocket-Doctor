@@ -41,5 +41,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.lblMobile.Text = dt.Rows[dt.Rows.Count - 1]["mobilenumber"].ToString();
 
         }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            FormEditProfile fe = new FormEditProfile();
+            fe.Visible = true;
+        }
     }
 }
