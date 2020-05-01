@@ -5,8 +5,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
+using WindowsFormsAppPocketDoctorProject.View;
 
 namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 {
@@ -15,18 +17,22 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DataTable dataTable;
         Doctor doc = new Doctor();
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
-
+        
+        
         internal DataTable GetDoctorInfo()
         {
+
+            string d = FormLogin.uid;
+
             
             try
             {
-                string sql = "SELECT userid, username,password,mobilenumber,edu_background from tbl_User  join tbl_Doctor  on userid = 'U-0001-D' AND dr_id ='U-0001-D'";
+                string sql = "SELECT userid, username,password,mobilenumber,edu_background from tbl_User  join tbl_Doctor  on userid = '"+d+"' AND dr_id ='"+d+"'";
 
                 dataTable = dbCon.GetDataTable(sql);
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(ex+""); }
 
             finally { dbCon.CloseConnection(); }
 

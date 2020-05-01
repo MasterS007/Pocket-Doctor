@@ -55,12 +55,12 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void FormHome_Load(object sender, EventArgs e)
         {
             
-            this.pnlDoctor.Controls.Add(userProf);
-            userProf.Hide();
+           
+          //  userProf.Hide();
             this.dgvPatientInfo.Hide();
             this.pnlMove1.Hide();
             this.pnlMove2.Hide();
-            this.pnlMove3.Hide();
+           // this.pnlMove3.Hide();
 
         }
 
@@ -73,7 +73,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             // ucHome1.BringToFront();
             this.pnlMove1.Hide();
             this.pnlMove2.Hide();
-            this.pnlMove3.Hide();
+         //   this.pnlMove3.Hide();
             this.pnlMove.Show();
 
 
@@ -81,13 +81,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnProfile_Click(object sender, EventArgs e)
         {
-           
+            this.pnlDoctor.Controls.Add(userProf);
+            userProf.Show();
             this.pnlMove.Hide();
             this.pnlMove2.Hide();
-            this.pnlMove3.Hide();
+           // this.pnlMove3.Hide();
             this.pnlMove1.Show();
             this.dgvPatientInfo.Hide();
-            userProf.Show();
+            
 
         }
 
@@ -101,24 +102,13 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.dgvPatientInfo.DataSource = dataT;
             this.pnlMove1.Hide();
             this.pnlMove.Hide();
-            this.pnlMove3.Hide();
+           // this.pnlMove3.Hide();
             this.pnlMove2.Show();
 
 
         }
 
-        private void BtnPrescription_Click(object sender, EventArgs e)
-        {
-            /* ucHome1.Hide();
-             ucPaitent1.Hide();
-             ucTest1.Hide();
-             ucMedicinecs1.Show();
-            ucMedicinecs1.BringToFront();*/
-            this.pnlMove1.Hide();
-            this.pnlMove2.Hide();
-            this.pnlMove.Hide();
-            this.pnlMove3.Show();
-        }
+       
 
      /*   private void PicbSearch_Click(object sender, EventArgs e)
         {
@@ -140,6 +130,13 @@ namespace WindowsFormsAppPocketDoctorProject.View
             DateTime dateT = DateTime.Now;
             this.lbTime.Text = dateT.ToLongTimeString();
             this.lblDate.Text = dateT.ToLongDateString();
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FormLogin flog = new FormLogin();
+            flog.Visible = true;
         }
     }
 }

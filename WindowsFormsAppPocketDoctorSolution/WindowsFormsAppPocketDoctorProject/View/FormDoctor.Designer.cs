@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDoctor = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -42,23 +42,32 @@
             this.picbSearchP = new System.Windows.Forms.PictureBox();
             this.txtSearchP = new System.Windows.Forms.TextBox();
             this.dgvPatientInfo = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prescriptionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlMove3 = new System.Windows.Forms.Panel();
             this.pnlMove2 = new System.Windows.Forms.Panel();
             this.pnlMove1 = new System.Windows.Forms.Panel();
             this.pnlMove = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnPatient = new System.Windows.Forms.Button();
-            this.btnPrescription = new System.Windows.Forms.Button();
             this.pctUpload = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
             this.lblUploadImg = new System.Windows.Forms.Label();
             this.timerD = new System.Windows.Forms.Timer(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlDoctor.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
             this.SuspendLayout();
@@ -75,9 +84,10 @@
             this.pnlDoctor.Controls.Add(this.panel4);
             this.pnlDoctor.Controls.Add(this.panel3);
             this.pnlDoctor.Controls.Add(this.dgvPatientInfo);
-            this.pnlDoctor.Location = new System.Drawing.Point(231, 14);
+            this.pnlDoctor.Controls.Add(this.menuStrip1);
+            this.pnlDoctor.Location = new System.Drawing.Point(231, 2);
             this.pnlDoctor.Name = "pnlDoctor";
-            this.pnlDoctor.Size = new System.Drawing.Size(964, 749);
+            this.pnlDoctor.Size = new System.Drawing.Size(964, 772);
             this.pnlDoctor.TabIndex = 0;
             // 
             // panel4
@@ -115,9 +125,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearchP);
             this.panel3.Controls.Add(this.txtSearchP);
-            this.panel3.Location = new System.Drawing.Point(458, 19);
+            this.panel3.Location = new System.Drawing.Point(475, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(473, 69);
+            this.panel3.Size = new System.Drawing.Size(473, 62);
             this.panel3.TabIndex = 11;
             // 
             // picbSearchP
@@ -125,7 +135,7 @@
             this.picbSearchP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picbSearchP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picbSearchP.Image = ((System.Drawing.Image)(resources.GetObject("picbSearchP.Image")));
-            this.picbSearchP.Location = new System.Drawing.Point(405, 19);
+            this.picbSearchP.Location = new System.Drawing.Point(405, 12);
             this.picbSearchP.Name = "picbSearchP";
             this.picbSearchP.Size = new System.Drawing.Size(50, 34);
             this.picbSearchP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +145,7 @@
             // txtSearchP
             // 
             this.txtSearchP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchP.Location = new System.Drawing.Point(44, 19);
+            this.txtSearchP.Location = new System.Drawing.Point(44, 12);
             this.txtSearchP.Name = "txtSearchP";
             this.txtSearchP.Size = new System.Drawing.Size(355, 34);
             this.txtSearchP.TabIndex = 10;
@@ -153,23 +163,23 @@
             this.dgvPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPatientInfo.Location = new System.Drawing.Point(4, 154);
@@ -177,39 +187,108 @@
             this.dgvPatientInfo.Name = "dgvPatientInfo";
             this.dgvPatientInfo.ReadOnly = true;
             this.dgvPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPatientInfo.RowHeadersVisible = false;
             this.dgvPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientInfo.RowTemplate.Height = 40;
             this.dgvPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPatientInfo.Size = new System.Drawing.Size(954, 496);
+            this.dgvPatientInfo.Size = new System.Drawing.Size(954, 519);
             this.dgvPatientInfo.TabIndex = 9;
             this.dgvPatientInfo.Tag = "";
             this.dgvPatientInfo.VirtualMode = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prescriptionToolStripMenuItem});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // prescriptionToolStripMenuItem
+            // 
+            this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
+            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.prescriptionToolStripMenuItem.Text = "Prescription";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patientProfileToolStripMenuItem,
+            this.prescriptionToolStripMenuItem1});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // patientProfileToolStripMenuItem
+            // 
+            this.patientProfileToolStripMenuItem.Name = "patientProfileToolStripMenuItem";
+            this.patientProfileToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.patientProfileToolStripMenuItem.Text = "Patient Profile";
+            // 
+            // prescriptionToolStripMenuItem1
+            // 
+            this.prescriptionToolStripMenuItem1.Name = "prescriptionToolStripMenuItem1";
+            this.prescriptionToolStripMenuItem1.Size = new System.Drawing.Size(176, 26);
+            this.prescriptionToolStripMenuItem1.Text = "Prescription";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.profileToolStripMenuItem.Text = "Profile";
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.Controls.Add(this.pnlMove3);
             this.panel2.Controls.Add(this.pnlMove2);
             this.panel2.Controls.Add(this.pnlMove1);
             this.panel2.Controls.Add(this.pnlMove);
             this.panel2.Controls.Add(this.btnHome);
             this.panel2.Controls.Add(this.btnPatient);
-            this.panel2.Controls.Add(this.btnPrescription);
+            this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.pctUpload);
             this.panel2.Controls.Add(this.btnProfile);
             this.panel2.Controls.Add(this.lblUploadImg);
@@ -218,20 +297,11 @@
             this.panel2.Size = new System.Drawing.Size(213, 749);
             this.panel2.TabIndex = 1;
             // 
-            // pnlMove3
-            // 
-            this.pnlMove3.AutoScroll = true;
-            this.pnlMove3.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove3.Location = new System.Drawing.Point(5, 608);
-            this.pnlMove3.Name = "pnlMove3";
-            this.pnlMove3.Size = new System.Drawing.Size(20, 71);
-            this.pnlMove3.TabIndex = 15;
-            // 
             // pnlMove2
             // 
             this.pnlMove2.AutoScroll = true;
             this.pnlMove2.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove2.Location = new System.Drawing.Point(5, 483);
+            this.pnlMove2.Location = new System.Drawing.Point(5, 558);
             this.pnlMove2.Name = "pnlMove2";
             this.pnlMove2.Size = new System.Drawing.Size(20, 71);
             this.pnlMove2.TabIndex = 14;
@@ -240,16 +310,16 @@
             // 
             this.pnlMove1.AutoScroll = true;
             this.pnlMove1.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove1.Location = new System.Drawing.Point(5, 358);
+            this.pnlMove1.Location = new System.Drawing.Point(5, 407);
             this.pnlMove1.Name = "pnlMove1";
-            this.pnlMove1.Size = new System.Drawing.Size(20, 71);
+            this.pnlMove1.Size = new System.Drawing.Size(20, 69);
             this.pnlMove1.TabIndex = 13;
             // 
             // pnlMove
             // 
             this.pnlMove.AutoScroll = true;
             this.pnlMove.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove.Location = new System.Drawing.Point(5, 229);
+            this.pnlMove.Location = new System.Drawing.Point(5, 252);
             this.pnlMove.Name = "pnlMove";
             this.pnlMove.Size = new System.Drawing.Size(20, 71);
             this.pnlMove.TabIndex = 12;
@@ -260,7 +330,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(29, 229);
+            this.btnHome.Location = new System.Drawing.Point(29, 252);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(126, 71);
             this.btnHome.TabIndex = 8;
@@ -274,27 +344,13 @@
             this.btnPatient.FlatAppearance.BorderSize = 0;
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatient.Location = new System.Drawing.Point(29, 483);
+            this.btnPatient.Location = new System.Drawing.Point(29, 558);
             this.btnPatient.Name = "btnPatient";
             this.btnPatient.Size = new System.Drawing.Size(156, 71);
             this.btnPatient.TabIndex = 6;
             this.btnPatient.Text = "Patient Profile";
             this.btnPatient.UseVisualStyleBackColor = true;
             this.btnPatient.Click += new System.EventHandler(this.BtnPatient_Click);
-            // 
-            // btnPrescription
-            // 
-            this.btnPrescription.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrescription.FlatAppearance.BorderSize = 0;
-            this.btnPrescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrescription.Location = new System.Drawing.Point(29, 608);
-            this.btnPrescription.Name = "btnPrescription";
-            this.btnPrescription.Size = new System.Drawing.Size(156, 68);
-            this.btnPrescription.TabIndex = 5;
-            this.btnPrescription.Text = "New Prescription";
-            this.btnPrescription.UseVisualStyleBackColor = true;
-            this.btnPrescription.Click += new System.EventHandler(this.BtnPrescription_Click);
             // 
             // pctUpload
             // 
@@ -312,9 +368,9 @@
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.Location = new System.Drawing.Point(29, 358);
+            this.btnProfile.Location = new System.Drawing.Point(29, 407);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(130, 71);
+            this.btnProfile.Size = new System.Drawing.Size(130, 69);
             this.btnProfile.TabIndex = 4;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -338,6 +394,20 @@
             // 
             this.timerD.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(44, 698);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(111, 35);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
             // FormDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,6 +415,7 @@
             this.ClientSize = new System.Drawing.Size(1203, 775);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlDoctor);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -352,12 +423,15 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormHome_FormClosed);
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.pnlDoctor.ResumeLayout(false);
+            this.pnlDoctor.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).EndInit();
@@ -376,16 +450,24 @@
         private System.Windows.Forms.TextBox txtSearchP;
         private System.Windows.Forms.DataGridView dgvPatientInfo;
         private System.Windows.Forms.Button btnPatient;
-        private System.Windows.Forms.Button btnPrescription;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel pnlMove;
-        private System.Windows.Forms.Panel pnlMove3;
         private System.Windows.Forms.Panel pnlMove2;
         private System.Windows.Forms.Panel pnlMove1;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerD;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientProfileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

@@ -32,6 +32,6 @@ G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocket
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csproj.CopyComplete
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.exe
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.pdb
-G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csprojAssemblyReference.cache
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormDoctor.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.UserControlProfile.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csprojAssemblyReference.cache

@@ -17,8 +17,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormLogin : Form
     {
+        public static string uid;
       
         UserRepo urepo = new UserRepo();
+        DoctorRepo drepo = new DoctorRepo();
+        UserControlProfile prof = new UserControlProfile();
         
 
         public FormLogin()
@@ -26,15 +29,19 @@ namespace WindowsFormsAppPocketDoctorProject.View
             InitializeComponent();
             
         }
-
-
+       
+        
         private void BtnLogin_Click_1(object sender, EventArgs e)
         {
             DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
             User users = new User();
+            Doctor doc = new Doctor();
             users.UserId = txtUserId.Text;
+            uid = txtUserId.Text;
+            
             users.password = txtPassword.Text;
              var role = urepo.SelectUser(users);
+           
              //if (dataTable == true)
           //  {
                 /* string role;
@@ -53,6 +60,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
                         this.Visible = false;
                         FormDoctor fm = new FormDoctor();
                         fm.Visible = true;
+                        
 
                     }
 
@@ -90,6 +98,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         }
 
+       
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
