@@ -57,11 +57,11 @@
             this.pnlMove = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnPatient = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pctUpload = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
             this.lblUploadImg = new System.Windows.Forms.Label();
             this.timerD = new System.Windows.Forms.Timer(this.components);
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlDoctor.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -240,7 +240,7 @@
             // prescriptionToolStripMenuItem
             // 
             this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
-            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.prescriptionToolStripMenuItem.Text = "Prescription";
             // 
             // openToolStripMenuItem
@@ -300,7 +300,7 @@
             // 
             this.pnlMove2.AutoScroll = true;
             this.pnlMove2.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove2.Location = new System.Drawing.Point(5, 558);
+            this.pnlMove2.Location = new System.Drawing.Point(5, 563);
             this.pnlMove2.Name = "pnlMove2";
             this.pnlMove2.Size = new System.Drawing.Size(20, 71);
             this.pnlMove2.TabIndex = 14;
@@ -309,7 +309,7 @@
             // 
             this.pnlMove1.AutoScroll = true;
             this.pnlMove1.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove1.Location = new System.Drawing.Point(5, 407);
+            this.pnlMove1.Location = new System.Drawing.Point(5, 399);
             this.pnlMove1.Name = "pnlMove1";
             this.pnlMove1.Size = new System.Drawing.Size(20, 69);
             this.pnlMove1.TabIndex = 13;
@@ -318,7 +318,7 @@
             // 
             this.pnlMove.AutoScroll = true;
             this.pnlMove.BackColor = System.Drawing.Color.Brown;
-            this.pnlMove.Location = new System.Drawing.Point(5, 252);
+            this.pnlMove.Location = new System.Drawing.Point(5, 251);
             this.pnlMove.Name = "pnlMove";
             this.pnlMove.Size = new System.Drawing.Size(20, 71);
             this.pnlMove.TabIndex = 12;
@@ -329,7 +329,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(29, 252);
+            this.btnHome.Location = new System.Drawing.Point(29, 251);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(126, 71);
             this.btnHome.TabIndex = 8;
@@ -343,13 +343,27 @@
             this.btnPatient.FlatAppearance.BorderSize = 0;
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatient.Location = new System.Drawing.Point(29, 558);
+            this.btnPatient.Location = new System.Drawing.Point(29, 563);
             this.btnPatient.Name = "btnPatient";
             this.btnPatient.Size = new System.Drawing.Size(156, 71);
             this.btnPatient.TabIndex = 6;
             this.btnPatient.Text = "Patient Profile";
             this.btnPatient.UseVisualStyleBackColor = true;
             this.btnPatient.Click += new System.EventHandler(this.BtnPatient_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(44, 698);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(111, 35);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // pctUpload
             // 
@@ -367,7 +381,7 @@
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.Location = new System.Drawing.Point(29, 407);
+            this.btnProfile.Location = new System.Drawing.Point(29, 399);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(130, 69);
             this.btnProfile.TabIndex = 4;
@@ -392,20 +406,6 @@
             // timerD
             // 
             this.timerD.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(44, 698);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(111, 35);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // FormDoctor
             // 
