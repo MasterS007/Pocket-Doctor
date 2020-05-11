@@ -30,7 +30,7 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
         internal string mobilenumber
         { get; set; }
 
-        internal int pid
+        internal string p_id
         { set; get; }
 
         internal string bloodgroup { get; set; }

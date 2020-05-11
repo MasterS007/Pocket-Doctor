@@ -39,6 +39,8 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 return dataTable;
           
         }
+
+  
         internal DataTable GetDoctor()
         {
             
@@ -55,7 +57,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 //db.Sda.Fill(dataTable);
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(ex+""); }
 
             finally { dbCon.CloseConnection(); }
 

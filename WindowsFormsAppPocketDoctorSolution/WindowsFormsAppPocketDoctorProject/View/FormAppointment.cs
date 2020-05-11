@@ -75,7 +75,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
             
             dp.dr_id = this.dgvDoctor.CurrentRow.Cells["UserId"].Value.ToString();
-            dp.p_id = Convert.ToInt32(this.lblPId.Text);
+            dp.p_id = this.lblPId.Text;
             
             dp.visiting_date =Convert.ToDateTime(lblDate.Text);
             bool succeed = docp.InsertRow(dp);

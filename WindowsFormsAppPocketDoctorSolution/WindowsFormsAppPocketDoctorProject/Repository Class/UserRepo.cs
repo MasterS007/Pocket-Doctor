@@ -77,7 +77,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         public string SelectUser(User users)
         {
             string role=null;
-            bool correct = false;
+            //bool correct = false;
             
 
             try

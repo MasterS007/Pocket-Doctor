@@ -65,6 +65,14 @@ namespace WindowsFormsAppPocketDoctorProject.Data_Layer
             return ds;
         }
 
+        public DataSet DataSet(string query)
+        {
+            SqlCommand sqcom = new SqlCommand(query, SqlCon);
+            SqlDataAdapter sda = new SqlDataAdapter(sqcom);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            return ds;
+        }
         public DataTable GetDataTable(string query)
         {
             var ds = GetDataSet(query);

@@ -17,13 +17,13 @@ namespace WindowsFormsAppPocketDoctorProject
         {
              Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
-             Application.Run(new FormLogin());
+             //Application.Run(new FormLogin());
            //  Application.Run(new FormSignUp());
             // Application.Run(new FormDoctor());
-            // Application.Run(new FormReceptonist());
+               Application.Run(new FormReceptonist());
             // Application.Run(new FormPatient());
             // Application.Run(new FormPathologist());
-          // Application.Run(new FormAppointment());
+              // Application.Run(new FormShowAppointment());
 
 
         }

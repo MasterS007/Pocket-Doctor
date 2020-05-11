@@ -35,17 +35,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnShowAppointment = new System.Windows.Forms.Button();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.dgvPatientPro = new System.Windows.Forms.DataGridView();
+            this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMSReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -53,13 +61,6 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bloodgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnShowAppointment);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.panel2);
@@ -91,21 +92,22 @@
             this.panel1.Size = new System.Drawing.Size(1174, 727);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // btnShowAppointment
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Location = new System.Drawing.Point(500, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 57);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Cancel Appointment";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShowAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAppointment.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnShowAppointment.FlatAppearance.BorderSize = 0;
+            this.btnShowAppointment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnShowAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAppointment.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnShowAppointment.Location = new System.Drawing.Point(500, 104);
+            this.btnShowAppointment.Name = "btnShowAppointment";
+            this.btnShowAppointment.Size = new System.Drawing.Size(208, 57);
+            this.btnShowAppointment.TabIndex = 22;
+            this.btnShowAppointment.Text = "Show Appointments";
+            this.btnShowAppointment.UseVisualStyleBackColor = true;
+            this.btnShowAppointment.Click += new System.EventHandler(this.BtnShowAppointment_Click);
             // 
             // pcbRefresh
             // 
@@ -196,7 +198,7 @@
             this.dgvPatientPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatientPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientPro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pid,
+            this.p_id,
             this.name,
             this.age,
             this.gender,
@@ -218,6 +220,7 @@
             this.dgvPatientPro.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPatientPro.MultiSelect = false;
             this.dgvPatientPro.Name = "dgvPatientPro";
+            this.dgvPatientPro.ReadOnly = true;
             this.dgvPatientPro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -234,12 +237,53 @@
             this.dgvPatientPro.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientPro.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientPro.RowTemplate.Height = 40;
-            this.dgvPatientPro.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPatientPro.Size = new System.Drawing.Size(1169, 433);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPatientPro_CellMouseClick);
+            // 
+            // p_id
+            // 
+            this.p_id.DataPropertyName = "p_id";
+            this.p_id.HeaderText = "Patient Id";
+            this.p_id.Name = "p_id";
+            this.p_id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // bloodgroup
+            // 
+            this.bloodgroup.DataPropertyName = "bloodgroup";
+            this.bloodgroup.HeaderText = "Blood Group";
+            this.bloodgroup.Name = "bloodgroup";
+            this.bloodgroup.ReadOnly = true;
+            // 
+            // mobilenumber
+            // 
+            this.mobilenumber.DataPropertyName = "mobilenumber";
+            this.mobilenumber.HeaderText = "Mobile Number";
+            this.mobilenumber.Name = "mobilenumber";
+            this.mobilenumber.ReadOnly = true;
             // 
             // CMSReceptionist
             // 
@@ -249,16 +293,17 @@
             this.refreshPatientToolStripMenuItem,
             this.deletePatientToolStripMenuItem,
             this.updatePatientToolStripMenuItem,
-            this.addPatientToolStripMenuItem});
+            this.addPatientToolStripMenuItem,
+            this.newAppointmentToolStripMenuItem});
             this.CMSReceptionist.Name = "CMSReceptionist";
             this.CMSReceptionist.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSReceptionist.Size = new System.Drawing.Size(215, 136);
+            this.CMSReceptionist.Size = new System.Drawing.Size(205, 134);
             // 
             // refreshPatientToolStripMenuItem
             // 
             this.refreshPatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshPatientToolStripMenuItem.Image")));
             this.refreshPatientToolStripMenuItem.Name = "refreshPatientToolStripMenuItem";
-            this.refreshPatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.refreshPatientToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.refreshPatientToolStripMenuItem.Text = "Refresh";
             this.refreshPatientToolStripMenuItem.Click += new System.EventHandler(this.MenuSTripRefresh_Click);
             // 
@@ -266,7 +311,7 @@
             // 
             this.deletePatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deletePatientToolStripMenuItem.Image")));
             this.deletePatientToolStripMenuItem.Name = "deletePatientToolStripMenuItem";
-            this.deletePatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.deletePatientToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.deletePatientToolStripMenuItem.Text = "Delete";
             this.deletePatientToolStripMenuItem.Click += new System.EventHandler(this.MenuStripDelete_Click);
             // 
@@ -274,9 +319,23 @@
             // 
             this.updatePatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updatePatientToolStripMenuItem.Image")));
             this.updatePatientToolStripMenuItem.Name = "updatePatientToolStripMenuItem";
-            this.updatePatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.updatePatientToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.updatePatientToolStripMenuItem.Text = "Update";
             this.updatePatientToolStripMenuItem.Click += new System.EventHandler(this.MenuStripUpdate_Click);
+            // 
+            // addPatientToolStripMenuItem
+            // 
+            this.addPatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addPatientToolStripMenuItem.Image")));
+            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
+            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.addPatientToolStripMenuItem.Text = "Add Patient";
+            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.AddPatientToolStripMenuItem_Click);
+            // 
+            // newAppointmentToolStripMenuItem
+            // 
+            this.newAppointmentToolStripMenuItem.Name = "newAppointmentToolStripMenuItem";
+            this.newAppointmentToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.newAppointmentToolStripMenuItem.Text = "New Appointment";
             // 
             // panel3
             // 
@@ -367,51 +426,6 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "Patient Id";
-            this.pid.Name = "pid";
-            this.pid.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Patient Name";
-            this.name.Name = "name";
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            // 
-            // bloodgroup
-            // 
-            this.bloodgroup.DataPropertyName = "bloodgroup";
-            this.bloodgroup.HeaderText = "Blood Group";
-            this.bloodgroup.Name = "bloodgroup";
-            // 
-            // mobilenumber
-            // 
-            this.mobilenumber.DataPropertyName = "mobilenumber";
-            this.mobilenumber.HeaderText = "Mobile Number";
-            this.mobilenumber.Name = "mobilenumber";
-            // 
-            // addPatientToolStripMenuItem
-            // 
-            this.addPatientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addPatientToolStripMenuItem.Image")));
-            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
-            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
-            this.addPatientToolStripMenuItem.Text = "Add Patient";
-            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.AddPatientToolStripMenuItem_Click);
-            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,17 +470,18 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pcbRefresh;
         internal System.Windows.Forms.DataGridView dgvPatientPro;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnShowAppointment;
         private System.Windows.Forms.ContextMenuStrip CMSReceptionist;
         private System.Windows.Forms.ToolStripMenuItem refreshPatientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletePatientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updatePatientToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
+        private System.Windows.Forms.ToolStripMenuItem addPatientToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
-        private System.Windows.Forms.ToolStripMenuItem addPatientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newAppointmentToolStripMenuItem;
     }
 }

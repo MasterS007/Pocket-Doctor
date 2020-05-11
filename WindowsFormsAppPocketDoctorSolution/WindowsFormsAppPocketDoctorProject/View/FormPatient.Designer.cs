@@ -226,6 +226,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormPatient";
+            this.Load += new System.EventHandler(this.FormPatient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -81,7 +81,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.p_id = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
             p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
             p.gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
             p.age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
@@ -119,7 +119,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void BtnDelete_Click(object sender, EventArgs e)
         {
           
-            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.p_id = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
             p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
            
             if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -169,7 +169,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             f1.lblAge.Text = this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString();
             f1.lblBloodg.Text = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
             f1.lblGender.Text = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
-            f1.lblPId.Text = this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString();
+            f1.lblPId.Text = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
             f1.Show();
 
         }
@@ -208,7 +208,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void MenuStripDelete_Click(object sender, EventArgs e)
         {
-            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.p_id = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
             p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
 
             if (MessageBox.Show("Do you want to delete?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -237,7 +237,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void MenuStripUpdate_Click(object sender, EventArgs e)
         {
-            p.pid = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["pid"].Value.ToString());
+            p.p_id = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
             p.name = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
             p.gender = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
             p.age = Convert.ToInt32(this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString());
@@ -274,6 +274,12 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             FormPatient fp = new FormPatient();
             fp.Show();
+        }
+
+        private void BtnShowAppointment_Click(object sender, EventArgs e)
+        {
+            FormShowAppointment appShow = new FormShowAppointment();
+            appShow.Show();
         }
     }
 }

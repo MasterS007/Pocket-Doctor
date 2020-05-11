@@ -17,6 +17,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     {
         Patient p = new Patient();
         PatientRepo prepo = new PatientRepo();
+
         public FormPatient()
         {
             InitializeComponent();
@@ -27,7 +28,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
             Application.Exit();
          }*/
 
-       
+        private void LoadAutoUserId()
+        {
+            int serial = prepo.AutoIDValue();
+            prepo.P_Id = (++serial).ToString("d4");
+            p.p_id = prepo.P_Id;
+
+        }
+
         private void BtnSave_Click_1(object sender, EventArgs e)
         {
             p.name = this.txtPatientName.Text;
@@ -43,7 +51,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             }
             p.mobilenumber = this.txtMobileNum.Text;
 
-            bool succeed = prepo.InsertPatient(p);
+            bool succeed = prepo.InsertPatient(p,p.p_id);
 
             if (succeed == true)
             {
@@ -59,6 +67,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
                 MessageBox.Show(p.name + " is not inserted");
             }
 
+        }
+
+        private void FormPatient_Load(object sender, EventArgs e)
+        {
+            this.LoadAutoUserId();
         }
     }
 }

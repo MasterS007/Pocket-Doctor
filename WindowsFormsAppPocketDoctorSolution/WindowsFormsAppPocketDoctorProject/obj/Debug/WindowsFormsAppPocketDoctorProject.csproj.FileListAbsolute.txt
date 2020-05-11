@@ -36,3 +36,6 @@ G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocket
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.UserControlProfile.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csprojAssemblyReference.cache
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormEditProfile.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormPrescription.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.UserControlDoctorHome.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormShowAppointment.resources
