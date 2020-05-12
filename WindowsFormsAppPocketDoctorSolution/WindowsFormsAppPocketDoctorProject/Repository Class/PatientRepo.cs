@@ -67,27 +67,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             return succeed;
         }
 
-        internal DataTable GetAppointtedPatient()
-        {
-            try
-            {
-                string sql = "SELECT ";
-                //SqlCommand cmd = db.Query(sql);
-                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                //adapter.Fill(dataTable);
-                dataTable = dbCon.GetDataTable(sql);
-                //db.Sda.Fill(dataTable);
-
-            }
-            catch (Exception ex) { }
-
-
-
-
-            return dataTable;
-
-        }
+       
         internal DataTable GetPatient()
         {
             try
@@ -109,6 +89,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             return dataTable;
         }
 
+        
         internal DataTable SearchPatient(string keyWord)
         {
             try

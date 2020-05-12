@@ -106,13 +106,31 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             return dataTable;
         }
+        internal DataTable SearchAppointedPatient(string keyWord)
+        {
+            string drid = FormLogin.uid;
+            try
+            {
 
+                string sql = "SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a join tbl_Patient p on p.p_id LIKE '%"+keyWord+ "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id OR p.mobilenumber LIKE '%" + keyWord + "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id OR p.name LIKE '%" + keyWord + "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id ";
+                dataTable = dbCon.GetDataTable(sql);
+
+
+            }
+            catch (Exception ex) { }
+
+
+
+
+            return dataTable;
+        }
         internal DataTable GetAppointtedPatient()
         {
             string drid = FormLogin.uid;
             try
             {
-                string sql = "SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a join tbl_Patient p on a.dr_id= '" + drid + "' and p.p_id = a.p_id ";
+                string sql = "SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a join tbl_Patient p on a.dr_id= '" + drid + "' and p.p_id = a.p_id  ";
+                
                 //SqlCommand cmd = db.Query(sql);
                 //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

@@ -109,20 +109,20 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         }
 
-       
 
-     /*   private void PicbSearch_Click(object sender, EventArgs e)
-        {
-            string keyWord = txtSearchP.Text;
-            DataTable dset = prepo.SearchPatient(keyWord);
-            this.dgvPatientInfo.DataSource = dset;
 
-        }*/
+        /*   private void PicbSearch_Click(object sender, EventArgs e)
+           {
+               string keyWord = txtSearchP.Text;
+               DataTable dset =  arepo.SearchAppointedPatient(keyWord);
+               this.dgvPatientInfo.DataSource = dset;
+
+           }*/
 
         private void TxtSearchP_TextChanged(object sender, EventArgs e)
         {
             string keyWord = txtSearchP.Text;
-            DataTable dset = prepo.SearchPatient(keyWord);
+            DataTable dset = arepo.SearchAppointedPatient(keyWord);
             this.dgvPatientInfor.DataSource = dset;
         }
 

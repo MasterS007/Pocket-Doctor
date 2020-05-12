@@ -63,6 +63,7 @@
     <Compile Include="Entity Class\Appointment.cs" />
     <Compile Include="Entity Class\Pathologist.cs" />
     <Compile Include="Entity Class\Patient.cs" />
+    <Compile Include="Entity Class\PatientHistory.cs" />
     <Compile Include="Entity Class\Receptionist.cs" />
     <Compile Include="Repository Class\AppointmentRepo.cs" />
     <Compile Include="Repository Class\DoctorRepo.cs" />
@@ -116,12 +117,6 @@
     </Compile>
     <Compile Include="View\FormPatient.Designer.cs">
       <DependentUpon>FormPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormDoctorProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormDoctorProfile.Designer.cs">
-      <DependentUpon>FormDoctorProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormShowAppointment.cs">
       <SubType>Form</SubType>
@@ -178,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPatient.resx">
       <DependentUpon>FormPatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormDoctorProfile.resx">
-      <DependentUpon>FormDoctorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormShowAppointment.resx">
       <DependentUpon>FormShowAppointment.cs</DependentUpon>
