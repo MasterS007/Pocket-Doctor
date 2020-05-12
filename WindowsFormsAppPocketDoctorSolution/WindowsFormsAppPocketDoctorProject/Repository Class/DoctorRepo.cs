@@ -19,6 +19,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
         public const float salary = 800;
         
+        
         internal DataTable GetDoctorInfo()
         {
 
@@ -80,6 +81,23 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
         }
 
+        internal DataTable GetDailySalary( )
+        {
+            FormDoctor fdoc = new FormDoctor();
+            DateTime daTe = Convert.ToDateTime(fdoc.daTe);
+            string d = FormLogin.uid;
+            try
+            {
+                string sql = "Select Count(appt_id) salary from tbl_Appointment where dr_id='" + d + "' and visiting_date = '"+daTe+"' ";
+                dataTable = dbCon.GetDataTable(sql);
+            }
+            catch (Exception ex) { MessageBox.Show("" + ex); }
+            finally { dbCon.CloseConnection(); }
+
+
+            return dataTable;
+
+        }
         internal DataTable GetMonthlySalary(DateTime from, DateTime to)
         {
             string d = FormLogin.uid;

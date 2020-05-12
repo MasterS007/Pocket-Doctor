@@ -122,10 +122,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             }
             catch (Exception ex) { MessageBox.Show("" + ex); }
-  
-
-
-
+ 
 
             return dataTable;
 

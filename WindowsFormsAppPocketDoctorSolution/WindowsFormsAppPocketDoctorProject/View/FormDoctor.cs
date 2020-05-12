@@ -126,10 +126,13 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.dgvPatientInfor.DataSource = dset;
         }
 
+        public string daTe;
         private void Timer1_Tick(object sender, EventArgs e)
         {
+
             DateTime dateT = DateTime.Now;
             this.lbTime.Text = dateT.ToLongTimeString();
+           daTe = dateT.ToShortDateString();
             this.lblDate.Text = dateT.ToLongDateString();
         }
 

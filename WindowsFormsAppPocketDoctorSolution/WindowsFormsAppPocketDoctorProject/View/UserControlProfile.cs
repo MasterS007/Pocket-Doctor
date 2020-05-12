@@ -29,9 +29,6 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void UserControlProfile_Load(object sender, EventArgs e)
         {
 
-            
-
-
             DataTable dt = docRepo.GetDoctorInfo();
             
             
@@ -97,9 +94,9 @@ namespace WindowsFormsAppPocketDoctorProject.View
                 this.lblEarning.Text = mSalary.ToString();
             }
 
-            else if (this.cmbEarnings.Text == "Daily")
+             else if (this.cmbEarnings.Text == "Daily")
             {
-                DataTable dt = docRepo.GetMonthlySalary(Convert.ToDateTime(this.dateTimeFrom.Text), Convert.ToDateTime(this.dateTimeTo.Text));
+                DataTable dt = docRepo.GetDailySalary();
 
                 float mSalary = float.Parse(dt.Rows[0]["salary"].ToString()) *DoctorRepo.salary;
                 this.lblEarning.Text = mSalary.ToString();
