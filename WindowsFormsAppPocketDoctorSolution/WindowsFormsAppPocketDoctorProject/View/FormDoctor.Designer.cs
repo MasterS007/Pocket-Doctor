@@ -41,7 +41,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picbSearchP = new System.Windows.Forms.PictureBox();
             this.txtSearchP = new System.Windows.Forms.TextBox();
-            this.dgvPatientInfo = new System.Windows.Forms.DataGridView();
+            this.dgvPatientInfor = new System.Windows.Forms.DataGridView();
+            this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visiting_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +71,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfor)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctUpload)).BeginInit();
@@ -82,7 +87,7 @@
             this.pnlDoctor.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlDoctor.Controls.Add(this.panel4);
             this.pnlDoctor.Controls.Add(this.panel3);
-            this.pnlDoctor.Controls.Add(this.dgvPatientInfo);
+            this.pnlDoctor.Controls.Add(this.dgvPatientInfor);
             this.pnlDoctor.Controls.Add(this.menuStrip1);
             this.pnlDoctor.Location = new System.Drawing.Point(231, 2);
             this.pnlDoctor.Name = "pnlDoctor";
@@ -150,18 +155,18 @@
             this.txtSearchP.TabIndex = 10;
             this.txtSearchP.TextChanged += new System.EventHandler(this.TxtSearchP_TextChanged);
             // 
-            // dgvPatientInfo
+            // dgvPatientInfor
             // 
-            this.dgvPatientInfo.AllowUserToAddRows = false;
-            this.dgvPatientInfo.AllowUserToDeleteRows = false;
-            this.dgvPatientInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPatientInfor.AllowUserToAddRows = false;
+            this.dgvPatientInfor.AllowUserToDeleteRows = false;
+            this.dgvPatientInfor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPatientInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatientInfo.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPatientInfo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvPatientInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvPatientInfor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPatientInfor.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPatientInfor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPatientInfor.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvPatientInfor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,8 +174,14 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatientInfor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPatientInfor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatientInfor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.p_id,
+            this.name,
+            this.age,
+            this.gender,
+            this.visiting_date});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,14 +189,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientInfo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPatientInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgvPatientInfo.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvPatientInfo.Location = new System.Drawing.Point(4, 154);
-            this.dgvPatientInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvPatientInfo.Name = "dgvPatientInfo";
-            this.dgvPatientInfo.ReadOnly = true;
-            this.dgvPatientInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvPatientInfor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPatientInfor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dgvPatientInfor.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvPatientInfor.Location = new System.Drawing.Point(4, 154);
+            this.dgvPatientInfor.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPatientInfor.Name = "dgvPatientInfor";
+            this.dgvPatientInfor.ReadOnly = true;
+            this.dgvPatientInfor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,20 +204,54 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPatientInfo.RowHeadersVisible = false;
-            this.dgvPatientInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvPatientInfor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPatientInfor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPatientInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPatientInfo.RowTemplate.Height = 40;
-            this.dgvPatientInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvPatientInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPatientInfo.Size = new System.Drawing.Size(956, 510);
-            this.dgvPatientInfo.TabIndex = 9;
-            this.dgvPatientInfo.Tag = "";
-            this.dgvPatientInfo.VirtualMode = true;
+            this.dgvPatientInfor.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPatientInfor.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPatientInfor.RowTemplate.Height = 40;
+            this.dgvPatientInfor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvPatientInfor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatientInfor.Size = new System.Drawing.Size(956, 510);
+            this.dgvPatientInfor.TabIndex = 9;
+            this.dgvPatientInfor.Tag = "";
+            this.dgvPatientInfor.VirtualMode = true;
+            // 
+            // p_id
+            // 
+            this.p_id.DataPropertyName = "p_id";
+            this.p_id.HeaderText = "Patient Id";
+            this.p_id.Name = "p_id";
+            this.p_id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // visiting_date
+            // 
+            this.visiting_date.DataPropertyName = "visiting_date";
+            this.visiting_date.HeaderText = "Visiting Date";
+            this.visiting_date.Name = "visiting_date";
+            this.visiting_date.ReadOnly = true;
             // 
             // menuStrip1
             // 
@@ -234,13 +279,13 @@
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prescriptionToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.newToolStripMenuItem.Text = "New";
             // 
             // prescriptionToolStripMenuItem
             // 
             this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
-            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.prescriptionToolStripMenuItem.Text = "Prescription";
             // 
             // openToolStripMenuItem
@@ -249,7 +294,7 @@
             this.patientProfileToolStripMenuItem,
             this.prescriptionToolStripMenuItem1});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // patientProfileToolStripMenuItem
@@ -275,7 +320,7 @@
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
             // panel2
@@ -428,7 +473,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearchP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatientInfor)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -447,7 +492,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox picbSearchP;
         private System.Windows.Forms.TextBox txtSearchP;
-        private System.Windows.Forms.DataGridView dgvPatientInfo;
+        private System.Windows.Forms.DataGridView dgvPatientInfor;
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnHome;
@@ -468,5 +513,10 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visiting_date;
     }
 }

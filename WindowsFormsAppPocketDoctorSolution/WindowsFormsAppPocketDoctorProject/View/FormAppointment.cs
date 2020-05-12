@@ -15,7 +15,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     public partial class FormAppointment : Form
     {
         DoctorRepo docRepo = new DoctorRepo();
-       
+        public static string docid;
         public FormAppointment()
         {
             InitializeComponent();
@@ -75,6 +75,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
             
             dp.dr_id = this.dgvDoctor.CurrentRow.Cells["UserId"].Value.ToString();
+            docid = this.dgvDoctor.CurrentRow.Cells["UserId"].Value.ToString();
             dp.p_id = this.lblPId.Text;
             
             dp.visiting_date =Convert.ToDateTime(lblDate.Text);
@@ -94,6 +95,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
             }
 
         }
+
+
 
         private void Label3_Click(object sender, EventArgs e)
         {

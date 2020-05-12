@@ -17,7 +17,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DataTable dataTable;
         Doctor doc = new Doctor();
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
-        
+        public const float salary = 800;
         
         internal DataTable GetDoctorInfo()
         {
@@ -27,7 +27,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             
             try
             {
-                string sql = "SELECT userid, username,password,mobilenumber,edu_background from tbl_User  join tbl_Doctor  on userid = '"+d+"' AND dr_id ='"+d+"'";
+                string sql = "SELECT userid, username,password,mobilenumber,edu_background , earnings from tbl_User  join tbl_Doctor  on userid = '"+d+"' AND dr_id ='"+d+"'";
 
                 dataTable = dbCon.GetDataTable(sql);
 
@@ -75,11 +75,25 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             catch (Exception ex) { }
             finally { dbCon.CloseConnection(); }
 
-          
+
             return dataTable;
 
         }
 
+        internal DataTable GetMonthlySalary(DateTime from, DateTime to)
+        {
+            string d = FormLogin.uid;
+            try
+            {
+                string sql = "Select Count(appt_id) salary from tbl_Appointment where dr_id='" + d + "' and visiting_date Between '"+from+"' and '"+to+"' ";
+                dataTable = dbCon.GetDataTable(sql);
+            }
+            catch(Exception ex) { MessageBox.Show(""+ex); }
+            finally { dbCon.CloseConnection(); }
+
+
+            return dataTable;
+        }
         internal bool UpdateDoctor(User d, Doctor doc)
         {
             string u = FormLogin.uid;

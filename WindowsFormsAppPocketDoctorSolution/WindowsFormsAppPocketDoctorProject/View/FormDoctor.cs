@@ -19,6 +19,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         Patient p;
         PatientRepo prepo = new PatientRepo();
         UserControlProfile userProf = new UserControlProfile();
+        AppointmentRepo arepo = new AppointmentRepo();
         public FormDoctor()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             
            
           //  userProf.Hide();
-            this.dgvPatientInfo.Hide();
+            this.dgvPatientInfor.Hide();
             this.pnlMove1.Hide();
             this.pnlMove2.Hide();
            // this.pnlMove3.Hide();
@@ -87,7 +88,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.pnlMove2.Hide();
            // this.pnlMove3.Hide();
             this.pnlMove1.Show();
-            this.dgvPatientInfo.Hide();
+            this.dgvPatientInfor.Hide();
             
 
         }
@@ -95,11 +96,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void BtnPatient_Click(object sender, EventArgs e)
         {
             userProf.Hide();
-            this.dgvPatientInfo.Show();
-            
-            DataTable dataT = prepo.GetPatient();
+            this.dgvPatientInfor.Show();
 
-            this.dgvPatientInfo.DataSource = dataT;
+            DataTable dataT = arepo.GetAppointtedPatient();
+
+            this.dgvPatientInfor.DataSource = dataT;
             this.pnlMove1.Hide();
             this.pnlMove.Hide();
            // this.pnlMove3.Hide();
@@ -122,7 +123,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             string keyWord = txtSearchP.Text;
             DataTable dset = prepo.SearchPatient(keyWord);
-            this.dgvPatientInfo.DataSource = dset;
+            this.dgvPatientInfor.DataSource = dset;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
