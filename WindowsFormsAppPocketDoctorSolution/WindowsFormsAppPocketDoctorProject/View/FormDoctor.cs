@@ -67,15 +67,13 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            //ucMedicinecs1.Hide();
-            // ucPaitent1.Hide();
-            //ucTest1.Hide();
-            // ucHome1.Show();
-            // ucHome1.BringToFront();
+            userProf.Hide();
+            this.dgvPatientInfor.Hide();
             this.pnlMove1.Hide();
             this.pnlMove2.Hide();
          //   this.pnlMove3.Hide();
             this.pnlMove.Show();
+            
 
 
         }
@@ -138,9 +136,58 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
             FormLogin flog = new FormLogin();
             flog.Visible = true;
+        }
+
+        private void PrescriptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPrescription fp = new FormPrescription();
+            fp.Show();
+        }
+
+        private void ProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormEditProfile fe = new FormEditProfile();
+            fe.Visible = true;
+        }
+
+        private void ProfileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.pnlDoctor.Controls.Add(userProf);
+            userProf.Show();
+            this.pnlMove.Hide();
+            this.pnlMove2.Hide();
+            
+            this.pnlMove1.Show();
+            this.dgvPatientInfor.Hide();
+        }
+
+        private void PatientProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userProf.Hide();
+            this.dgvPatientInfor.Show();
+
+            DataTable dataT = arepo.GetAppointtedPatient();
+
+            this.dgvPatientInfor.DataSource = dataT;
+            this.pnlMove1.Hide();
+            this.pnlMove.Hide();
+           
+            this.pnlMove2.Show();
+        }
+
+        private void HomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            userProf.Hide();
+            this.dgvPatientInfor.Hide();
+            this.pnlMove1.Hide();
+            this.pnlMove2.Hide();
+           
+            this.pnlMove.Show();
         }
     }
 }
