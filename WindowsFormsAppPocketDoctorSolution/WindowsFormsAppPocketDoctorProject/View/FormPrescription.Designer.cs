@@ -30,24 +30,24 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCatagory = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblPatientMobile = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblPatientName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEdu = new System.Windows.Forms.Label();
             this.lblDocName = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtPatientName = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtPId = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,20 +57,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtDate);
+            this.panel1.Controls.Add(this.txtMobile);
+            this.panel1.Controls.Add(this.txtPId);
+            this.panel1.Controls.Add(this.txtGender);
+            this.panel1.Controls.Add(this.txtAge);
+            this.panel1.Controls.Add(this.txtPatientName);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.lblCatagory);
-            this.panel1.Controls.Add(this.lblId);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Controls.Add(this.lblPatientMobile);
-            this.panel1.Controls.Add(this.lblGender);
-            this.panel1.Controls.Add(this.lblAge);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.lblPatientName);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lblEdu);
             this.panel1.Controls.Add(this.lblDocName);
@@ -91,16 +91,6 @@
             this.lblCatagory.TabIndex = 17;
             this.lblCatagory.Text = "Category";
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(78, 228);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(31, 25);
-            this.lblId.TabIndex = 16;
-            this.lblId.Text = "ID";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -110,46 +100,6 @@
             this.label15.Size = new System.Drawing.Size(37, 25);
             this.label15.TabIndex = 15;
             this.label15.Text = "ID:";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(593, 228);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(53, 25);
-            this.lblDate.TabIndex = 14;
-            this.lblDate.Text = "Date";
-            // 
-            // lblPatientMobile
-            // 
-            this.lblPatientMobile.AutoSize = true;
-            this.lblPatientMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientMobile.Location = new System.Drawing.Point(332, 228);
-            this.lblPatientMobile.Name = "lblPatientMobile";
-            this.lblPatientMobile.Size = new System.Drawing.Size(75, 25);
-            this.lblPatientMobile.TabIndex = 13;
-            this.lblPatientMobile.Text = "Mobile ";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(607, 162);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 25);
-            this.lblGender.TabIndex = 12;
-            this.lblGender.Text = "Gender";
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(347, 162);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(48, 25);
-            this.lblAge.TabIndex = 11;
-            this.lblAge.Text = "Age";
             // 
             // label9
             // 
@@ -165,7 +115,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(523, 228);
+            this.label8.Location = new System.Drawing.Point(548, 228);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 25);
             this.label8.TabIndex = 9;
@@ -175,7 +125,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(236, 228);
+            this.label7.Location = new System.Drawing.Point(269, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 25);
             this.label7.TabIndex = 8;
@@ -195,21 +145,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(268, 162);
+            this.label5.Location = new System.Drawing.Point(296, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 25);
             this.label5.TabIndex = 6;
             this.label5.Text = "Age:";
-            // 
-            // lblPatientName
-            // 
-            this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientName.Location = new System.Drawing.Point(114, 162);
-            this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(64, 25);
-            this.lblPatientName.TabIndex = 6;
-            this.lblPatientName.Text = "Name";
             // 
             // panel2
             // 
@@ -298,6 +238,54 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // txtPatientName
+            // 
+            this.txtPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientName.Location = new System.Drawing.Point(102, 162);
+            this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.Size = new System.Drawing.Size(160, 30);
+            this.txtPatientName.TabIndex = 19;
+            // 
+            // txtAge
+            // 
+            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAge.Location = new System.Drawing.Point(347, 159);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(160, 30);
+            this.txtAge.TabIndex = 20;
+            // 
+            // txtGender
+            // 
+            this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.Location = new System.Drawing.Point(606, 157);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(160, 30);
+            this.txtGender.TabIndex = 21;
+            // 
+            // txtPId
+            // 
+            this.txtPId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPId.Location = new System.Drawing.Point(68, 223);
+            this.txtPId.Name = "txtPId";
+            this.txtPId.Size = new System.Drawing.Size(160, 30);
+            this.txtPId.TabIndex = 22;
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobile.Location = new System.Drawing.Point(347, 225);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(160, 30);
+            this.txtMobile.TabIndex = 23;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.Location = new System.Drawing.Point(618, 225);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(160, 30);
+            this.txtDate.TabIndex = 24;
+            // 
             // FormPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,15 +312,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lblPatientMobile;
         internal System.Windows.Forms.Label lblCatagory;
-        internal System.Windows.Forms.Label lblPatientName;
         internal System.Windows.Forms.Label lblEdu;
         internal System.Windows.Forms.Label lblDocName;
-        internal System.Windows.Forms.Label lblGender;
-        internal System.Windows.Forms.Label lblAge;
-        internal System.Windows.Forms.Label lblId;
-        internal System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtMobile;
+        internal System.Windows.Forms.TextBox txtAge;
+        internal System.Windows.Forms.TextBox txtPatientName;
+        internal System.Windows.Forms.TextBox txtGender;
+        internal System.Windows.Forms.TextBox txtPId;
+        internal System.Windows.Forms.TextBox txtDate;
     }
 }
