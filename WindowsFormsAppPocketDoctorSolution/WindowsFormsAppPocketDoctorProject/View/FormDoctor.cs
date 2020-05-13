@@ -189,5 +189,33 @@ namespace WindowsFormsAppPocketDoctorProject.View
            
             this.pnlMove.Show();
         }
+
+
+        int rowIndex = 0;
+        private void DgvPatientInfor_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.dgvPatientInfor.Rows[e.RowIndex].Selected = true;
+                this.rowIndex = e.RowIndex;
+                this.contextMenuStripDOc.Show(this.dgvPatientInfor, e.Location);
+                this.contextMenuStripDOc.Show(Cursor.Position);
+
+            }
+        }
+
+        private void PrescriptionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormPrescription fp = new FormPrescription();
+            fp.Show();
+        }
+
+        private void RefreshConToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dataT = arepo.GetAppointtedPatient();
+
+            this.dgvPatientInfor.DataSource = dataT;
+
+        }
     }
 }
