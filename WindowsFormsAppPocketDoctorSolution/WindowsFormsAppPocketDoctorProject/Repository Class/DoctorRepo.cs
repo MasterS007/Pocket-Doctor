@@ -28,7 +28,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             
             try
             {
-                string sql = "SELECT userid, username,password,mobilenumber,edu_background , earnings from tbl_User  join tbl_Doctor  on userid = '"+d+"' AND dr_id ='"+d+"'";
+                string sql = "SELECT userid, username,password,mobilenumber,edu_background , earnings, dr_catagory from tbl_User  join tbl_Doctor  on userid = '"+d+"' AND dr_id ='"+d+"'";
 
                 dataTable = dbCon.GetDataTable(sql);
 

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoctor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDoctor = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -178,14 +178,14 @@
             this.dgvPatientInfor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatientInfor.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPatientInfor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatientInfor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientInfor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.p_id,
@@ -194,14 +194,14 @@
             this.gender,
             this.visiting_date,
             this.prescription});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatientInfor.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatientInfor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatientInfor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvPatientInfor.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPatientInfor.Location = new System.Drawing.Point(4, 154);
@@ -210,18 +210,18 @@
             this.dgvPatientInfor.Name = "dgvPatientInfor";
             this.dgvPatientInfor.ReadOnly = true;
             this.dgvPatientInfor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfor.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatientInfor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatientInfor.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatientInfor.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientInfor.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientInfor.RowTemplate.Height = 40;
             this.dgvPatientInfor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -508,14 +508,14 @@
             this.openToolConStripMenuItem,
             this.refreshConToolStripMenuItem});
             this.contextMenuStripDOc.Name = "contextMenuStripDOc";
-            this.contextMenuStripDOc.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStripDOc.Size = new System.Drawing.Size(128, 76);
             // 
             // newToolConStripMenuItem
             // 
             this.newToolConStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prescriptionToolStripMenuItem1});
             this.newToolConStripMenuItem.Name = "newToolConStripMenuItem";
-            this.newToolConStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.newToolConStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.newToolConStripMenuItem.Text = "New";
             // 
             // prescriptionToolStripMenuItem1
@@ -530,7 +530,7 @@
             this.openToolConStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patientPrescriptionToolStripMenuItem});
             this.openToolConStripMenuItem.Name = "openToolConStripMenuItem";
-            this.openToolConStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.openToolConStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.openToolConStripMenuItem.Text = "Open";
             // 
             // patientPrescriptionToolStripMenuItem
@@ -542,7 +542,7 @@
             // refreshConToolStripMenuItem
             // 
             this.refreshConToolStripMenuItem.Name = "refreshConToolStripMenuItem";
-            this.refreshConToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.refreshConToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.refreshConToolStripMenuItem.Text = "Refresh";
             this.refreshConToolStripMenuItem.Click += new System.EventHandler(this.RefreshConToolStripMenuItem_Click);
             // 
@@ -586,7 +586,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox picbSearchP;
         private System.Windows.Forms.TextBox txtSearchP;
-        private System.Windows.Forms.DataGridView dgvPatientInfor;
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnHome;
@@ -622,5 +621,6 @@
         private System.Windows.Forms.ToolStripMenuItem openToolConStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientPrescriptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshConToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvPatientInfor;
     }
 }

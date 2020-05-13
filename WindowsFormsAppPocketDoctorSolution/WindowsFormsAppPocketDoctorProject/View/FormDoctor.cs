@@ -20,6 +20,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         PatientRepo prepo = new PatientRepo();
         UserControlProfile userProf = new UserControlProfile();
         AppointmentRepo arepo = new AppointmentRepo();
+        DoctorRepo docRepo = new DoctorRepo();
         public FormDoctor()
         {
             InitializeComponent();
@@ -207,7 +208,19 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void PrescriptionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormPrescription fp = new FormPrescription();
-            fp.Show();
+            DataTable dt = docRepo.GetDoctorInfo();
+
+           fp.lblDocName.Text = dt.Rows[dt.Rows.Count - 1]["username"].ToString();
+           fp.lblEdu.Text = dt.Rows[dt.Rows.Count - 1]["edu_background"].ToString();
+           fp.lblCatagory.Text = dt.Rows[dt.Rows.Count - 1]["dr_catagory"].ToString();
+
+            fp.lblPatientName.Text = this.dgvPatientInfor.CurrentRow.Cells["name"].Value.ToString();
+            fp.lblId.Text = this.dgvPatientInfor.CurrentRow.Cells["p_id"].Value.ToString();
+            fp.lblGender.Text = this.dgvPatientInfor.CurrentRow.Cells["gender"].Value.ToString();
+            fp.lblAge.Text = this.dgvPatientInfor.CurrentRow.Cells["gender"].Value.ToString();
+            DateTime daate =Convert.ToDateTime( this.dgvPatientInfor.CurrentRow.Cells["visiting_date"].Value.ToString());
+            fp.lblDate.Text = daate.ToShortDateString();
+           fp.Show();
         }
 
         private void RefreshConToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,5 +230,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.dgvPatientInfor.DataSource = dataT;
 
         }
+
+        
+
     }
 }
