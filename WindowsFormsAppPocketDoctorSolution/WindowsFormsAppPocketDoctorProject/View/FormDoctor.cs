@@ -159,62 +159,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
             fp.txtDate.Text = daate.ToShortDateString();
             fp.Show();
         }
-        private void PrescriptionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // this.CreatePrescription();
-            FormPrescription fp = new FormPrescription();
-            DataTable dt = docRepo.GetDoctorInfo();
-
-            fp.lblDocName.Text = dt.Rows[dt.Rows.Count - 1]["username"].ToString();
-            fp.lblEdu.Text = dt.Rows[dt.Rows.Count - 1]["edu_background"].ToString();
-            fp.lblCatagory.Text = dt.Rows[dt.Rows.Count - 1]["dr_catagory"].ToString();
-            fp.Show();
-        }
-
-        private void ProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            FormEditProfile fe = new FormEditProfile();
-            fe.Visible = true;
-        }
-
-        private void ProfileToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.pnlDoctor.Controls.Add(userProf);
-            userProf.Show();
-            this.pnlMove.Hide();
-            this.pnlMove2.Hide();
-            
-            this.pnlMove1.Show();
-            this.dgvPatientInfor.Hide();
-        }
-
-        private void PatientProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            userProf.Hide();
-            this.dgvPatientInfor.Show();
-
-            DataTable dataT = arepo.GetAppointtedPatient();
-
-            this.dgvPatientInfor.DataSource = dataT;
-            this.pnlMove1.Hide();
-            this.pnlMove.Hide();
-           
-            this.pnlMove2.Show();
-        }
-
-        private void HomeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            userProf.Hide();
-            this.dgvPatientInfor.Hide();
-            this.pnlMove1.Hide();
-            this.pnlMove2.Hide();
-           
-            this.pnlMove.Show();
-        }
-
-
+       
+      
         int rowIndex = 0;
         private void DgvPatientInfor_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -241,7 +187,65 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         }
 
-        
+       
+        private void NewPrescriptionMenu_Click(object sender, EventArgs e)
+        {
+            FormPrescription fp = new FormPrescription();
+            DataTable dt = docRepo.GetDoctorInfo();
 
+            fp.lblDocName.Text = dt.Rows[dt.Rows.Count - 1]["username"].ToString();
+            fp.lblEdu.Text = dt.Rows[dt.Rows.Count - 1]["edu_background"].ToString();
+            fp.lblCatagory.Text = dt.Rows[dt.Rows.Count - 1]["dr_catagory"].ToString();
+            fp.Show();
+        }
+
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            FormLogin flog = new FormLogin();
+            flog.Visible = true;
+        }
+
+        private void EditDoctorProfileMenu_Click(object sender, EventArgs e)
+        {
+            FormEditProfile fe = new FormEditProfile();
+            fe.Visible = true;
+
+        }
+
+        private void ViewDoctorProfileMenu_Click(object sender, EventArgs e)
+        {
+            this.pnlDoctor.Controls.Add(userProf);
+            userProf.Show();
+            this.pnlMove.Hide();
+            this.pnlMove2.Hide();
+
+            this.pnlMove1.Show();
+            this.dgvPatientInfor.Hide();
+        }
+
+        private void ViewHomeMenu_Click(object sender, EventArgs e)
+        {
+            userProf.Hide();
+            this.dgvPatientInfor.Hide();
+            this.pnlMove1.Hide();
+            this.pnlMove2.Hide();
+
+            this.pnlMove.Show();
+        }
+
+        private void ViewPatienProfileMenu_Click(object sender, EventArgs e)
+        {
+            userProf.Hide();
+            this.dgvPatientInfor.Show();
+
+            DataTable dataT = arepo.GetAppointtedPatient();
+
+            this.dgvPatientInfor.DataSource = dataT;
+            this.pnlMove1.Hide();
+            this.pnlMove.Hide();
+
+            this.pnlMove2.Show();
+        }
     }
 }

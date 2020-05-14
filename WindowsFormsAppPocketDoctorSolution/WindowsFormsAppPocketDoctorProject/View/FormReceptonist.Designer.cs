@@ -76,7 +76,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnShowAppointment);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
@@ -89,7 +90,7 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1174, 727);
+            this.panel1.Size = new System.Drawing.Size(1182, 727);
             this.panel1.TabIndex = 1;
             // 
             // btnShowAppointment
@@ -170,7 +171,7 @@
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbTime.Location = new System.Drawing.Point(130, 45);
+            this.lbTime.Location = new System.Drawing.Point(147, 37);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(58, 23);
             this.lbTime.TabIndex = 16;
@@ -238,7 +239,7 @@
             this.dgvPatientPro.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPatientPro.RowTemplate.Height = 40;
             this.dgvPatientPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatientPro.Size = new System.Drawing.Size(1169, 433);
+            this.dgvPatientPro.Size = new System.Drawing.Size(1170, 431);
             this.dgvPatientPro.TabIndex = 15;
             this.dgvPatientPro.Tag = "";
             this.dgvPatientPro.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPatientPro_CellMouseClick);
@@ -345,7 +346,7 @@
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Location = new System.Drawing.Point(12, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(398, 69);
+            this.panel3.Size = new System.Drawing.Size(404, 69);
             this.panel3.TabIndex = 12;
             // 
             // picbSearch
@@ -430,8 +431,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1176, 722);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1184, 722);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;

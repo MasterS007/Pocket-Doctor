@@ -30,5 +30,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             Application.Exit();
         }
+
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin flog = new FormLogin();
+            flog.Visible = true;
+            this.Hide();
+            
+            
+        }
     }
 }
