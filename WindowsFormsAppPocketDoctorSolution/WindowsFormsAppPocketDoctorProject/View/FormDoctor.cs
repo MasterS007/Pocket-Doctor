@@ -150,6 +150,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             fp.lblDocName.Text = dt.Rows[dt.Rows.Count - 1]["username"].ToString();
             fp.lblEdu.Text = dt.Rows[dt.Rows.Count - 1]["edu_background"].ToString();
             fp.lblCatagory.Text = dt.Rows[dt.Rows.Count - 1]["dr_catagory"].ToString();
+            fp.lblMobile.Text = dt.Rows[dt.Rows.Count - 1]["mobilenumber"].ToString();
 
             fp.txtPatientName.Text = this.dgvPatientInfor.CurrentRow.Cells["name"].Value.ToString();
             fp.txtPId.Text = this.dgvPatientInfor.CurrentRow.Cells["p_id"].Value.ToString();
@@ -196,6 +197,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             fp.lblDocName.Text = dt.Rows[dt.Rows.Count - 1]["username"].ToString();
             fp.lblEdu.Text = dt.Rows[dt.Rows.Count - 1]["edu_background"].ToString();
             fp.lblCatagory.Text = dt.Rows[dt.Rows.Count - 1]["dr_catagory"].ToString();
+            fp.lblMobile.Text = dt.Rows[dt.Rows.Count - 1]["mobilenumber"].ToString();
             fp.Show();
         }
 

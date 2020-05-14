@@ -17,6 +17,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     public partial class FormPrescription : Form
     {
         TestRepo trepo = new TestRepo();
+        FormPrescriptiontoPDF fPdf = new FormPrescriptiontoPDF();
         public FormPrescription()
         {
             InitializeComponent();
@@ -32,24 +33,41 @@ namespace WindowsFormsAppPocketDoctorProject.View
                 chkListTest.Items.Add(dt.Rows[i]["name"].ToString());
             }
         }
-        private void doc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-           
+       
 
-            //Panel grd = new Panel();
-            Bitmap bmp = new Bitmap(pnlPrescription.Width, pnlPrescription.Height, pnlPrescription.CreateGraphics());
-            bmp.SetResolution(1920, 1080);
-            pnlPrescription.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, pnlPrescription.Width, pnlPrescription.Height));
-            RectangleF bounds = e.PageSettings.PrintableArea;
-            float factor = ((float)bmp.Height / (float)bmp.Width);
-            e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
+        internal void fillTestList()
+        {
+
+            int i = 1;
+            fPdf.listBoxTest.Items.Clear();
+           
+           // MessageBox.Show(chkListTest.Items)
+           foreach(string s in this.chkListTest.CheckedItems)
+            {
+                
+                fPdf.listBoxTest.Items.Add(i.ToString()+"."+s);
+                i++;
+           
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            System.Drawing.Printing.PrintDocument doc = new System.Drawing.Printing.PrintDocument();
-            doc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(doc_PrintPage);
-            doc.Print();
+           
+            
+            fPdf.lblDocName.Text = this.lblDocName.Text;
+            fPdf.lblEdu.Text = this.lblEdu.Text;
+            fPdf.lblCatagory.Text = this.lblCatagory.Text;
+            fPdf.lblMobileDoc.Text = this.lblMobile.Text;
+            fPdf.lblPatientName.Text = this.txtPatientName.Text;
+            fPdf.lblPId.Text = this.txtPId.Text;
+            fPdf.lblAge.Text = this.txtAge.Text;
+            fPdf.lblGender.Text = this.txtGender.Text;
+            fPdf.lblDate.Text = this.txtDate.Text;
+            this.fillTestList();
+           this.Hide();
+          
+            fPdf.Show();
         }
 
 
