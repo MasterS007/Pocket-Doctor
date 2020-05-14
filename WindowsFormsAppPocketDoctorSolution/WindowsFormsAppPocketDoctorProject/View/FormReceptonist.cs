@@ -281,5 +281,12 @@ namespace WindowsFormsAppPocketDoctorProject.View
             FormShowAppointment appShow = new FormShowAppointment();
             appShow.Show();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            FormLogin flog = new FormLogin();
+            flog.Visible = true;
+        }
     }
 }
