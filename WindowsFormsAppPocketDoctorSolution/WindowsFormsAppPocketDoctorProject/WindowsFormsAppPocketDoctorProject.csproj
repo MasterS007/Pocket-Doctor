@@ -68,8 +68,10 @@
     <Compile Include="Entity Class\Patient.cs" />
     <Compile Include="Entity Class\PatientHistory.cs" />
     <Compile Include="Entity Class\Receptionist.cs" />
+    <Compile Include="Entity Class\Test.cs" />
     <Compile Include="Repository Class\AppointmentRepo.cs" />
     <Compile Include="Repository Class\DoctorRepo.cs" />
+    <Compile Include="Repository Class\TestRepo.cs" />
     <Compile Include="View\FormAppointment.cs">
       <SubType>Form</SubType>
     </Compile>

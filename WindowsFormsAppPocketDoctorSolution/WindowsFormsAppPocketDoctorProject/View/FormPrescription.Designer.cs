@@ -46,8 +46,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEdu = new System.Windows.Forms.Label();
             this.lblDocName = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkListTest = new System.Windows.Forms.CheckedListBox();
             this.pnlPrescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPrescription.BackColor = System.Drawing.Color.White;
+            this.pnlPrescription.Controls.Add(this.chkListTest);
             this.pnlPrescription.Controls.Add(this.txtDate);
             this.pnlPrescription.Controls.Add(this.txtMobile);
             this.pnlPrescription.Controls.Add(this.txtPId);
@@ -74,7 +75,6 @@
             this.pnlPrescription.Controls.Add(this.panel2);
             this.pnlPrescription.Controls.Add(this.lblEdu);
             this.pnlPrescription.Controls.Add(this.lblDocName);
-            this.pnlPrescription.Controls.Add(this.checkedListBox1);
             this.pnlPrescription.Controls.Add(this.label1);
             this.pnlPrescription.Location = new System.Drawing.Point(6, 3);
             this.pnlPrescription.Name = "pnlPrescription";
@@ -240,43 +240,6 @@
             this.lblDocName.TabIndex = 3;
             this.lblDocName.Text = "Doctor Name";
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Patch testing",
-            "Biopsy",
-            "Scrapings",
-            "Examination by Wood Light",
-            "Tzanck testing",
-            "Diascopy",
-            "Blood (IgE/RAST)",
-            "Prick skin",
-            "Intradermal skin",
-            "Hearing test",
-            "Laryngoscopy",
-            "Electronystagmography (ENG)",
-            "Videonystagmography (VNG)",
-            "Lip Biopsy",
-            "Nasal endoscopy",
-            "CT scan",
-            "Allergy testing",
-            "Cultures test",
-            "Laryngeal electromyography (EMG)",
-            "Stroboscopy",
-            "Applanation Tonometry",
-            "Corneal Topography",
-            "Fluorescein Angiogram",
-            "Dialted Pupillary Exam",
-            "Ocular motility",
-            "Color vision testing",
-            "Retinal Examination",
-            "Noncontact tonometry"});
-            this.checkedListBox1.Location = new System.Drawing.Point(18, 393);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(342, 191);
-            this.checkedListBox1.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -286,6 +249,14 @@
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
+            // 
+            // chkListTest
+            // 
+            this.chkListTest.FormattingEnabled = true;
+            this.chkListTest.Location = new System.Drawing.Point(22, 384);
+            this.chkListTest.Name = "chkListTest";
+            this.chkListTest.Size = new System.Drawing.Size(223, 276);
+            this.chkListTest.TabIndex = 25;
             // 
             // FormPrescription
             // 
@@ -312,7 +283,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
@@ -326,5 +296,6 @@
         internal System.Windows.Forms.TextBox txtGender;
         internal System.Windows.Forms.TextBox txtPId;
         internal System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.CheckedListBox chkListTest;
     }
 }

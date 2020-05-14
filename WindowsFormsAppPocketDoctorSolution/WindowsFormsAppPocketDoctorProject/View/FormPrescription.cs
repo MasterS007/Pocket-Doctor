@@ -10,18 +10,31 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using WindowsFormsAppPocketDoctorProject.Repository_Class;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormPrescription : Form
     {
+        TestRepo trepo = new TestRepo();
         public FormPrescription()
         {
             InitializeComponent();
+            FillchkboxlistTest();
         }
 
+        private void FillchkboxlistTest()
+        {
+            DataTable dt = trepo.GetTest();
+
+            for(int i=0; i<dt.Rows.Count; i++)
+            {
+                chkListTest.Items.Add(dt.Rows[i]["name"].ToString());
+            }
+        }
         private void doc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+           
 
             //Panel grd = new Panel();
             Bitmap bmp = new Bitmap(pnlPrescription.Width, pnlPrescription.Height, pnlPrescription.CreateGraphics());
@@ -38,5 +51,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             doc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(doc_PrintPage);
             doc.Print();
         }
+
+
     }
 }
