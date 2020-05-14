@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlPrescription = new System.Windows.Forms.Panel();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.txtPId = new System.Windows.Forms.TextBox();
@@ -48,38 +48,38 @@
             this.lblDocName = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlPrescription.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlPrescription
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlPrescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.txtDate);
-            this.panel1.Controls.Add(this.txtMobile);
-            this.panel1.Controls.Add(this.txtPId);
-            this.panel1.Controls.Add(this.txtGender);
-            this.panel1.Controls.Add(this.txtAge);
-            this.panel1.Controls.Add(this.txtPatientName);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.lblCatagory);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lblEdu);
-            this.panel1.Controls.Add(this.lblDocName);
-            this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(6, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 717);
-            this.panel1.TabIndex = 0;
+            this.pnlPrescription.BackColor = System.Drawing.Color.White;
+            this.pnlPrescription.Controls.Add(this.txtDate);
+            this.pnlPrescription.Controls.Add(this.txtMobile);
+            this.pnlPrescription.Controls.Add(this.txtPId);
+            this.pnlPrescription.Controls.Add(this.txtGender);
+            this.pnlPrescription.Controls.Add(this.txtAge);
+            this.pnlPrescription.Controls.Add(this.txtPatientName);
+            this.pnlPrescription.Controls.Add(this.btnSave);
+            this.pnlPrescription.Controls.Add(this.lblCatagory);
+            this.pnlPrescription.Controls.Add(this.label15);
+            this.pnlPrescription.Controls.Add(this.label9);
+            this.pnlPrescription.Controls.Add(this.label8);
+            this.pnlPrescription.Controls.Add(this.label7);
+            this.pnlPrescription.Controls.Add(this.label6);
+            this.pnlPrescription.Controls.Add(this.label5);
+            this.pnlPrescription.Controls.Add(this.panel2);
+            this.pnlPrescription.Controls.Add(this.lblEdu);
+            this.pnlPrescription.Controls.Add(this.lblDocName);
+            this.pnlPrescription.Controls.Add(this.checkedListBox1);
+            this.pnlPrescription.Controls.Add(this.label1);
+            this.pnlPrescription.Location = new System.Drawing.Point(6, 3);
+            this.pnlPrescription.Name = "pnlPrescription";
+            this.pnlPrescription.Size = new System.Drawing.Size(813, 717);
+            this.pnlPrescription.TabIndex = 0;
             // 
             // txtDate
             // 
@@ -292,21 +292,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 722);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPrescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "FormPrescription";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrescription";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlPrescription.ResumeLayout(false);
+            this.pnlPrescription.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlPrescription;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
