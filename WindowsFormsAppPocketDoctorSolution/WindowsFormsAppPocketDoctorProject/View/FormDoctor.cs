@@ -14,8 +14,6 @@ namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormDoctor : Form
     {
-        //  List<Panel> listPanel = new List<Panel>();
-        //int index;
         Patient p;
         PatientRepo prepo = new PatientRepo();
         UserControlProfile userProf = new UserControlProfile();
@@ -177,7 +175,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void PrescriptionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.CreatePrescription();
+            try
+            {
+                this.CreatePrescription();
+            }
+            catch(Exception ex) { MessageBox.Show(ex+""); }
         }
 
         private void RefreshConToolStripMenuItem_Click(object sender, EventArgs e)

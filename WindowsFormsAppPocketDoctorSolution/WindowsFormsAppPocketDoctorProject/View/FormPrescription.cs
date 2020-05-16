@@ -11,13 +11,16 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using WindowsFormsAppPocketDoctorProject.Repository_Class;
+using WindowsFormsAppPocketDoctorProject.Data_Layer;
 
 namespace WindowsFormsAppPocketDoctorProject.View
 {
     public partial class FormPrescription : Form
     {
+        ReportRepo rrepo = new ReportRepo();
         TestRepo trepo = new TestRepo();
         FormPrescriptiontoPDF fPdf = new FormPrescriptiontoPDF();
+        List<string> checkedItems = new List<string>();
         public FormPrescription()
         {
             InitializeComponent();
@@ -50,10 +53,29 @@ namespace WindowsFormsAppPocketDoctorProject.View
            
             }
         }
+        
+       
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-           
+
+            foreach (string s in this.chkListTest.CheckedItems)
+            {
+                this.checkedItems.Add(s);
+            }
+                bool succeed = rrepo.InsertTest(this.txtPId.Text,this.checkedItems);
+
+                if (succeed == true)
+                {
+                    MessageBox.Show(" Test is inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Test is not inserted");
+                }
+            
+                
+          //  }
             
             fPdf.lblDocName.Text = this.lblDocName.Text;
             fPdf.lblEdu.Text = this.lblEdu.Text;
@@ -65,11 +87,12 @@ namespace WindowsFormsAppPocketDoctorProject.View
             fPdf.lblGender.Text = this.txtGender.Text;
             fPdf.lblDate.Text = this.txtDate.Text;
             this.fillTestList();
-           this.Hide();
+
+             
+
+            this.Hide();
           
             fPdf.Show();
         }
-
-
     }
 }

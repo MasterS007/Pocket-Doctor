@@ -21,11 +21,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void doc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-           
-
-            //Panel grd = new Panel();
             Bitmap bmp = new Bitmap(pnlPrestoPdf.Width, pnlPrestoPdf.Height, pnlPrestoPdf.CreateGraphics());
-            bmp.SetResolution(1920, 1080);
+           // bmp.SetResolution(1920, 1080);
             pnlPrestoPdf.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, pnlPrestoPdf.Width, pnlPrestoPdf.Height));
             RectangleF bounds = e.PageSettings.PrintableArea;
             float factor = ((float)bmp.Height / (float)bmp.Width);
@@ -37,11 +34,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
            // this.fillTestList();
         }
 
-        private void BtnSavePDF_Click(object sender, EventArgs e)
+     
+       
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Drawing.Printing.PrintDocument doc = new System.Drawing.Printing.PrintDocument();
             doc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(doc_PrintPage);
             doc.Print();
+            this.Dispose();
         }
     }
 }

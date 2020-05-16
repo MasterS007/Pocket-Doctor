@@ -47,6 +47,9 @@
             this.lblEdu = new System.Windows.Forms.Label();
             this.lblDocName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkListMedicine = new System.Windows.Forms.CheckedListBox();
             this.pnlPrescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +59,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPrescription.BackColor = System.Drawing.Color.White;
+            this.pnlPrescription.Controls.Add(this.chkListMedicine);
+            this.pnlPrescription.Controls.Add(this.label3);
+            this.pnlPrescription.Controls.Add(this.label2);
             this.pnlPrescription.Controls.Add(this.lblMobile);
             this.pnlPrescription.Controls.Add(this.chkListTest);
             this.pnlPrescription.Controls.Add(this.txtDate);
@@ -76,14 +82,14 @@
             this.pnlPrescription.Controls.Add(this.label1);
             this.pnlPrescription.Location = new System.Drawing.Point(6, 3);
             this.pnlPrescription.Name = "pnlPrescription";
-            this.pnlPrescription.Size = new System.Drawing.Size(813, 717);
+            this.pnlPrescription.Size = new System.Drawing.Size(813, 725);
             this.pnlPrescription.TabIndex = 0;
             // 
             // lblMobile
             // 
             this.lblMobile.AutoSize = true;
             this.lblMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMobile.Location = new System.Drawing.Point(17, 98);
+            this.lblMobile.Location = new System.Drawing.Point(667, 85);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(70, 25);
             this.lblMobile.TabIndex = 26;
@@ -94,7 +100,7 @@
             this.chkListTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chkListTest.CheckOnClick = true;
             this.chkListTest.FormattingEnabled = true;
-            this.chkListTest.Location = new System.Drawing.Point(22, 384);
+            this.chkListTest.Location = new System.Drawing.Point(30, 355);
             this.chkListTest.Name = "chkListTest";
             this.chkListTest.Size = new System.Drawing.Size(223, 274);
             this.chkListTest.TabIndex = 25;
@@ -144,7 +150,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(654, 658);
+            this.btnSave.Location = new System.Drawing.Point(655, 668);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(124, 39);
             this.btnSave.TabIndex = 18;
@@ -156,7 +162,7 @@
             // 
             this.lblCatagory.AutoSize = true;
             this.lblCatagory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCatagory.Location = new System.Drawing.Point(17, 70);
+            this.lblCatagory.Location = new System.Drawing.Point(569, 60);
             this.lblCatagory.Name = "lblCatagory";
             this.lblCatagory.Size = new System.Drawing.Size(92, 25);
             this.lblCatagory.TabIndex = 17;
@@ -176,7 +182,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 345);
+            this.label9.Location = new System.Drawing.Point(20, 316);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 32);
             this.label9.TabIndex = 10;
@@ -224,7 +230,7 @@
             // 
             this.lblEdu.AutoSize = true;
             this.lblEdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdu.Location = new System.Drawing.Point(13, 45);
+            this.lblEdu.Location = new System.Drawing.Point(569, 35);
             this.lblEdu.Name = "lblEdu";
             this.lblEdu.Size = new System.Drawing.Size(224, 25);
             this.lblEdu.TabIndex = 4;
@@ -234,7 +240,7 @@
             // 
             this.lblDocName.AutoSize = true;
             this.lblDocName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocName.Location = new System.Drawing.Point(13, 10);
+            this.lblDocName.Location = new System.Drawing.Point(565, 10);
             this.lblDocName.Name = "lblDocName";
             this.lblDocName.Size = new System.Drawing.Size(126, 25);
             this.lblDocName.TabIndex = 3;
@@ -250,13 +256,44 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(569, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Mobile:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(440, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 32);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Medicines\' Name";
+            // 
+            // chkListMedicine
+            // 
+            this.chkListMedicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chkListMedicine.CheckOnClick = true;
+            this.chkListMedicine.FormattingEnabled = true;
+            this.chkListMedicine.Location = new System.Drawing.Point(446, 351);
+            this.chkListMedicine.Name = "chkListMedicine";
+            this.chkListMedicine.Size = new System.Drawing.Size(223, 274);
+            this.chkListMedicine.TabIndex = 29;
+            // 
             // FormPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 722);
+            this.ClientSize = new System.Drawing.Size(822, 730);
             this.Controls.Add(this.pnlPrescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPrescription";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -288,5 +325,8 @@
         internal System.Windows.Forms.TextBox txtDate;
         internal System.Windows.Forms.Label lblMobile;
         internal System.Windows.Forms.CheckedListBox chkListTest;
+        internal System.Windows.Forms.CheckedListBox chkListMedicine;
+        private System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label2;
     }
 }

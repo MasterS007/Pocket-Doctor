@@ -38,6 +38,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             this.dgvAppointment.AutoGenerateColumns = false;
             this.dgvAppointment.DataSource = dataT;
+            this.dgvAppointment.ClearSelection();
+            this.dgvAppointment.Refresh();
         }
 
         private void FormShowAppointment_Load(object sender, EventArgs e)
@@ -64,6 +66,11 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnCancelApp_Click(object sender, EventArgs e)
         {
+            if(dgvAppointment.SelectedRows.Count!=1)
+            {
+                MessageBox.Show("Please select a row at first!");
+            }
+
             a.appt_id = Convert.ToInt32(this.dgvAppointment.CurrentRow.Cells["appt_id"].Value.ToString());
 
 
