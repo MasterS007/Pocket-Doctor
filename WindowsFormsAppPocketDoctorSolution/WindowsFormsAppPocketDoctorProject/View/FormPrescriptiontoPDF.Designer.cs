@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlPrestoPdf = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.listBoxMedicine = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,6 +38,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblPId = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
@@ -47,9 +50,6 @@
             this.lblCatagory = new System.Windows.Forms.Label();
             this.lblEdu = new System.Windows.Forms.Label();
             this.lblDocName = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.menuStripPDF = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,9 +59,10 @@
             // 
             // pnlPrestoPdf
             // 
-            this.pnlPrestoPdf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlPrestoPdf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPrestoPdf.BackColor = System.Drawing.Color.White;
+            this.pnlPrestoPdf.BackColor = System.Drawing.Color.MintCream;
             this.pnlPrestoPdf.Controls.Add(this.label7);
             this.pnlPrestoPdf.Controls.Add(this.label4);
             this.pnlPrestoPdf.Controls.Add(this.listBoxMedicine);
@@ -85,14 +86,35 @@
             this.pnlPrestoPdf.Controls.Add(this.lblDocName);
             this.pnlPrestoPdf.Location = new System.Drawing.Point(5, 31);
             this.pnlPrestoPdf.Name = "pnlPrestoPdf";
-            this.pnlPrestoPdf.Size = new System.Drawing.Size(812, 810);
+            this.pnlPrestoPdf.Size = new System.Drawing.Size(812, 985);
             this.pnlPrestoPdf.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(540, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 27);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Mobile:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 751);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 26);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Note:";
             // 
             // listBoxMedicine
             // 
             this.listBoxMedicine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxMedicine.BackColor = System.Drawing.Color.MintCream;
             this.listBoxMedicine.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxMedicine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxMedicine.FormattingEnabled = true;
@@ -100,7 +122,7 @@
             this.listBoxMedicine.Location = new System.Drawing.Point(458, 376);
             this.listBoxMedicine.Name = "listBoxMedicine";
             this.listBoxMedicine.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxMedicine.Size = new System.Drawing.Size(312, 350);
+            this.listBoxMedicine.Size = new System.Drawing.Size(312, 525);
             this.listBoxMedicine.TabIndex = 34;
             // 
             // label2
@@ -125,6 +147,7 @@
             // 
             // listBoxTest
             // 
+            this.listBoxTest.BackColor = System.Drawing.Color.MintCream;
             this.listBoxTest.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTest.ForeColor = System.Drawing.Color.Black;
@@ -165,6 +188,16 @@
             this.lblPId.Size = new System.Drawing.Size(32, 27);
             this.lblPId.TabIndex = 28;
             this.lblPId.Text = "Id";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(360, 205);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 27);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "ID:";
             // 
             // lblGender
             // 
@@ -276,36 +309,6 @@
             this.lblDocName.TabIndex = 4;
             this.lblDocName.Text = "Doctor Name";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(360, 205);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 27);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "ID:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 760);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 26);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Note:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(540, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 27);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "Mobile:";
-            // 
             // menuStripPDF
             // 
             this.menuStripPDF.BackColor = System.Drawing.Color.White;
@@ -330,7 +333,7 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
@@ -339,14 +342,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(821, 844);
+            this.ClientSize = new System.Drawing.Size(821, 1019);
             this.Controls.Add(this.pnlPrestoPdf);
             this.Controls.Add(this.menuStripPDF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPrescriptiontoPDF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrescriptiontoPDF";
-            this.Load += new System.EventHandler(this.FormPrescriptiontoPDF_Load);
             this.pnlPrestoPdf.ResumeLayout(false);
             this.pnlPrestoPdf.PerformLayout();
             this.menuStripPDF.ResumeLayout(false);

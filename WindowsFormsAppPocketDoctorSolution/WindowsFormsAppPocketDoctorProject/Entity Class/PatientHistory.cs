@@ -8,10 +8,11 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
     class PatientHistory
     {
-       private string prescription { get; set; }
+       private byte[] prescription { get; set; }
        private int hist_id { get; set; }
        private int rep_id { get; set; }
        private string p_id { get; set; }
+       private string p_filename { get; set; }
 
     }
 }

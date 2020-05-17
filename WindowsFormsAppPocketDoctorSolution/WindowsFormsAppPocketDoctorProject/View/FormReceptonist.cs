@@ -53,6 +53,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
         private void PopulatedDataGridView(DataTable dataT)
         {
             this.dgvPatientPro.AutoGenerateColumns = false;
+            this.dgvPatientPro.ClearSelection();
+            this.dgvPatientPro.Refresh();
             this.dgvPatientPro.DataSource = dataT;
         }
 
@@ -282,8 +284,22 @@ namespace WindowsFormsAppPocketDoctorProject.View
             appShow.Show();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void NewAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormAppointment f1 = new FormAppointment();
+
+            f1.lblName.Text = this.dgvPatientPro.CurrentRow.Cells["name"].Value.ToString();
+            f1.lblAge.Text = this.dgvPatientPro.CurrentRow.Cells["age"].Value.ToString();
+            f1.lblBloodg.Text = this.dgvPatientPro.CurrentRow.Cells["bloodgroup"].Value.ToString();
+            f1.lblGender.Text = this.dgvPatientPro.CurrentRow.Cells["gender"].Value.ToString();
+            f1.lblPId.Text = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
+            f1.Show();
+
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+
             this.Dispose();
             FormLogin flog = new FormLogin();
             flog.Visible = true;

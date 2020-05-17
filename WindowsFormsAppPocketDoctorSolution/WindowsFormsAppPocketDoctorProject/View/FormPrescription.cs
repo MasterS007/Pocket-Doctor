@@ -44,7 +44,6 @@ namespace WindowsFormsAppPocketDoctorProject.View
             int i = 1;
             fPdf.listBoxTest.Items.Clear();
            
-           // MessageBox.Show(chkListTest.Items)
            foreach(string s in this.chkListTest.CheckedItems)
             {
                 
@@ -72,11 +71,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
                 else
                 {
                     MessageBox.Show("Test is not inserted");
-                }
-            
-                
-          //  }
-            
+                } 
             fPdf.lblDocName.Text = this.lblDocName.Text;
             fPdf.lblEdu.Text = this.lblEdu.Text;
             fPdf.lblCatagory.Text = this.lblCatagory.Text;

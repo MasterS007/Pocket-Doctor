@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnShowAppointment = new System.Windows.Forms.Button();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.btnCreatePatient = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.timerR = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,7 +79,7 @@
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnShowAppointment);
             this.panel1.Controls.Add(this.pcbRefresh);
             this.panel1.Controls.Add(this.btnDelete);
@@ -94,6 +94,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 727);
             this.panel1.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(12, 668);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(108, 39);
+            this.btnLogout.TabIndex = 23;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // btnShowAppointment
             // 
@@ -339,6 +353,7 @@
             this.newAppointmentToolStripMenuItem.Name = "newAppointmentToolStripMenuItem";
             this.newAppointmentToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.newAppointmentToolStripMenuItem.Text = "New Appointment";
+            this.newAppointmentToolStripMenuItem.Click += new System.EventHandler(this.NewAppointmentToolStripMenuItem_Click);
             // 
             // panel3
             // 
@@ -429,20 +444,6 @@
             // 
             this.timerR.Tick += new System.EventHandler(this.TimerR_Tick);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 668);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 39);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Log out";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // FormReceptonist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -500,6 +501,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         private System.Windows.Forms.ToolStripMenuItem newAppointmentToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

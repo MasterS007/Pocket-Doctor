@@ -83,6 +83,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
                 string query = "Select a.appt_id, p.p_id, p.name, p.mobilenumber,a.visiting_date from tbl_Appointment a join tbl_Patient p on a.p_id =p.p_id and a.dr_id ='" + id + "' and a.visiting_date = '"+date+"'";
                 dataTable = dbCon.GetDataTable(query);
+             
             }
             catch (Exception ex) { }
             finally { dbCon.CloseConnection(); }
@@ -124,19 +125,17 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             return dataTable;
         }
-        internal DataTable GetAppointtedPatient()
+        internal DataTable GetAppointtedPatient(DateTime dateT)
         {
             string drid = FormLogin.uid;
             try
             {
-                string sql = "SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a join tbl_Patient p on a.dr_id= '" + drid + "' and p.p_id = a.p_id  ";
-                
-                //SqlCommand cmd = db.Query(sql);
-                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                string sql = @"SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date from tbl_Appointment a,
+                              tbl_Patient p where a.dr_id = '" + drid + "' and p.p_id = a.p_id and a.visiting_date ='"+dateT+"' ";
 
-                //adapter.Fill(dataTable);
                 dataTable = dbCon.GetDataTable(sql);
-                //db.Sda.Fill(dataTable);
+
+    
 
             }
             catch (Exception ex) { MessageBox.Show("" + ex); }

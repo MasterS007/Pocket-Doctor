@@ -13,6 +13,7 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
         private string p_id { get; set; }
         private DateTime issue_date { get; set; }
         private DateTime due_date { get; set; }
-        private string report { get; set; }
+        private string rep_name { get; set; }
+        private byte[] report { get; set; }
     }
 }

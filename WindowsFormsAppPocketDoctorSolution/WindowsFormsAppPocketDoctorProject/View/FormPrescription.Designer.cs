@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlPrescription = new System.Windows.Forms.Panel();
+            this.chkListMedicine = new System.Windows.Forms.CheckedListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblMobile = new System.Windows.Forms.Label();
             this.chkListTest = new System.Windows.Forms.CheckedListBox();
             this.txtDate = new System.Windows.Forms.TextBox();
@@ -47,9 +50,6 @@
             this.lblEdu = new System.Windows.Forms.Label();
             this.lblDocName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkListMedicine = new System.Windows.Forms.CheckedListBox();
             this.pnlPrescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.pnlPrescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPrescription.BackColor = System.Drawing.Color.White;
+            this.pnlPrescription.BackColor = System.Drawing.Color.Honeydew;
             this.pnlPrescription.Controls.Add(this.chkListMedicine);
             this.pnlPrescription.Controls.Add(this.label3);
             this.pnlPrescription.Controls.Add(this.label2);
@@ -85,6 +85,37 @@
             this.pnlPrescription.Size = new System.Drawing.Size(813, 725);
             this.pnlPrescription.TabIndex = 0;
             // 
+            // chkListMedicine
+            // 
+            this.chkListMedicine.BackColor = System.Drawing.Color.Honeydew;
+            this.chkListMedicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chkListMedicine.CheckOnClick = true;
+            this.chkListMedicine.FormattingEnabled = true;
+            this.chkListMedicine.Location = new System.Drawing.Point(446, 351);
+            this.chkListMedicine.Name = "chkListMedicine";
+            this.chkListMedicine.Size = new System.Drawing.Size(223, 274);
+            this.chkListMedicine.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(440, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 32);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Medicines\' Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(569, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Mobile:";
+            // 
             // lblMobile
             // 
             this.lblMobile.AutoSize = true;
@@ -97,6 +128,7 @@
             // 
             // chkListTest
             // 
+            this.chkListTest.BackColor = System.Drawing.Color.Honeydew;
             this.chkListTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chkListTest.CheckOnClick = true;
             this.chkListTest.FormattingEnabled = true;
@@ -107,6 +139,7 @@
             // 
             // txtDate
             // 
+            this.txtDate.BackColor = System.Drawing.Color.Honeydew;
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Location = new System.Drawing.Point(393, 223);
             this.txtDate.Name = "txtDate";
@@ -115,6 +148,7 @@
             // 
             // txtPId
             // 
+            this.txtPId.BackColor = System.Drawing.Color.Honeydew;
             this.txtPId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPId.Location = new System.Drawing.Point(68, 223);
             this.txtPId.Name = "txtPId";
@@ -123,6 +157,7 @@
             // 
             // txtGender
             // 
+            this.txtGender.BackColor = System.Drawing.Color.Honeydew;
             this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGender.Location = new System.Drawing.Point(606, 157);
             this.txtGender.Name = "txtGender";
@@ -131,6 +166,7 @@
             // 
             // txtAge
             // 
+            this.txtAge.BackColor = System.Drawing.Color.Honeydew;
             this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.Location = new System.Drawing.Point(347, 159);
             this.txtAge.Name = "txtAge";
@@ -139,6 +175,7 @@
             // 
             // txtPatientName
             // 
+            this.txtPatientName.BackColor = System.Drawing.Color.Honeydew;
             this.txtPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientName.Location = new System.Drawing.Point(102, 162);
             this.txtPatientName.Name = "txtPatientName";
@@ -255,36 +292,6 @@
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(569, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Mobile:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(440, 307);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 32);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Medicines\' Name";
-            // 
-            // chkListMedicine
-            // 
-            this.chkListMedicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chkListMedicine.CheckOnClick = true;
-            this.chkListMedicine.FormattingEnabled = true;
-            this.chkListMedicine.Location = new System.Drawing.Point(446, 351);
-            this.chkListMedicine.Name = "chkListMedicine";
-            this.chkListMedicine.Size = new System.Drawing.Size(223, 274);
-            this.chkListMedicine.TabIndex = 29;
             // 
             // FormPrescription
             // 
