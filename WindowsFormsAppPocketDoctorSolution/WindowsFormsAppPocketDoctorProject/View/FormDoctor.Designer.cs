@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDoctor = new System.Windows.Forms.Panel();
+            this.lblApList = new System.Windows.Forms.Label();
             this.btnDownlaod = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -44,6 +45,11 @@
             this.picbSearchP = new System.Windows.Forms.PictureBox();
             this.txtSearchP = new System.Windows.Forms.TextBox();
             this.dgvPatientInfor = new System.Windows.Forms.DataGridView();
+            this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visiting_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMove2 = new System.Windows.Forms.Panel();
             this.pnlMove1 = new System.Windows.Forms.Panel();
@@ -78,12 +84,6 @@
             this.viewDoctorProfileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPatienProfileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHomeMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visiting_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblApList = new System.Windows.Forms.Label();
             this.pnlDoctor.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,6 +113,17 @@
             this.pnlDoctor.Name = "pnlDoctor";
             this.pnlDoctor.Size = new System.Drawing.Size(964, 732);
             this.pnlDoctor.TabIndex = 0;
+            // 
+            // lblApList
+            // 
+            this.lblApList.AutoSize = true;
+            this.lblApList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApList.ForeColor = System.Drawing.Color.White;
+            this.lblApList.Location = new System.Drawing.Point(306, 123);
+            this.lblApList.Name = "lblApList";
+            this.lblApList.Size = new System.Drawing.Size(281, 29);
+            this.lblApList.TabIndex = 18;
+            this.lblApList.Text = "Today\'s Appointment List";
             // 
             // btnDownlaod
             // 
@@ -268,6 +279,41 @@
             this.dgvPatientInfor.Tag = "";
             this.dgvPatientInfor.VirtualMode = true;
             this.dgvPatientInfor.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPatientInfor_CellMouseClick);
+            // 
+            // p_id
+            // 
+            this.p_id.DataPropertyName = "p_id";
+            this.p_id.HeaderText = "Patient Id";
+            this.p_id.Name = "p_id";
+            this.p_id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Patient Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // visiting_date
+            // 
+            this.visiting_date.DataPropertyName = "visiting_date";
+            this.visiting_date.HeaderText = "Visiting Date";
+            this.visiting_date.Name = "visiting_date";
+            this.visiting_date.ReadOnly = true;
             // 
             // panel2
             // 
@@ -587,52 +633,6 @@
             this.viewHomeMenu.Size = new System.Drawing.Size(176, 26);
             this.viewHomeMenu.Text = "Home";
             this.viewHomeMenu.Click += new System.EventHandler(this.ViewHomeMenu_Click);
-            // 
-            // p_id
-            // 
-            this.p_id.DataPropertyName = "p_id";
-            this.p_id.HeaderText = "Patient Id";
-            this.p_id.Name = "p_id";
-            this.p_id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Patient Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // visiting_date
-            // 
-            this.visiting_date.DataPropertyName = "visiting_date";
-            this.visiting_date.HeaderText = "Visiting Date";
-            this.visiting_date.Name = "visiting_date";
-            this.visiting_date.ReadOnly = true;
-            // 
-            // lblApList
-            // 
-            this.lblApList.AutoSize = true;
-            this.lblApList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApList.ForeColor = System.Drawing.Color.White;
-            this.lblApList.Location = new System.Drawing.Point(306, 123);
-            this.lblApList.Name = "lblApList";
-            this.lblApList.Size = new System.Drawing.Size(281, 29);
-            this.lblApList.TabIndex = 18;
-            this.lblApList.Text = "Today\'s Appointment List";
             // 
             // FormDoctor
             // 

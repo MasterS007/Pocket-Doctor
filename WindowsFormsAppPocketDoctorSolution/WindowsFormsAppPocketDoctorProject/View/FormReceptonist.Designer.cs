@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowReport = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnShowAppointment = new System.Windows.Forms.Button();
             this.pcbRefresh = new System.Windows.Forms.PictureBox();
@@ -79,6 +80,7 @@
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnShowReport);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnShowAppointment);
             this.panel1.Controls.Add(this.pcbRefresh);
@@ -94,6 +96,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 727);
             this.panel1.TabIndex = 1;
+            // 
+            // btnShowReport
+            // 
+            this.btnShowReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowReport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnShowReport.FlatAppearance.BorderSize = 0;
+            this.btnShowReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnShowReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowReport.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnShowReport.Location = new System.Drawing.Point(634, 88);
+            this.btnShowReport.Name = "btnShowReport";
+            this.btnShowReport.Size = new System.Drawing.Size(136, 61);
+            this.btnShowReport.TabIndex = 24;
+            this.btnShowReport.Text = "Show Report";
+            this.btnShowReport.UseVisualStyleBackColor = true;
+            this.btnShowReport.Click += new System.EventHandler(this.BtnShowReport_Click);
             // 
             // btnLogout
             // 
@@ -118,9 +137,9 @@
             this.btnShowAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAppointment.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnShowAppointment.Location = new System.Drawing.Point(500, 104);
+            this.btnShowAppointment.Location = new System.Drawing.Point(424, 92);
             this.btnShowAppointment.Name = "btnShowAppointment";
-            this.btnShowAppointment.Size = new System.Drawing.Size(208, 57);
+            this.btnShowAppointment.Size = new System.Drawing.Size(160, 57);
             this.btnShowAppointment.TabIndex = 22;
             this.btnShowAppointment.Text = "Show Appointments";
             this.btnShowAppointment.UseVisualStyleBackColor = true;
@@ -150,9 +169,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(949, 96);
+            this.btnDelete.Location = new System.Drawing.Point(1000, 84);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(215, 73);
+            this.btnDelete.Size = new System.Drawing.Size(135, 73);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete Profile";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -237,7 +256,6 @@
             this.dgvPatientPro.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPatientPro.MultiSelect = false;
             this.dgvPatientPro.Name = "dgvPatientPro";
-            this.dgvPatientPro.ReadOnly = true;
             this.dgvPatientPro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -265,42 +283,36 @@
             this.p_id.DataPropertyName = "p_id";
             this.p_id.HeaderText = "Patient Id";
             this.p_id.Name = "p_id";
-            this.p_id.ReadOnly = true;
             // 
             // name
             // 
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Patient Name";
             this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // age
             // 
             this.age.DataPropertyName = "age";
             this.age.HeaderText = "Age";
             this.age.Name = "age";
-            this.age.ReadOnly = true;
             // 
             // gender
             // 
             this.gender.DataPropertyName = "gender";
             this.gender.HeaderText = "Gender";
             this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
             // 
             // bloodgroup
             // 
             this.bloodgroup.DataPropertyName = "bloodgroup";
             this.bloodgroup.HeaderText = "Blood Group";
             this.bloodgroup.Name = "bloodgroup";
-            this.bloodgroup.ReadOnly = true;
             // 
             // mobilenumber
             // 
             this.mobilenumber.DataPropertyName = "mobilenumber";
             this.mobilenumber.HeaderText = "Mobile Number";
             this.mobilenumber.Name = "mobilenumber";
-            this.mobilenumber.ReadOnly = true;
             // 
             // CMSReceptionist
             // 
@@ -361,7 +373,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(12, 40);
+            this.panel3.Location = new System.Drawing.Point(11, 18);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(404, 69);
             this.panel3.TabIndex = 12;
@@ -398,9 +410,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(737, 104);
+            this.btnUpdate.Location = new System.Drawing.Point(826, 86);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(206, 57);
+            this.btnUpdate.Size = new System.Drawing.Size(127, 65);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -415,9 +427,9 @@
             this.btnCreatePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePatient.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnCreatePatient.Location = new System.Drawing.Point(236, 104);
+            this.btnCreatePatient.Location = new System.Drawing.Point(236, 96);
             this.btnCreatePatient.Name = "btnCreatePatient";
-            this.btnCreatePatient.Size = new System.Drawing.Size(204, 57);
+            this.btnCreatePatient.Size = new System.Drawing.Size(150, 65);
             this.btnCreatePatient.TabIndex = 4;
             this.btnCreatePatient.Text = "New Patient Profile";
             this.btnCreatePatient.UseVisualStyleBackColor = true;
@@ -432,9 +444,9 @@
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppointment.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAppointment.Location = new System.Drawing.Point(12, 104);
+            this.btnAppointment.Location = new System.Drawing.Point(35, 100);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(185, 57);
+            this.btnAppointment.Size = new System.Drawing.Size(143, 57);
             this.btnAppointment.TabIndex = 3;
             this.btnAppointment.Text = "New Appointment";
             this.btnAppointment.UseVisualStyleBackColor = true;
@@ -502,5 +514,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumber;
         private System.Windows.Forms.ToolStripMenuItem newAppointmentToolStripMenuItem;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnShowReport;
     }
 }

@@ -9,7 +9,7 @@ namespace WindowsFormsAppPocketDoctorProject.Entity_Class
     class Test
     {
         private int t_id { get; set; }
-        private string name { get; set; }
+        private string tname { get; set; }
         private float cost { get; set; }
     }
 }

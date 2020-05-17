@@ -84,7 +84,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         internal DataTable GetDailySalary( )
         {
             FormDoctor fdoc = new FormDoctor();
-            DateTime daTe = Convert.ToDateTime(fdoc.daTe);
+            DateTime daTe = Convert.ToDateTime(fdoc.dateT);
             string d = FormLogin.uid;
             try
             {

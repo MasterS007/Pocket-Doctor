@@ -38,9 +38,9 @@ G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocket
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormShowAppointment.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\itextsharp.dll
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\itextsharp.xml
-G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.csprojAssemblyReference.cache
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormPrescriptiontoPDF.resources
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\PDFNet\x64\PDFNet.dll
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\PDFNet\x86\PDFNet.dll
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\bin\Debug\PDFNetLoader.dll
 G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.UserControlPatientHis.resources
+G:\Aiub\3-Spring(2019-2020)\C#\final\Project\Pocket Doctor\WindowsFormsAppPocketDoctorSolution\WindowsFormsAppPocketDoctorProject\obj\Debug\WindowsFormsAppPocketDoctorProject.View.FormShowReport.resources

@@ -34,7 +34,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
         private static PDFNetLoader loader = PDFNetLoader.Instance();
         PatientHistoryRepo hrepo = new PatientHistoryRepo();
-        DateTime dateT = DateTime.Now;
+        public DateTime dateT = DateTime.Now;
         public FormDoctor()
         {
             InitializeComponent();
@@ -340,34 +340,45 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void BtnDownlaod_Click(object sender, EventArgs e)
         {
-            if (!phistory.dgvPatientHistory.CurrentRow.Cells["p_filename"].Selected)
+            if (!phistory.dgvPatientHistory.CurrentRow.Selected)
             {
-                MessageBox.Show("Please Select The File Column First");
+                MessageBox.Show("Please Select The File Column row First");
 
             }
             else
             {
                 string fname = phistory.dgvPatientHistory.CurrentRow.Cells["p_filename"].Value.ToString();
-                try
+                if (MessageBox.Show("Do you want to download?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var dt = hrepo.GetPrescription(fname);
-                    byte[] pData = (byte[])(dt.Rows[0]["prescription"]);
-                    System.IO.File.WriteAllBytes("G:\\Aiub\\3-Spring(2019-2020)\\C#\\temp.pdf", pData);
-                    Process p = new Process();
-                    p.StartInfo.FileName = "G:\\Aiub\\3-Spring(2019-2020)\\C#\\temp.pdf"; //Open the file on PDF Reader
-                    p.Start();
-                    //MessageBox.Show(pData);
+                    try
+                    {
+                        var dt = hrepo.GetPrescription(fname);
+                        byte[] pData = (byte[])(dt.Rows[0]["prescription"]);
+                        System.IO.File.WriteAllBytes("G:\\Aiub\\3-Spring(2019-2020)\\C#\\temp.pdf", pData);
+                        Process p = new Process();
+                        p.StartInfo.FileName = "G:\\Aiub\\3-Spring(2019-2020)\\C#\\temp.pdf"; //Open the file on PDF Reader
+                        p.Start();
+                        //MessageBox.Show(pData);
 
 
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error during File Write " + ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+
+                else
                 {
-                    MessageBox.Show("Error during File Write " + ex.ToString());
+                    MessageBox.Show("File is not downloaded", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
             }
             
 
         }
+
+       
     }
 }

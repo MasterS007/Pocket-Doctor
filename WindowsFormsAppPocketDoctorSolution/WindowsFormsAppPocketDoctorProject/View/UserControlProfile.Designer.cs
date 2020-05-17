@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowSalary = new System.Windows.Forms.Button();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.dateTimeTo = new MetroFramework.Controls.MetroDateTime();
+            this.dateTimeFrom = new MetroFramework.Controls.MetroDateTime();
             this.cmbEarnings = new System.Windows.Forms.ComboBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,11 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimeFrom = new MetroFramework.Controls.MetroDateTime();
-            this.dateTimeTo = new MetroFramework.Controls.MetroDateTime();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.lblTo = new System.Windows.Forms.Label();
-            this.btnShowSalary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +90,59 @@
             this.panel1.Size = new System.Drawing.Size(924, 460);
             this.panel1.TabIndex = 0;
             // 
+            // btnShowSalary
+            // 
+            this.btnShowSalary.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnShowSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowSalary.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnShowSalary.Location = new System.Drawing.Point(15, 404);
+            this.btnShowSalary.Name = "btnShowSalary";
+            this.btnShowSalary.Size = new System.Drawing.Size(128, 39);
+            this.btnShowSalary.TabIndex = 31;
+            this.btnShowSalary.Text = "Show Earnings";
+            this.btnShowSalary.UseVisualStyleBackColor = false;
+            this.btnShowSalary.Click += new System.EventHandler(this.BtnShowSalary_Click);
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(671, 296);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(42, 29);
+            this.lblTo.TabIndex = 30;
+            this.lblTo.Text = "To";
+            this.lblTo.Visible = false;
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrom.Location = new System.Drawing.Point(427, 296);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(72, 29);
+            this.lblFrom.TabIndex = 29;
+            this.lblFrom.Text = "From";
+            this.lblFrom.Visible = false;
+            // 
+            // dateTimeTo
+            // 
+            this.dateTimeTo.Location = new System.Drawing.Point(676, 328);
+            this.dateTimeTo.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateTimeTo.Name = "dateTimeTo";
+            this.dateTimeTo.Size = new System.Drawing.Size(232, 30);
+            this.dateTimeTo.TabIndex = 28;
+            this.dateTimeTo.Visible = false;
+            // 
+            // dateTimeFrom
+            // 
+            this.dateTimeFrom.Location = new System.Drawing.Point(418, 328);
+            this.dateTimeFrom.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateTimeFrom.Name = "dateTimeFrom";
+            this.dateTimeFrom.Size = new System.Drawing.Size(224, 30);
+            this.dateTimeFrom.TabIndex = 27;
+            this.dateTimeFrom.Visible = false;
+            // 
             // cmbEarnings
             // 
             this.cmbEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,7 +155,7 @@
             this.cmbEarnings.Name = "cmbEarnings";
             this.cmbEarnings.Size = new System.Drawing.Size(180, 37);
             this.cmbEarnings.TabIndex = 25;
-            this.cmbEarnings.Text = "Earnings";
+            this.cmbEarnings.Text = "Total Earnings";
             this.cmbEarnings.SelectedIndexChanged += new System.EventHandler(this.CmbEarnings_SelectedIndexChanged);
             // 
             // textPassword
@@ -290,59 +343,6 @@
             this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-            // 
-            // dateTimeFrom
-            // 
-            this.dateTimeFrom.Location = new System.Drawing.Point(418, 328);
-            this.dateTimeFrom.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dateTimeFrom.Name = "dateTimeFrom";
-            this.dateTimeFrom.Size = new System.Drawing.Size(224, 30);
-            this.dateTimeFrom.TabIndex = 27;
-            this.dateTimeFrom.Visible = false;
-            // 
-            // dateTimeTo
-            // 
-            this.dateTimeTo.Location = new System.Drawing.Point(676, 328);
-            this.dateTimeTo.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dateTimeTo.Name = "dateTimeTo";
-            this.dateTimeTo.Size = new System.Drawing.Size(232, 30);
-            this.dateTimeTo.TabIndex = 28;
-            this.dateTimeTo.Visible = false;
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(427, 296);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(72, 29);
-            this.lblFrom.TabIndex = 29;
-            this.lblFrom.Text = "From";
-            this.lblFrom.Visible = false;
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(671, 296);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(42, 29);
-            this.lblTo.TabIndex = 30;
-            this.lblTo.Text = "To";
-            this.lblTo.Visible = false;
-            // 
-            // btnShowSalary
-            // 
-            this.btnShowSalary.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnShowSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnShowSalary.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnShowSalary.Location = new System.Drawing.Point(15, 404);
-            this.btnShowSalary.Name = "btnShowSalary";
-            this.btnShowSalary.Size = new System.Drawing.Size(128, 39);
-            this.btnShowSalary.TabIndex = 31;
-            this.btnShowSalary.Text = "Show Earnings";
-            this.btnShowSalary.UseVisualStyleBackColor = false;
-            this.btnShowSalary.Click += new System.EventHandler(this.BtnShowSalary_Click);
             // 
             // UserControlProfile
             // 

@@ -44,7 +44,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             string drid = FormAppointment.docid;
             DataTable dt = this.GetSalary();
 
-            totalSalary = float.Parse(dt.Rows[0]["earnings"].ToString())+ DoctorRepo.salary;
+            totalSalary = float.Parse(dt.Rows[0]["earnings"].ToString()) + DoctorRepo.salary;
             bool succeed = false;
             try
             {
@@ -58,6 +58,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 if (row == 1)
                 {
                     succeed = true;
+                    
                 }
                 else
                 {

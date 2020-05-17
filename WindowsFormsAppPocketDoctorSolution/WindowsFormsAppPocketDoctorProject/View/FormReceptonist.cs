@@ -112,8 +112,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             {
                 MessageBox.Show(p.name + " is not updated", "Row Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
-           
+             
           
 
         }
@@ -303,6 +302,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
             this.Dispose();
             FormLogin flog = new FormLogin();
             flog.Visible = true;
+        }
+
+        private void BtnShowReport_Click(object sender, EventArgs e)
+        {
+            //   string pid = this.dgvPatientPro.CurrentRow.Cells["p_id"].Value.ToString();
+            FormShowReport frep = new FormShowReport();
+            frep.Show();
+            
         }
     }
 }

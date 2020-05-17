@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPathologist));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPathologist));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -46,23 +46,20 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvTest = new System.Windows.Forms.DataGridView();
             this.timerT = new System.Windows.Forms.Timer(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
             this.rep_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.issue_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.report = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pcbRefresh = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rep_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,28 +68,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.pcbRefresh);
+            this.panel1.Controls.Add(this.btnInsert);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnUploadRep);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dgvTest);
-            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 735);
+            this.panel1.Size = new System.Drawing.Size(1066, 626);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.lbTime);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(666, 642);
+            this.panel2.Location = new System.Drawing.Point(698, 546);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 90);
+            this.panel2.Size = new System.Drawing.Size(359, 71);
             this.panel2.TabIndex = 27;
             // 
             // lblDate
@@ -101,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(92, 35);
+            this.lblDate.Location = new System.Drawing.Point(87, 21);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(58, 23);
             this.lblDate.TabIndex = 17;
@@ -113,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(167, 64);
+            this.lbTime.Location = new System.Drawing.Point(151, 46);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(58, 23);
             this.lbTime.TabIndex = 16;
@@ -123,15 +119,16 @@
             // 
             this.btnUploadRep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUploadRep.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnUploadRep.BackColor = System.Drawing.Color.White;
             this.btnUploadRep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUploadRep.FlatAppearance.BorderSize = 0;
             this.btnUploadRep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnUploadRep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUploadRep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadRep.Location = new System.Drawing.Point(394, 568);
+            this.btnUploadRep.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnUploadRep.Location = new System.Drawing.Point(9, 539);
             this.btnUploadRep.Name = "btnUploadRep";
-            this.btnUploadRep.Size = new System.Drawing.Size(235, 48);
+            this.btnUploadRep.Size = new System.Drawing.Size(174, 51);
             this.btnUploadRep.TabIndex = 23;
             this.btnUploadRep.Text = "Upload Report";
             this.btnUploadRep.UseVisualStyleBackColor = false;
@@ -142,9 +139,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.picbSearch);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Location = new System.Drawing.Point(19, 70);
+            this.panel3.Location = new System.Drawing.Point(9, 11);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(446, 69);
+            this.panel3.Size = new System.Drawing.Size(443, 69);
             this.panel3.TabIndex = 13;
             // 
             // picbSearch
@@ -178,10 +175,11 @@
             this.dgvTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTest.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTest.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvTest.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -192,9 +190,10 @@
             this.rep_id,
             this.p_id,
             this.name,
+            this.tname,
             this.issue_date,
             this.due_date,
-            this.report});
+            this.rep_name});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,19 +202,39 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTest.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTest.Location = new System.Drawing.Point(3, 176);
+            this.dgvTest.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dgvTest.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvTest.Location = new System.Drawing.Point(3, 124);
             this.dgvTest.Name = "dgvTest";
-            this.dgvTest.ReadOnly = true;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTest.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTest.RowTemplate.Height = 24;
             this.dgvTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTest.Size = new System.Drawing.Size(1019, 365);
+            this.dgvTest.Size = new System.Drawing.Size(1063, 365);
             this.dgvTest.TabIndex = 0;
             // 
             // timerT
             // 
             this.timerT.Tick += new System.EventHandler(this.TimerT_Tick);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnLogout.Location = new System.Drawing.Point(957, 11);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(90, 38);
+            this.btnLogout.TabIndex = 28;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // rep_id
             // 
@@ -224,7 +243,6 @@
             this.rep_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.rep_id.HeaderText = "Report Id";
             this.rep_id.Name = "rep_id";
-            this.rep_id.ReadOnly = true;
             // 
             // p_id
             // 
@@ -233,75 +251,57 @@
             this.p_id.DefaultCellStyle = dataGridViewCellStyle3;
             this.p_id.HeaderText = "Patient Id";
             this.p_id.Name = "p_id";
-            this.p_id.ReadOnly = true;
             // 
             // name
             // 
             this.name.DataPropertyName = "name";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.DefaultCellStyle = dataGridViewCellStyle4;
-            this.name.HeaderText = "Test Name";
+            this.name.HeaderText = "Patient Name";
             this.name.Name = "name";
-            this.name.ReadOnly = true;
+            // 
+            // tname
+            // 
+            this.tname.DataPropertyName = "tname";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tname.DefaultCellStyle = dataGridViewCellStyle4;
+            this.tname.HeaderText = "Test Name";
+            this.tname.Name = "tname";
             // 
             // issue_date
             // 
             this.issue_date.DataPropertyName = "issue_date";
             this.issue_date.HeaderText = "Issue Date";
             this.issue_date.Name = "issue_date";
-            this.issue_date.ReadOnly = true;
             // 
             // due_date
             // 
             this.due_date.DataPropertyName = "due_date";
             this.due_date.HeaderText = "Due Date";
             this.due_date.Name = "due_date";
-            this.due_date.ReadOnly = true;
             // 
-            // report
+            // rep_name
             // 
-            this.report.DataPropertyName = "report";
-            this.report.HeaderText = "Report";
-            this.report.Name = "report";
-            this.report.ReadOnly = true;
+            this.rep_name.DataPropertyName = "rep_name";
+            this.rep_name.HeaderText = "Report";
+            this.rep_name.Name = "rep_name";
             // 
-            // pcbRefresh
+            // btnInsert
             // 
-            this.pcbRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pcbRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pcbRefresh.Image")));
-            this.pcbRefresh.Location = new System.Drawing.Point(960, 9);
-            this.pcbRefresh.Name = "pcbRefresh";
-            this.pcbRefresh.Size = new System.Drawing.Size(56, 51);
-            this.pcbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbRefresh.TabIndex = 28;
-            this.pcbRefresh.TabStop = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1025, 28);
-            this.menuStrip1.TabIndex = 29;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logoutToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnInsert.Location = new System.Drawing.Point(219, 539);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(184, 51);
+            this.btnInsert.TabIndex = 29;
+            this.btnInsert.Text = "Insert Date";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // FormPathologist
             // 
@@ -309,10 +309,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1031, 739);
+            this.ClientSize = new System.Drawing.Size(1072, 630);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormPathologist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -320,16 +319,12 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPathologist_FormClosed);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRefresh)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -346,15 +341,14 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerT;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridViewTextBoxColumn rep_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tname;
         private System.Windows.Forms.DataGridViewTextBoxColumn issue_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn due_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn report;
-        private System.Windows.Forms.PictureBox pcbRefresh;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rep_name;
+        private System.Windows.Forms.Button btnInsert;
     }
 }

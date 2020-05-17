@@ -147,6 +147,12 @@
     <Compile Include="View\FormShowAppointment.Designer.cs">
       <DependentUpon>FormShowAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormShowReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormShowReport.Designer.cs">
+      <DependentUpon>FormShowReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity Class\User.cs" />
+    <Compile Include="View\ReporRepo.cs" />
     <Compile Include="View\UserControlPatientHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormShowAppointment.resx">
       <DependentUpon>FormShowAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormShowReport.resx">
+      <DependentUpon>FormShowReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>

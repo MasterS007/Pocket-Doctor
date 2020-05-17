@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 using WindowsFormsAppPocketDoctorProject.Entity_Class;
 
@@ -73,10 +74,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             try
             {
                 string sql = "SELECT * FROM tbl_Patient";
-                //SqlCommand cmd = db.Query(sql);
-                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                //adapter.Fill(dataTable);
+ 
                 dataTable = dbCon.GetDataTable(sql);
                 //db.Sda.Fill(dataTable);
 
@@ -114,7 +112,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             try
             {
               string sql = @"UPDATE tbl_Patient SET name = '"+ p.name + "', gender= '" + p.gender +"', age = '"+p.age+"'," +
-                    " mobilenumber='"+p.mobilenumber+"', bloodgroup = '"+p.bloodgroup+"' WHERE pid = '"+p.p_id+"'";
+                    " mobilenumber='"+p.mobilenumber+"', bloodgroup = '"+p.bloodgroup+"' WHERE p_id = '"+p.p_id+"'";
 
                 var row = dbCon.ExecuteUpdateQuery(sql);
                 if (row == 1)
@@ -126,7 +124,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                     succeed = false;
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(""+ex); }
 
            
 
