@@ -45,7 +45,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             bool succeed = false;
             try
             {
-                string sql = "Insert into tbl_Doctor (dr_id, dr_catagory) values ('" + drid + "', '" + docCat + "')";
+                string sql = "Insert into tbl_Doctor (dr_id, dr_catagory,earnings) values ('" + drid + "', '" + docCat + "',0)";
                 var row = dbCon.ExecuteUpdateQuery(sql);
                 
                 if (row == 1)
@@ -68,13 +68,12 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         internal DataTable GetDoctor()
         {
             
-            //DataTable dataTable = new DataTable();
+            
 
             try
             {
                 string sql = "select userid, username , dr_catagory from tbl_User  join tbl_Doctor  on userid = dr_id ";
-               // SqlCommand cmd = db.Query(sql);
-               //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+             
 
                 //adapter.Fill(dataTable);
                 dataTable =dbCon.GetDataTable(sql);

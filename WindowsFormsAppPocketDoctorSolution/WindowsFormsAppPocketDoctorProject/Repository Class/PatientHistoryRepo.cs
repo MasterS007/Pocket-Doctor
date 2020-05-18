@@ -67,7 +67,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         }
         internal bool InsertPrescription(string pid,string filePDF, MemoryStream ms, string drid)
         {
-           
+
             DataTable daTa = this.GetSalary(drid);
             totalSalary = float.Parse(daTa.Rows[0]["earnings"].ToString()) + DoctorRepo.salary;
             bool succeed = false;

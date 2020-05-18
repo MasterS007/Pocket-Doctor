@@ -23,8 +23,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 int tid = Convert.ToInt32(dataTable.Rows[0]["t_id"].ToString());
 
                 var dt = dbCon.Query("Update tbl_Report set report = @filepdf, rep_name = '" + filePDF + "' where p_id = '" + pid + "' and t_id ="+tid+"");
-
-                 dt.Parameters.AddWithValue("@filepdf", SqlDbType.VarBinary).Value = ms.ToArray();
+                dt.Parameters.AddWithValue("@filepdf", SqlDbType.VarBinary).Value = ms.ToArray();
 
                 var row = dt.ExecuteNonQuery();
                 if (row > 0)
@@ -55,7 +54,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             {
                 int tid;
                 int row = 0;
-
+        
                 foreach (string s in checkedItems)
                 {
                     string quyery = "Select t_id from tbl_Test where tname = '" + s + "'";
@@ -65,6 +64,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                     string sql = "INSERT INTO tbl_Report (t_id, p_id) VALUES(' " + tid + " ', '" + pid + "')";
                     row = dbCon.ExecuteUpdateQuery(sql);
 
+                   
                 }
                 if (row > 0)
                 {

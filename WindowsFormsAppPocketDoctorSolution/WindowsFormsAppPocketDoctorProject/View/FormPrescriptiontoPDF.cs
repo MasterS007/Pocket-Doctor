@@ -37,7 +37,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             System.Drawing.Printing.PrintDocument doc = new System.Drawing.Printing.PrintDocument();
             doc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(doc_PrintPage);
             doc.Print();
-            //this.Dispose();
+            this.Dispose();
 
         }
 
