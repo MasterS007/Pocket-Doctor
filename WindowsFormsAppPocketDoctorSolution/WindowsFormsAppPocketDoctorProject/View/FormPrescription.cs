@@ -18,6 +18,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     public partial class FormPrescription : Form
     {
         ReportRepo rrepo = new ReportRepo();
+        MedicineRepo mrepo = new MedicineRepo();
         TestRepo trepo = new TestRepo();
         FormPrescriptiontoPDF fPdf = new FormPrescriptiontoPDF();
         List<string> checkedItems = new List<string>();
@@ -25,19 +26,42 @@ namespace WindowsFormsAppPocketDoctorProject.View
         {
             InitializeComponent();
             FillchkboxlistTest();
+            FillchkListMedicine();
         }
 
+        private void FillchkListMedicine()
+        {
+            DataTable dt = mrepo.GetMedicine();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                chkListMedicine.Items.Add(dt.Rows[i]["name"].ToString());
+            }
+        }
         private void FillchkboxlistTest()
         {
             DataTable dt = trepo.GetTest();
 
             for(int i=0; i<dt.Rows.Count; i++)
             {
-                chkListTest.Items.Add(dt.Rows[i]["name"].ToString());
+                chkListTest.Items.Add(dt.Rows[i]["tname"].ToString());
             }
         }
-       
 
+        internal void fillMedicineList()
+        {
+
+            int i = 1;
+            fPdf.listBoxMedicine.Items.Clear();
+
+            foreach (string s in this.chkListMedicine.CheckedItems)
+            {
+
+                fPdf.listBoxMedicine.Items.Add(i.ToString() + "." + s);
+                i++;
+
+            }
+        }
         internal void fillTestList()
         {
 
@@ -82,6 +106,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             fPdf.lblGender.Text = this.txtGender.Text;
             fPdf.lblDate.Text = this.txtDate.Text;
             this.fillTestList();
+            this.fillMedicineList();
 
              
 

@@ -17,44 +17,23 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DataTable dataTable;
         FormLogin flog = new FormLogin();
         DoctorRepo drepo = new DoctorRepo();
-        float totalSalary = 0;
+       
 
 
 
-        internal DataTable GetSalary()
-        {
-            string drid = FormAppointment.docid;
-            try
-            {
-                string sql = "SELECT earnings from tbl_Doctor where dr_id ='"+drid+"' ";
-
-                dataTable = dbCon.GetDataTable(sql);
-
-
-            }
-            catch (Exception ex) { }
-
-
-
-
-            return dataTable;
-        }
+     
         internal bool InsertRow(Appointment dp)
         {
             string drid = FormAppointment.docid;
-            DataTable dt = this.GetSalary();
-
-            totalSalary = float.Parse(dt.Rows[0]["earnings"].ToString()) + DoctorRepo.salary;
+            
             bool succeed = false;
             try
             {
                 string sql = "INSERT INTO tbl_Appointment (dr_id, p_id, visiting_date ) VALUES( '"+dp.dr_id+"', '"+dp.p_id+"', '"+dp.visiting_date+"')";
 
 
-                string sl = "Update tbl_Doctor set earnings = " + totalSalary + " where dr_id = '" + drid + "' ";
-
                 var row = dbCon.ExecuteUpdateQuery(sql);
-                var row1 = dbCon.ExecuteUpdateQuery(sl);
+                
                 if (row == 1)
                 {
                     succeed = true;
@@ -87,6 +66,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
              
             }
             catch (Exception ex) { }
+
             finally { dbCon.CloseConnection(); }
 
              return dataTable;
@@ -108,18 +88,20 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             return dataTable;
         }
-        internal DataTable SearchAppointedPatient(string keyWord)
+        internal DataTable SearchAppointedPatient(string keyWord, DateTime daTe)
         {
+          
             string drid = FormLogin.uid;
             try
             {
 
-                string sql = "SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a join tbl_Patient p on p.p_id LIKE '%"+keyWord+ "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id OR p.mobilenumber LIKE '%" + keyWord + "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id OR p.name LIKE '%" + keyWord + "%' and a.dr_id= '" + drid + "' and p.p_id = a.p_id ";
-                dataTable = dbCon.GetDataTable(sql);
-
-
+                string sql = @"SELECT p.p_id, p.name, p.age, p.gender, a.visiting_date FROM tbl_Appointment a, tbl_Patient p Where
+                              
+                    a.dr_id= '" + drid + "'and p.p_id = a.p_id and p.name LIKE '%" + keyWord + "%' and a.visiting_date = '" + daTe + "' ";
+                           dataTable = dbCon.GetDataTable(sql);
+              
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show("" + ex); }
 
 
 
@@ -148,16 +130,16 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         internal bool DeleteAppointment(Appointment a)
         {
             string drid = FormAppointment.docid;
-            DataTable dt = this.GetSalary();
-            totalSalary = float.Parse(dt.Rows[0]["earnings"].ToString()) - DoctorRepo.salary;
+           
+            
             bool succeed = false;
             try
             {
                 string sql = "DELETE FROM tbl_Appointment WHERE appt_id = '" + a.appt_id + "'";
-                string sl = "Update tbl_Doctor set earnings = " + totalSalary + " where dr_id = '" + drid + "' ";
+                
 
                 var row = dbCon.ExecuteUpdateQuery(sql);
-                var row1 = dbCon.ExecuteUpdateQuery(sl);
+                
                 if (row == 1)
                 {
                     succeed = true;

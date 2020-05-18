@@ -40,8 +40,31 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                 return dataTable;
           
         }
+        internal bool InsertDoctorCategory(string drid, string docCat)
+        {
+            bool succeed = false;
+            try
+            {
+                string sql = "Insert into tbl_Doctor (dr_id, dr_catagory) values ('" + drid + "', '" + docCat + "')";
+                var row = dbCon.ExecuteUpdateQuery(sql);
+                
+                if (row == 1)
+                {
+                    succeed = true;
+                }
+                else
+                {
+                    succeed = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex + ""); }
 
-  
+
+
+            return succeed;
+        }
+
+
         internal DataTable GetDoctor()
         {
             
@@ -98,6 +121,8 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             return dataTable;
 
         }
+
+
         internal DataTable GetMonthlySalary(DateTime from, DateTime to)
         {
             string d = FormLogin.uid;

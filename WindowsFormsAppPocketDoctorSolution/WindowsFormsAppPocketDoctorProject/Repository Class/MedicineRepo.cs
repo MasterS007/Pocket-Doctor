@@ -9,15 +9,15 @@ using WindowsFormsAppPocketDoctorProject.Data_Layer;
 
 namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 {
-    class TestRepo
+    class MedicineRepo
     {
-        DataTable dataTable;  
+        DataTable dataTable;
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
-        internal DataTable GetTest()
+        internal DataTable GetMedicine()
         {
             try
             {
-                string sql = "select tname from tbl_Test";
+                string sql = "select name from tbl_Medicine";
                 // SqlCommand cmd = db.Query(sql);
                 //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

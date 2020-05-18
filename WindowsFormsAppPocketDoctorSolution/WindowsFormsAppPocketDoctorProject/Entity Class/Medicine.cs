@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppPocketDoctorProject.Entity_Class
 {
-    class Test
+    class Medicine
     {
-        internal int t_id { get; set; }
-        internal string tname { get; set; }
+        internal int med_id { get; set; }
+        internal string name { get; set; }
         internal float cost { get; set; }
     }
 }

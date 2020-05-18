@@ -16,6 +16,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     {
         User users = new User();
         UserRepo urepo = new UserRepo();
+        DoctorRepo docrepo = new DoctorRepo();
      
         public FormSignUp()
         {
@@ -49,12 +50,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
             User userDoc = new Doctor(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
             User userReceptionist = new Receptionist (txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
             User userPathologist = new Pathologist(txtUserName.Text, txtPassword.Text, txtMobileNum.Text);
-
+           
             if (this.cmbUserType.Text == "Doctor")
             {
-           
-            bool success= urepo.InsertUser(userDoc,users.UserId+"-D");
-               
+                
+                string docCategory = this.cmbCategory.Text;
+                
+                 bool success= urepo.InsertUser(userDoc,users.UserId+"-D");
+                bool sucs = docrepo.InsertDoctorCategory(users.UserId + "-D", docCategory);
                   if (success == false)
                   {
                      MessageBox.Show("Failed to insert");
@@ -116,7 +119,8 @@ namespace WindowsFormsAppPocketDoctorProject.View
         
         private void FormSignUp_Load(object sender, EventArgs e)
         {
-            
+            this.lblDoctorCategory.Hide();
+            this.cmbCategory.Hide();
              this.LoadAutoUserId();
             //users.UserId = uId;
            
@@ -124,6 +128,12 @@ namespace WindowsFormsAppPocketDoctorProject.View
            // Id = uId + "-D";
           // MessageBox.Show(users.UserId+"-D");
 
+        }
+
+        private void CmbUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.lblDoctorCategory.Show();
+            this.cmbCategory.Show();
         }
     }
 }

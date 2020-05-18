@@ -72,7 +72,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
       
         private void FormHome_Load(object sender, EventArgs e)
         {
-           
+            
             DataTable dataT = arepo.GetAppointtedPatient(dateT);
             this.PopulatedDataGridView(dataT);
             this.dgvPatientInfor.Show();
@@ -167,15 +167,21 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void TxtSearchP_TextChanged(object sender, EventArgs e)
         {
-            if(this.Home())
+
+            string keyWord = txtSearchP.Text;
+
+            if ( this.btnPatientFlag==true)
+
             {
-                string keyWord = txtSearchP.Text;
-                DataTable dset = arepo.SearchAppointedPatient(keyWord);
-                this.dgvPatientInfor.DataSource = dset;
+              
+                DataTable daset = hrepo.SearchPrescriptionHistory(keyWord);
+                phistory.dgvPatientHistory.DataSource = daset;
             }
-            else if(this.PatientProfile())
+            else if(this.btnPatientFlag ==false)
             {
-                string keyWord = txtSearchP.Text;
+                
+                DataTable dset = arepo.SearchAppointedPatient(keyWord, dateT);
+                this.PopulatedDataGridView(dset);
             }
             
         }
@@ -309,13 +315,14 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
                 if (openFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    string docid = FormLogin.uid;
                     MemoryStream ms = new MemoryStream();
                     FileStream fs = File.OpenRead(openFile.FileName);
                     fileLocation = openFile.FileName;
                     filename = fileLocation.Substring(System.Convert.ToInt32(fileLocation.LastIndexOf("\\")) + 1, fileLocation.Length - (System.Convert.ToInt32(fileLocation.LastIndexOf("\\")) + 1));
                     fs.CopyTo(ms);
                     string pid = dgvPatientInfor.CurrentRow.Cells["p_id"].Value.ToString();
-                    bool isSucceed = hrepo.InsertPrescription(pid, filename, ms);
+                    bool isSucceed = hrepo.InsertPrescription(pid, filename, ms, docid);
 
                     if(isSucceed == true)
                     {
@@ -348,7 +355,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             else
             {
                 string fname = phistory.dgvPatientHistory.CurrentRow.Cells["p_filename"].Value.ToString();
-                if (MessageBox.Show("Do you want to download?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to download?", "Download Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -371,7 +378,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
                 else
                 {
-                    MessageBox.Show("File is not downloaded", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("File is not downloaded", "Download Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
             }

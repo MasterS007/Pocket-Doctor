@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 using WindowsFormsAppPocketDoctorProject.Data_Layer;
 
@@ -11,8 +12,40 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
         DataTable dataTable;
 
         DatabaseConnection dbCon = DatabaseConnection.GetDbInstance();
+        internal bool InsertTestReport(string pid, string tname, string filePDF, MemoryStream ms)
+        {
+            bool succeed = false;
+
+            try
+            {
+                string query = "Select t_id from tbl_Test where tname = '" + tname + "'";
+                var dataTable = dbCon.GetDataTable(query);
+                int tid = Convert.ToInt32(dataTable.Rows[0]["t_id"].ToString());
+
+                var dt = dbCon.Query("Update tbl_Report set report = @filepdf, rep_name = '" + filePDF + "' where p_id = '" + pid + "' and t_id ="+tid+"");
+
+                 dt.Parameters.AddWithValue("@filepdf", SqlDbType.VarBinary).Value = ms.ToArray();
+
+                var row = dt.ExecuteNonQuery();
+                if (row > 0)
+                {
+                    succeed = true;
+
+                }
+                else
+                {
+                    succeed = false;
 
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during File Read " + ex.ToString());
+            }
+            return succeed;
+        }
         internal bool InsertTest(string pid, List<string> checkedItems)
         {
 
@@ -29,7 +62,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                     dataTable = dbCon.GetDataTable(quyery);
                     tid = Convert.ToInt32(dataTable.Rows[0]["t_id"].ToString());
 
-                    string sql = "INSERT INTO tbl_Report (t_id, p_id) VALUES(  ' " + tid + " ', '" + pid + "')";
+                    string sql = "INSERT INTO tbl_Report (t_id, p_id) VALUES(' " + tid + " ', '" + pid + "')";
                     row = dbCon.ExecuteUpdateQuery(sql);
 
                 }
@@ -114,8 +147,27 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             return dataTable;
         }
 
+        internal DataTable DownloadReport(string reportname, string pid)
+        {
+
+            try
+            {
+                string query = @"SELECT report from tbl_Report where rep_name ='"+reportname+"' and p_id ='"+pid+"' ";
+
+                dataTable = dbCon.GetDataTable(query);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            return dataTable;
+        }
+
+
         internal DataTable SearchReport(string keyWord)
         {
+    
             try
             {
 

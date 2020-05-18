@@ -137,8 +137,16 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             try
             {
                 string sql = "DELETE FROM tbl_Patient WHERE p_id = '"+p.p_id+"'";
+                string sql1 = "DELETE FROM tbl_PatientHistory Where p_id = '" + p.p_id + "'";
+               string sql2 = "DELETE FROM tbl_Appointment Where p_id = '" + p.p_id + "'";
+                string sql3 = "DELETE FROM tbl_Report WHere p_id ='" + p.p_id + "'";
+                
+                var row1 = dbCon.ExecuteUpdateQuery(sql1);
+                var row2 = dbCon.ExecuteUpdateQuery(sql2);
+                var row3 = dbCon.ExecuteUpdateQuery(sql3);
                 var row = dbCon.ExecuteUpdateQuery(sql);
-                if (row == 1)
+
+                if (row>0 && row1 >0 || row3>0 )
                 {
                     succeed = true;
                 }
@@ -147,7 +155,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
                     succeed = false;
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(""+ex); }
 
             
 

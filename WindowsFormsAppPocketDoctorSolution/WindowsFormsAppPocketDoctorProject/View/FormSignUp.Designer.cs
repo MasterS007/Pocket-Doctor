@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.lblDoctorCategory = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.chkPassword = new System.Windows.Forms.CheckBox();
@@ -45,6 +47,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbCategory);
+            this.panel1.Controls.Add(this.lblDoctorCategory);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbUserType);
             this.panel1.Controls.Add(this.chkPassword);
@@ -59,6 +63,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(684, 498);
             this.panel1.TabIndex = 0;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Dermatologist",
+            "Opthalmologist",
+            "Ear, Nose and Throat"});
+            this.cmbCategory.Location = new System.Drawing.Point(223, 326);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(254, 33);
+            this.cmbCategory.TabIndex = 15;
+            // 
+            // lblDoctorCategory
+            // 
+            this.lblDoctorCategory.AutoSize = true;
+            this.lblDoctorCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoctorCategory.Location = new System.Drawing.Point(50, 329);
+            this.lblDoctorCategory.Name = "lblDoctorCategory";
+            this.lblDoctorCategory.Size = new System.Drawing.Size(92, 25);
+            this.lblDoctorCategory.TabIndex = 14;
+            this.lblDoctorCategory.Text = "Category";
             // 
             // label4
             // 
@@ -82,6 +109,7 @@
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(254, 33);
             this.cmbUserType.TabIndex = 12;
+            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.CmbUserType_SelectedIndexChanged);
             // 
             // chkPassword
             // 
@@ -99,7 +127,7 @@
             // 
             this.btnSingUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSingUp.Location = new System.Drawing.Point(259, 358);
+            this.btnSingUp.Location = new System.Drawing.Point(251, 404);
             this.btnSingUp.Name = "btnSingUp";
             this.btnSingUp.Size = new System.Drawing.Size(118, 34);
             this.btnSingUp.TabIndex = 10;
@@ -191,5 +219,7 @@
         private System.Windows.Forms.CheckBox chkPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbUserType;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Label lblDoctorCategory;
     }
 }

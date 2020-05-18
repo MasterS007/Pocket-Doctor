@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
     public partial class FormPathologist : Form
     {
         ReportRepo rrepo = new ReportRepo();
+        PatientHistoryRepo hrepo = new PatientHistoryRepo();
         public FormPathologist()
         {
             InitializeComponent();
@@ -82,6 +84,54 @@ namespace WindowsFormsAppPocketDoctorProject.View
             FormLogin flog = new FormLogin();
             flog.Visible = true;
             this.Hide();
+
+        }
+
+        private void BtnUploadRep_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+
+
+            string filename = "";
+            string fileLocation = "";
+            try
+            {
+                openFile.Filter = "PDF Files|*.pdf|All files(*.*)|*.*";
+                if (this.dgvTest.SelectedRows.Count != 1)
+                {
+                    MessageBox.Show("Please Select A Row First");
+
+                }
+
+                if (openFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    FileStream fs = File.OpenRead(openFile.FileName);
+                    fileLocation = openFile.FileName;
+                    filename = fileLocation.Substring(System.Convert.ToInt32(fileLocation.LastIndexOf("\\")) + 1, fileLocation.Length - (System.Convert.ToInt32(fileLocation.LastIndexOf("\\")) + 1));
+                    fs.CopyTo(ms);
+                    string pid = this.dgvTest.CurrentRow.Cells["p_id"].Value.ToString();
+                    string tname = this.dgvTest.CurrentRow.Cells["tname"].Value.ToString();
+                    bool isSucceed = rrepo.InsertTestReport(pid,tname, filename, ms);
+
+                    if (isSucceed == true)
+                    {
+                        var dt = rrepo.DisplayReport();
+                        this.PopulatedDataGridView(dt);
+                        
+                        MessageBox.Show("Inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Not Inserted");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during File Read " + ex.ToString());
+            }
 
         }
     }

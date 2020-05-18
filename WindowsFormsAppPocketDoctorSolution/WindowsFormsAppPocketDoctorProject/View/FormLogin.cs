@@ -41,45 +41,33 @@ namespace WindowsFormsAppPocketDoctorProject.View
             
             users.password = txtPassword.Text;
              var role = urepo.SelectUser(users);
-           
-             //if (dataTable == true)
-          //  {
-                /* string role;
-                 string query = "SELECT userrole FROM tbl_User WHERE id='"+txtUserId.Text+"'";
-                SqlCommand cmd1 = dbCon.Query(query);
-                 var queryResult= cmd1.ExecuteScalar();
-                 */
 
-              //  if (queryResult != null)
-              //  {
-                 //   role = Convert.ToString(queryResult);
-                
-                    
-                    if( role.Equals("D"))
-                    {
-                        this.Visible = false;
-                        FormDoctor fm = new FormDoctor();
-                        fm.Visible = true;
-                        
 
-                    }
+            if (role.Equals("D"))
+            {
+                this.Visible = false;
+                FormDoctor fm = new FormDoctor();
+                fm.Visible = true;
 
-                    else if (role.Equals("R"))
-                    {
-                        this.Visible = false;
-                        FormReceptonist fm = new FormReceptonist();
-                        fm.Visible = true;
 
-                    }
+            }
 
-                    else if (role.Equals("P"))
-                    {
-                        this.Visible = false;
-                        FormPathologist fm = new FormPathologist();
-                        fm.Visible = true;
+            else if (role.Equals("R"))
+            {
+                this.Visible = false;
+                FormReceptonist fm = new FormReceptonist();
+                fm.Visible = true;
 
-                    }
-               
+            }
+
+            else if (role.Equals("P"))
+            {
+                this.Visible = false;
+                FormPathologist fm = new FormPathologist();
+                fm.Visible = true;
+
+            }
+
 
             else
             {

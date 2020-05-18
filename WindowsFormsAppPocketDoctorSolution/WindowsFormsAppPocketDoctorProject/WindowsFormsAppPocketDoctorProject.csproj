@@ -73,6 +73,7 @@
     <Compile Include="Data Layer\DatabaseConnection.cs" />
     <Compile Include="Entity Class\Doctor.cs" />
     <Compile Include="Entity Class\Appointment.cs" />
+    <Compile Include="Entity Class\Medicine.cs" />
     <Compile Include="Entity Class\Pathologist.cs" />
     <Compile Include="Entity Class\Patient.cs" />
     <Compile Include="Entity Class\PatientHistory.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Entity Class\Test.cs" />
     <Compile Include="Repository Class\AppointmentRepo.cs" />
     <Compile Include="Repository Class\DoctorRepo.cs" />
+    <Compile Include="Repository Class\MedicineRepo.cs" />
     <Compile Include="Repository Class\PatientHistoryRepo.cs" />
     <Compile Include="Repository Class\ReportRepo.cs" />
     <Compile Include="Repository Class\TestRepo.cs" />

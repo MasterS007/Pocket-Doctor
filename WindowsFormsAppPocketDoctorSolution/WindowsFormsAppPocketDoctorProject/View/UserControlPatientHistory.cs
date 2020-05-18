@@ -55,7 +55,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
 
         private void DownloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.dgvPatientHistory.CurrentRow.Selected)
+            if (!this.dgvPatientHistory.CurrentRow.Selected || !this.dgvPatientHistory.CurrentRow.Cells["p_filename"].Selected)
             {
                 MessageBox.Show("Please Select The File Column First");
 

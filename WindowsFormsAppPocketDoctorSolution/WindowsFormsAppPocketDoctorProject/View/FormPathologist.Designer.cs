@@ -37,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
@@ -46,7 +48,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvTest = new System.Windows.Forms.DataGridView();
             this.timerT = new System.Windows.Forms.Timer(this.components);
-            this.btnLogout = new System.Windows.Forms.Button();
             this.rep_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.issue_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rep_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +78,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1066, 626);
             this.panel1.TabIndex = 0;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnInsert.Location = new System.Drawing.Point(219, 539);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(184, 51);
+            this.btnInsert.TabIndex = 29;
+            this.btnInsert.Text = "Insert Date";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnLogout.Location = new System.Drawing.Point(957, 11);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(90, 38);
+            this.btnLogout.TabIndex = 28;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // panel2
             // 
@@ -132,6 +170,7 @@
             this.btnUploadRep.TabIndex = 23;
             this.btnUploadRep.Text = "Upload Report";
             this.btnUploadRep.UseVisualStyleBackColor = false;
+            this.btnUploadRep.Click += new System.EventHandler(this.BtnUploadRep_Click);
             // 
             // panel3
             // 
@@ -217,25 +256,6 @@
             // 
             this.timerT.Tick += new System.EventHandler(this.TimerT_Tick);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackColor = System.Drawing.Color.White;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnLogout.Location = new System.Drawing.Point(957, 11);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(90, 38);
-            this.btnLogout.TabIndex = 28;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
             // rep_id
             // 
             this.rep_id.DataPropertyName = "rep_id";
@@ -243,6 +263,7 @@
             this.rep_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.rep_id.HeaderText = "Report Id";
             this.rep_id.Name = "rep_id";
+            this.rep_id.ReadOnly = true;
             // 
             // p_id
             // 
@@ -251,12 +272,14 @@
             this.p_id.DefaultCellStyle = dataGridViewCellStyle3;
             this.p_id.HeaderText = "Patient Id";
             this.p_id.Name = "p_id";
+            this.p_id.ReadOnly = true;
             // 
             // name
             // 
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Patient Name";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // tname
             // 
@@ -265,6 +288,7 @@
             this.tname.DefaultCellStyle = dataGridViewCellStyle4;
             this.tname.HeaderText = "Test Name";
             this.tname.Name = "tname";
+            this.tname.ReadOnly = true;
             // 
             // issue_date
             // 
@@ -283,25 +307,7 @@
             this.rep_name.DataPropertyName = "rep_name";
             this.rep_name.HeaderText = "Report";
             this.rep_name.Name = "rep_name";
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsert.BackColor = System.Drawing.Color.White;
-            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnInsert.Location = new System.Drawing.Point(219, 539);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(184, 51);
-            this.btnInsert.TabIndex = 29;
-            this.btnInsert.Text = "Insert Date";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+            this.rep_name.ReadOnly = true;
             // 
             // FormPathologist
             // 
@@ -342,6 +348,7 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timerT;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridViewTextBoxColumn rep_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -349,6 +356,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn issue_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn due_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn rep_name;
-        private System.Windows.Forms.Button btnInsert;
     }
 }
