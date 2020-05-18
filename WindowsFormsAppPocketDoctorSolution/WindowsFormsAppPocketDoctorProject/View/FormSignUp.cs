@@ -31,7 +31,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             
         }
 
-        private void ChkPassword_CheckedChanged(object sender, EventArgs e)
+        /*private void ChkPassword_CheckedChanged(object sender, EventArgs e)
         {
             if(chkPassword.Checked)
             {
@@ -41,7 +41,7 @@ namespace WindowsFormsAppPocketDoctorProject.View
             {
                 txtPassword.UseSystemPasswordChar = true;
             }
-        }
+        }*/
        // string Id;
         
         private void BtnSingUp_Click(object sender, EventArgs e)

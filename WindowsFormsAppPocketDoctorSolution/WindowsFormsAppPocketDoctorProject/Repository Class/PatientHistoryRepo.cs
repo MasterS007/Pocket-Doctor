@@ -65,7 +65,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
 
             return dataTable;
         }
-        internal bool InsertPrescription(string pid,string filePDF, MemoryStream ms,string drid)
+        internal bool InsertPrescription(string pid,string filePDF, MemoryStream ms, string drid)
         {
            
             DataTable daTa = this.GetSalary(drid);
@@ -76,7 +76,7 @@ namespace WindowsFormsAppPocketDoctorProject.Repository_Class
             {
                 var dt = dbCon.Query("insert into tbl_PatientHistory (prescription,p_id, p_filename) values (@filepdf, '" + pid + "', '" + filePDF + "')");
                 dt.Parameters.AddWithValue("@filepdf", SqlDbType.VarBinary).Value = ms.ToArray();
-
+               
                 string sl = "Update tbl_Doctor set earnings = " + totalSalary + " where dr_id = '" + drid + "' ";
                 var row1 = dbCon.ExecuteUpdateQuery(sl);
 
